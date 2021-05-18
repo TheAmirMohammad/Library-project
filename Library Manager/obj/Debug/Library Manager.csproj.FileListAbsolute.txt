@@ -1,0 +1,15 @@
+C:\Users\lenovo\Desktop\works\darC\AP\Lib Project\Library Manager\bin\Debug\Library Manager.exe.config
+C:\Users\lenovo\Desktop\works\darC\AP\Lib Project\Library Manager\bin\Debug\Library Manager.exe
+C:\Users\lenovo\Desktop\works\darC\AP\Lib Project\Library Manager\bin\Debug\Library Manager.pdb
+C:\Users\lenovo\Desktop\works\darC\AP\Lib Project\Library Manager\obj\Debug\Library Manager.csprojAssemblyReference.cache
+C:\Users\lenovo\Desktop\works\darC\AP\Lib Project\Library Manager\obj\Debug\MainWindow.g.cs
+C:\Users\lenovo\Desktop\works\darC\AP\Lib Project\Library Manager\obj\Debug\App.g.cs
+C:\Users\lenovo\Desktop\works\darC\AP\Lib Project\Library Manager\obj\Debug\Library Manager_MarkupCompile.cache
+C:\Users\lenovo\Desktop\works\darC\AP\Lib Project\Library Manager\obj\Debug\Library Manager_MarkupCompile.lref
+C:\Users\lenovo\Desktop\works\darC\AP\Lib Project\Library Manager\obj\Debug\MainWindow.baml
+C:\Users\lenovo\Desktop\works\darC\AP\Lib Project\Library Manager\obj\Debug\Library Manager.g.resources
+C:\Users\lenovo\Desktop\works\darC\AP\Lib Project\Library Manager\obj\Debug\Library_Manager.Properties.Resources.resources
+C:\Users\lenovo\Desktop\works\darC\AP\Lib Project\Library Manager\obj\Debug\Library Manager.csproj.GenerateResource.cache
+C:\Users\lenovo\Desktop\works\darC\AP\Lib Project\Library Manager\obj\Debug\Library Manager.csproj.CoreCompileInputs.cache
+C:\Users\lenovo\Desktop\works\darC\AP\Lib Project\Library Manager\obj\Debug\Library Manager.exe
+C:\Users\lenovo\Desktop\works\darC\AP\Lib Project\Library Manager\obj\Debug\Library Manager.pdb
