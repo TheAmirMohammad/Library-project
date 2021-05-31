@@ -57,6 +57,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="classes\Admin.cs" />
+    <Compile Include="classes\Book.cs" />
+    <Compile Include="classes\Date.cs" />
+    <Compile Include="classes\Employee.cs" />
+    <Compile Include="classes\Member.cs" />
+    <Compile Include="classes\User.cs" />
     <Compile Include="Pages\Admin\adminBank.xaml.cs">
       <DependentUpon>adminBank.xaml</DependentUpon>
     </Compile>
