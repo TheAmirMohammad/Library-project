@@ -63,7 +63,7 @@
     <Compile Include="Pages\Admin\AdminPanel.xaml.cs">
       <DependentUpon>AdminPanel.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\books.xaml.cs">
+    <Compile Include="Pages\Universal\books.xaml.cs">
       <DependentUpon>books.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Employee\editEmployee.xaml.cs">
@@ -75,19 +75,19 @@
     <Compile Include="Pages\Employee\EmployeePanel.xaml.cs">
       <DependentUpon>EmployeePanel.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\employees.xaml.cs">
+    <Compile Include="Pages\Universal\employees.xaml.cs">
       <DependentUpon>employees.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Member\MemberPanel.xaml.cs">
       <DependentUpon>MemberPanel.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\members.xaml.cs">
+    <Compile Include="Pages\Universal\members.xaml.cs">
       <DependentUpon>members.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\PayPanel.xaml.cs">
+    <Compile Include="PayPanel.xaml.cs">
       <DependentUpon>PayPanel.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\SignUpPage.xaml.cs">
+    <Compile Include="SignUpPage.xaml.cs">
       <DependentUpon>SignUpPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Employee\wallet.xaml.cs">
@@ -101,7 +101,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\books.xaml">
+    <Page Include="Pages\Universal\books.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -117,7 +117,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\employees.xaml">
+    <Page Include="Pages\Universal\employees.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -137,15 +137,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\members.xaml">
+    <Page Include="Pages\Universal\members.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\PayPanel.xaml">
+    <Page Include="PayPanel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\SignUpPage.xaml">
+    <Page Include="SignUpPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
