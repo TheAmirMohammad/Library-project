@@ -5,6 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Library_Manager"
         mc:Ignorable="d"
-        Title="Home Page" Height="450" Width="800">
-    <Grid Margin="10" MinWidth="200" MinHeight="100"/>
+        Title="Library" Height="450" Width="800">
+    <Grid Margin="10" MinWidth="200" MinHeight="100">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+    </Grid>
 </Window>
