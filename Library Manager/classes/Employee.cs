@@ -1,4 +1,6 @@
-﻿namespace Library_Manager
+﻿using System.Collections.Generic;
+
+namespace Library_Manager
 {
     public class Employee : User
     {
@@ -20,7 +22,7 @@
             throw new System.NotImplementedException();
         }
 
-        public List<Library_Manager.Book> showBarowedBooks()
+        public List<Book> showBarowedBooks()
         {
             throw new System.NotImplementedException();
         }

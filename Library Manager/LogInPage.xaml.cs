@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace Library_Manager
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for LogInPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class LogInPage : Page
     {
-        public MainWindow()
+        public LogInPage()
         {
             InitializeComponent();
         }
