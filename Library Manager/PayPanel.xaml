@@ -8,7 +8,80 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="PayPanel">
 
-    <Grid>
-        
+    <Grid Background="White">
+
+        <Grid Margin="10,0">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Card Info !"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center"
+                       FontSize="50"
+                       />
+
+            <StackPanel Orientation="Vertical"
+                        VerticalAlignment="Center"
+                        Grid.Row="1"
+                        >
+                <TextBlock Text="Card Number :"/>
+                <StackPanel Orientation="Horizontal"
+                            VerticalAlignment="Center"
+                            Margin="10,0"
+                            >
+                    <TextBox x:Name="num1" Width="40" MaxLength="4"/>
+                    <TextBlock Text="_"/>
+                    <TextBox x:Name="num2" Width="40" MaxLength="4"/>
+                    <TextBlock Text="_"/>
+                    <TextBox x:Name="num3" Width="40" MaxLength="4"/>
+                    <TextBlock Text="_"/>
+                    <TextBox x:Name="num4" Width="40" MaxLength="4"/>
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical"
+                        VerticalAlignment="Center"
+                        Grid.Row="2"
+                        >
+                <TextBlock Text="Password :"/>
+                <TextBox x:Name="password" MaxLength="12"/>
+            </StackPanel>
+            
+            <StackPanel Orientation="Vertical"
+                        VerticalAlignment="Center"
+                        Grid.Row="3"
+                        >
+                <TextBlock Text="CVV2 :"/>
+                <TextBox x:Name="cvv2" MaxLength="12"/>
+            </StackPanel>
+            
+            <StackPanel Orientation="Vertical"
+                        VerticalAlignment="Center"
+                        Grid.Row="4"
+                        >
+                <TextBlock Text="Expire Date :"/>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="year" Margin="20,0,0,0"/>
+                    <TextBox x:Name="year" Width="30" MaxLength="2"/>
+                    <TextBlock Text="month" Margin="20,0,0,0"/>
+                    <TextBox x:Name="month" Width="30" MaxLength="2"/>
+                </StackPanel>
+            </StackPanel>
+
+            <Button Grid.Row="6"
+                    HorizontalAlignment="Right"
+                    Content="Pay"
+                    Margin="0,0,20,0"
+                    />
+
+        </Grid>
     </Grid>
 </Page>

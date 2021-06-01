@@ -8,7 +8,78 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="SignUpPage">
 
-    <Grid>
-        
+    <Grid Background="Transparent">
+        <Grid Margin="20 ,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Hello, There !"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontSize="40"
+                       />
+
+            <StackPanel Orientation="Vertical"
+                        VerticalAlignment="Center"
+                        Grid.Row="1"
+                        >
+                <TextBlock Text="Name :"/>
+                <TextBox x:Name="name"
+                         />
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical"
+                        VerticalAlignment="Center"
+                        Grid.Row="2"
+                        >
+                <TextBlock Text="Email :"/>
+                <TextBox x:Name="email"/>
+            </StackPanel>
+            
+            <StackPanel Orientation="Vertical"
+                        VerticalAlignment="Center"
+                        Grid.Row="3"
+                        >
+                <TextBlock Text="Phone Number :"/>
+                <TextBox x:Name="phoneNumber"
+                         />
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical"
+                        VerticalAlignment="Center"
+                        Grid.Row="4"
+                        >
+                <TextBlock Text="Password :"/>
+                <TextBox x:Name="password"
+                         />
+            </StackPanel>
+
+            <CheckBox Grid.Row="5"
+                      VerticalAlignment="Center"
+                      Content="By signing in you accept our terms of use "
+                      />
+
+            <Button x:Name="sighin"
+                    Content="Sign In"
+                    Grid.Row="6"
+                    Margin="50,0"
+                    />
+
+            <TextBlock Text="Already have an account ?"
+                       Grid.Row="7"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Top"
+                       FontSize="15"
+                       />
+
+        </Grid>
     </Grid>
 </Page>
