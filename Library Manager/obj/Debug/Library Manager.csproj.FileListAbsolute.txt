@@ -141,3 +141,10 @@ E:\University\Term 4\AP\Programming\Project\Program\Library-project\Library Mana
 E:\University\Term 4\AP\Programming\Project\Program\Library-project\Library Manager\obj\Debug\Library Manager.csproj.CopyComplete
 E:\University\Term 4\AP\Programming\Project\Program\Library-project\Library Manager\obj\Debug\Library Manager.exe
 E:\University\Term 4\AP\Programming\Project\Program\Library-project\Library Manager\obj\Debug\Library Manager.pdb
+C:\Users\lenovo\Desktop\works\darC\AP\Library Project\Library-project\Library Manager\bin\Debug\MaterialDesignColors.dll
+C:\Users\lenovo\Desktop\works\darC\AP\Library Project\Library-project\Library Manager\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\lenovo\Desktop\works\darC\AP\Library Project\Library-project\Library Manager\bin\Debug\MaterialDesignColors.pdb
+C:\Users\lenovo\Desktop\works\darC\AP\Library Project\Library-project\Library Manager\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\lenovo\Desktop\works\darC\AP\Library Project\Library-project\Library Manager\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\lenovo\Desktop\works\darC\AP\Library Project\Library-project\Library Manager\obj\Debug\App.baml
+C:\Users\lenovo\Desktop\works\darC\AP\Library Project\Library-project\Library Manager\obj\Debug\Library Manager.csproj.CopyComplete

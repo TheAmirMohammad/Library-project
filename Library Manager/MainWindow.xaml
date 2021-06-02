@@ -3,37 +3,42 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Library_Manager"
-        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
-        TextElement.FontWeight="Regular"
-        TextElement.FontSize="13"
-        TextOptions.TextFormattingMode="Ideal" 
-        TextOptions.TextRenderingMode="Auto"        
-        Background="{DynamicResource MaterialDesignPaper}"
-        FontFamily="{DynamicResource MaterialDesignFont}"
+        xmlns:local="clr-namespace:Library_Manager" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d" WindowStartupLocation="CenterScreen" WindowStyle="None"
         Height="450" Width="800" ResizeMode="NoResize">
-    <Grid Margin="10" MinWidth="200" MinHeight="100">
+    <Grid >
 
         <Grid>
 
             <Grid.RowDefinitions>
-                <RowDefinition Height="25"/>
+                <RowDefinition Height="30"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
-            <Grid Grid.ColumnSpan="2">
+            <Grid Grid.ColumnSpan="2"
+                  Margin="5,5,5,0"
+                  >
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition Width="25"/>
                 </Grid.ColumnDefinitions>
 
-                <Button x:Name="Close_btn" Grid.Column="1"
-                        Content="X"
+                <Border x:Name="top"
+                        Grid.ColumnSpan="2" MouseLeftButtonDown="drag"
+                        />
+                <Button x:Name="Close_btn"
+                        Grid.Column="1"
+                        Foreground="White"
                         Click="Close_btn_Click"
                         BorderBrush="Black"
-                        />
+                        Height="20"
+                        Width="20"
+                        >
+                    <materialDesign:PackIcon Kind="Close"
+                                             HorizontalAlignment="Center"
+                                             VerticalAlignment="Center"
+                                             Foreground="White"/>
+                </Button>
 
             </Grid>
 
@@ -43,13 +48,17 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
+
+                <Frame x:Name="mainFrame"
+                       x:FieldModifier="public"
+                       Grid.Column="0"
+                       Margin="5"
+                       Source="/Library Manager;component/PayPanel.xaml" 
+                       NavigationUIVisibility="Hidden"
+                       />
             </Grid>
-            <StackPanel Grid.Row="2">
-                <materialDesign:Card Padding="32" Margin="16">
-                    <TextBlock Style="{DynamicResource MaterialDesignHeadline6TextBlock}">My First Material Design App</TextBlock>
-                </materialDesign:Card>
-            </StackPanel>
-            <StackPanel Grid.Row="0" Grid.Column="0"/>
+
+            <StackPanel Grid.Row="0" Grid.Column="0" MouseLeftButtonDown="drag"/>
         </Grid>
 
     </Grid>
