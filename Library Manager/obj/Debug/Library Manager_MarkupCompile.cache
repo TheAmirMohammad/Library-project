@@ -5,7 +5,11 @@ winexe
 C#
 .cs
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 C:\Users\lenovo\Desktop\works\darC\AP\Library Project\Library Manager\obj\Debug\
+=======
+C:\Users\lenovo\Desktop\works\darC\AP\Library Project\Library-project\Library Manager\obj\Debug\
+>>>>>>> Stashed changes
 =======
 C:\Users\lenovo\Desktop\works\darC\AP\Library Project\Library-project\Library Manager\obj\Debug\
 >>>>>>> Stashed changes
@@ -14,6 +18,7 @@ none
 false
 DEBUG;TRACE
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 C:\Users\lenovo\Desktop\works\darC\AP\Library Project\Library Manager\App.xaml
 13-410909026
 
@@ -21,6 +26,8 @@ C:\Users\lenovo\Desktop\works\darC\AP\Library Project\Library Manager\App.xaml
 151397803362
 Pages\Admin\adminBank.xaml;Pages\Admin\AdminPanel.xaml;Pages\Universal\books.xaml;Pages\Employee\editEmployee.xaml;Pages\Member\editMember.xaml;Pages\Employee\EmployeePanel.xaml;Pages\Universal\employees.xaml;LogInPage.xaml;Pages\Member\MemberPanel.xaml;Pages\Universal\members.xaml;PayPanel.xaml;SignUpPage.xaml;Pages\Employee\wallet.xaml;
 =======
+=======
+>>>>>>> Stashed changes
 C:\Users\lenovo\Desktop\works\darC\AP\Library Project\Library-project\Library Manager\App.xaml
 14740639099
 

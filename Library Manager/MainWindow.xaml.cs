@@ -19,7 +19,11 @@ namespace Library_Manager
 
         private void drag(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
+<<<<<<< Updated upstream
             this.DragMove();
+=======
+
+>>>>>>> Stashed changes
         }
     }
 }

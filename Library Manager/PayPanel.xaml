@@ -54,7 +54,11 @@
                 <TextBlock Text="Password :"/>
                 <TextBox x:Name="password" MaxLength="12"/>
             </StackPanel>
+<<<<<<< Updated upstream
             
+=======
+
+>>>>>>> Stashed changes
             <StackPanel Orientation="Vertical"
                         VerticalAlignment="Center"
                         Grid.Row="3"
@@ -62,7 +66,11 @@
                 <TextBlock Text="CVV2 :"/>
                 <TextBox x:Name="cvv2" MaxLength="12"/>
             </StackPanel>
+<<<<<<< Updated upstream
             
+=======
+
+>>>>>>> Stashed changes
             <StackPanel Orientation="Vertical"
                         VerticalAlignment="Center"
                         Grid.Row="4"

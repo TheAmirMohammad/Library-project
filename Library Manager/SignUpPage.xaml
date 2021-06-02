@@ -43,7 +43,11 @@
                 <TextBlock Text="Email :"/>
                 <TextBox x:Name="email"/>
             </StackPanel>
+<<<<<<< Updated upstream
             
+=======
+
+>>>>>>> Stashed changes
             <StackPanel Orientation="Vertical"
                         VerticalAlignment="Center"
                         Grid.Row="3"
@@ -67,7 +71,11 @@
                       Content="By signing in you accept our terms of use "
                       />
 
+<<<<<<< Updated upstream
             <Button x:Name="sighin"
+=======
+            <Button x:Name="signup"
+>>>>>>> Stashed changes
                     Content="Sign In"
                     Grid.Row="6"
                     Margin="50,0"

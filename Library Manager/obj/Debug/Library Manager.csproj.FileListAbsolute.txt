@@ -150,4 +150,7 @@ C:\Users\lenovo\Desktop\works\darC\AP\Library Project\Library-project\Library Ma
 C:\Users\lenovo\Desktop\works\darC\AP\Library Project\Library-project\Library Manager\bin\Debug\MaterialDesignThemes.Wpf.xml
 C:\Users\lenovo\Desktop\works\darC\AP\Library Project\Library-project\Library Manager\obj\Debug\App.baml
 C:\Users\lenovo\Desktop\works\darC\AP\Library Project\Library-project\Library Manager\obj\Debug\Library Manager.csproj.CopyComplete
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes

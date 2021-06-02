@@ -1,4 +1,9 @@
+<<<<<<< Updated upstream
 ﻿using System.Windows.Controls;
+=======
+﻿using System.Windows;
+using System.Windows.Controls;
+>>>>>>> Stashed changes
 
 namespace Library_Manager
 {
@@ -12,7 +17,11 @@ namespace Library_Manager
             InitializeComponent();
         }
 
+<<<<<<< Updated upstream
         private void login_Click(object sender, System.Windows.RoutedEventArgs e)
+=======
+        private void login_Click(object sender, RoutedEventArgs e)
+>>>>>>> Stashed changes
         {
 
         }

@@ -3,7 +3,11 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+<<<<<<< Updated upstream
         xmlns:local="clr-namespace:Library_Manager"
+=======
+        xmlns:local="clr-namespace:Library_Manager" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+>>>>>>> Stashed changes
         mc:Ignorable="d" WindowStartupLocation="CenterScreen" WindowStyle="None"
         Height="450" Width="800" ResizeMode="NoResize">
     <Grid >
@@ -53,6 +57,7 @@
                        x:FieldModifier="public"
                        Grid.Column="0"
                        Margin="5"
+<<<<<<< Updated upstream
                        Source="/Library Manager;component/PayPAnel.xaml" 
                        NavigationUIVisibility="Hidden"
                        />
@@ -61,6 +66,14 @@
 
             <StackPanel Grid.Row="0" Grid.Column="0"/>
 =======
+>>>>>>> Stashed changes
+=======
+                       Source="/Library Manager;component/PayPanel.xaml" 
+                       NavigationUIVisibility="Hidden"
+                       />
+            </Grid>
+
+            <StackPanel Grid.Row="0" Grid.Column="0" MouseLeftButtonDown="drag"/>
 >>>>>>> Stashed changes
         </Grid>
 
