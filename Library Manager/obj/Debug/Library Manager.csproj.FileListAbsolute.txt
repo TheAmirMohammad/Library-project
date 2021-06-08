@@ -141,3 +141,19 @@ E:\University\Term 4\AP\Programming\Project\Program\Library-project\Library Mana
 E:\University\Term 4\AP\Programming\Project\Program\Library-project\Library Manager\obj\Debug\Library Manager.csproj.CopyComplete
 E:\University\Term 4\AP\Programming\Project\Program\Library-project\Library Manager\obj\Debug\Library Manager.exe
 E:\University\Term 4\AP\Programming\Project\Program\Library-project\Library Manager\obj\Debug\Library Manager.pdb
+E:\University\Term 4\AP\Programming\Project\Program\Library-project\Library Manager\bin\Debug\SharpVectors.Converters.Wpf.dll
+E:\University\Term 4\AP\Programming\Project\Program\Library-project\Library Manager\bin\Debug\SharpVectors.Core.dll
+E:\University\Term 4\AP\Programming\Project\Program\Library-project\Library Manager\bin\Debug\SharpVectors.Css.dll
+E:\University\Term 4\AP\Programming\Project\Program\Library-project\Library Manager\bin\Debug\SharpVectors.Dom.dll
+E:\University\Term 4\AP\Programming\Project\Program\Library-project\Library Manager\bin\Debug\SharpVectors.Model.dll
+E:\University\Term 4\AP\Programming\Project\Program\Library-project\Library Manager\bin\Debug\SharpVectors.Rendering.Gdi.dll
+E:\University\Term 4\AP\Programming\Project\Program\Library-project\Library Manager\bin\Debug\SharpVectors.Rendering.Wpf.dll
+E:\University\Term 4\AP\Programming\Project\Program\Library-project\Library Manager\bin\Debug\SharpVectors.Runtime.Wpf.dll
+E:\University\Term 4\AP\Programming\Project\Program\Library-project\Library Manager\bin\Debug\SharpVectors.Converters.Wpf.xml
+E:\University\Term 4\AP\Programming\Project\Program\Library-project\Library Manager\bin\Debug\SharpVectors.Core.xml
+E:\University\Term 4\AP\Programming\Project\Program\Library-project\Library Manager\bin\Debug\SharpVectors.Css.xml
+E:\University\Term 4\AP\Programming\Project\Program\Library-project\Library Manager\bin\Debug\SharpVectors.Dom.xml
+E:\University\Term 4\AP\Programming\Project\Program\Library-project\Library Manager\bin\Debug\SharpVectors.Model.xml
+E:\University\Term 4\AP\Programming\Project\Program\Library-project\Library Manager\bin\Debug\SharpVectors.Rendering.Gdi.xml
+E:\University\Term 4\AP\Programming\Project\Program\Library-project\Library Manager\bin\Debug\SharpVectors.Rendering.Wpf.xml
+E:\University\Term 4\AP\Programming\Project\Program\Library-project\Library Manager\bin\Debug\SharpVectors.Runtime.Wpf.xml
