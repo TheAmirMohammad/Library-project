@@ -4,11 +4,100 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Library_Manager"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+      TextElement.FontWeight="Regular"
+      TextElement.FontSize="13"
+      TextOptions.TextFormattingMode="Ideal" 
+      TextOptions.TextRenderingMode="Auto"        
+      Background="{DynamicResource MaterialDesignPaper}"
+      FontFamily="{DynamicResource MaterialDesignFont}"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      WindowStartupLocation="CenterScreen" WindowStyle="None"
+      Height="450" Width="800" ResizeMode="NoResize"
       Title="AdminPanel">
 
     <Grid>
-        
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.08*"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="153*"/>
+                <ColumnDefinition Width="647*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Row="0" Background="#673ab7" Grid.ColumnSpan="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="736*"/>
+                    <ColumnDefinition Width="33*"/>
+                    <ColumnDefinition Width="33*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="2">
+                    <Button Style="{StaticResource MaterialDesignIconButton}" ToolTip="MaterialDesignIconButton" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <materialDesign:PackIcon Kind="Power"/>
+                    </Button>
+                </Grid>
+                <materialDesign:PopupBox Grid.Column="1" Foreground="White" PlacementMode="BottomAndAlignRightEdges">
+                    <StackPanel Width="200">
+                        <Button Style="{StaticResource MaterialDesignFlatButton}" ToolTip="MaterialDesignFlatButton" Content="Item1"/>
+                        <Button Style="{StaticResource MaterialDesignFlatButton}" ToolTip="MaterialDesignFlatButton" Content="Item2"/>
+                        <Button Style="{StaticResource MaterialDesignFlatButton}" ToolTip="MaterialDesignFlatButton" Content="Item3"/>
+                        <Separator/>
+                        <Button Style="{StaticResource MaterialDesignFlatButton}" ToolTip="MaterialDesignFlatButton" Content="Item4"/>
+                        <Button Style="{StaticResource MaterialDesignFlatButton}" ToolTip="MaterialDesignFlatButton" Content="Item5"/>
+                    </StackPanel>
+                </materialDesign:PopupBox>
+            </Grid>
+            <Grid Grid.Row="1" Background="#eceff1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="90*"/>
+                    <RowDefinition Height="30*"/>
+                    <RowDefinition Height="30*"/>
+                    <RowDefinition Height="30*"/>
+                    <RowDefinition Height="30*"/>
+                    <RowDefinition Height="188*"/>
+                    <RowDefinition Height="19*"/>
+                </Grid.RowDefinitions>
+                <Grid Background="#ffffff">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="76*"/>
+                        <RowDefinition Height="25*"/>
+                    </Grid.RowDefinitions>
+                    <materialDesign:ColorZone Mode="PrimaryLight" VerticalAlignment="Stretch">
+                        <materialDesign:PackIcon Kind="Library" Foreground="#1c313a" VerticalAlignment="Center" HorizontalAlignment="Center" Width="45" Height="45"/>
+                    </materialDesign:ColorZone>
+                    <TextBlock Grid.Row="1" Text="Rayo Libray" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Grid>
+                <StackPanel Grid.Row="1" VerticalAlignment="Center" Orientation="Horizontal" Margin="0">
+                    <materialDesign:PackIcon Kind="Home" Margin="10 0" VerticalAlignment="Center" Foreground="#1c313a"/>
+                    <Button Style="{StaticResource MaterialDesignFlatButton}" ToolTip="MaterialDesignIconButton"  VerticalAlignment="Center" Foreground="#1c313a" Margin="0 0 -80 0">
+                        <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" Text="Home" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="-40  2 0 0"/>
+                    </Button>
+                </StackPanel>
+                <StackPanel Grid.Row="2" VerticalAlignment="Center" Orientation="Horizontal" Height="30">
+                    <materialDesign:PackIcon Kind="Users" Margin="10 0" VerticalAlignment="Center" Foreground="#1c313a"/>
+                    <Button Style="{StaticResource MaterialDesignFlatButton}" ToolTip="MaterialDesignIconButton" VerticalAlignment="Center" Margin="0 0 -80 0" Foreground="#1c313a">
+                        <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" Text="Employees" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="-24 2 0 0"/>
+                    </Button>
+                </StackPanel>
+                <StackPanel Grid.Row="3" VerticalAlignment="Center" Orientation="Horizontal" Height="30">
+                    <materialDesign:PackIcon Kind="Book" Margin="10 0" VerticalAlignment="Center" Foreground="#1c313a"/>
+                    <Button Style="{StaticResource MaterialDesignFlatButton}" ToolTip="MaterialDesignIconButton" VerticalAlignment="Center" Margin="0 0 -80 0" Foreground="#1c313a">
+                        <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" Text="Book" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="-40 2 0 0"/>
+                    </Button>
+                </StackPanel>
+                <StackPanel Grid.Row="4" VerticalAlignment="Center" Orientation="Horizontal" Height="30">
+                    <materialDesign:PackIcon Kind="Money" Margin="10 0" VerticalAlignment="Center" Foreground="#1c313a"/>
+                    <Button Style="{StaticResource MaterialDesignFlatButton}" ToolTip="MaterialDesignIconButton" VerticalAlignment="Center" Margin="0 0 -80 0" Foreground="#1c313a">
+                        <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" Text="Budget" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="-40 2 0 0"/>
+                    </Button>
+                </StackPanel>
+                <TextBlock Grid.Row="6" Text="Version 1.0.0" FontSize="9" HorizontalAlignment="Center"/>
+            </Grid>
+            <Grid Grid.Row="1" Grid.Column="1">
+                <materialDesign:Card Margin="25 30"/>
+            </Grid>
+        </Grid>
     </Grid>
 </Window>

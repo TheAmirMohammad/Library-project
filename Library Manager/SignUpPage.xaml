@@ -4,11 +4,24 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Library_Manager"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:system="clr-namespace:System;assembly=mscorlib"
+      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+      TextElement.FontWeight="Regular"
+      TextElement.FontSize="13"
+      TextOptions.TextFormattingMode="Ideal" 
+      TextOptions.TextRenderingMode="Auto"        
+      Background="{DynamicResource MaterialDesignPaper}"
+      FontFamily="{DynamicResource MaterialDesignFont}"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="SignUpPage">
 
-    <Grid Background="Transparent">
+    <Page.Resources>
+        <system:Double x:Key="ButtonWidth">200</system:Double>
+    </Page.Resources>
+
+    <Grid Background="White">
         <Grid Margin="20 ,0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="2*"/>
@@ -16,7 +29,7 @@
                 <RowDefinition/>
                 <RowDefinition/>
                 <RowDefinition/>
-                <RowDefinition/>
+                <RowDefinition Height="1.5*"/>
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
@@ -24,62 +37,53 @@
             <TextBlock Text="Hello, There !"
                        HorizontalAlignment="Center"
                        VerticalAlignment="Center"
-                       FontSize="40"
+                       Style="{StaticResource MaterialDesignHeadline4TextBlock}"
                        />
 
             <StackPanel Orientation="Vertical"
-                        VerticalAlignment="Center"
+                        VerticalAlignment="Top"
                         Grid.Row="1"
                         >
-                <TextBlock Text="Name :"/>
-                <TextBox x:Name="name"
-                         />
+                <TextBox x:Name="txtName" materialDesign:HintAssist.Hint="Name" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
             </StackPanel>
 
             <StackPanel Orientation="Vertical"
-                        VerticalAlignment="Center"
+                        VerticalAlignment="Top"
                         Grid.Row="2"
                         >
-                <TextBlock Text="Email :"/>
-                <TextBox x:Name="email"/>
+                <TextBox x:Name="txtEmail" materialDesign:HintAssist.Hint="Email" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+            </StackPanel>
+
+            <StackPanel VerticalAlignment="Top" Grid.Row="3">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox Text="98" VerticalAlignment="Center" materialDesign:TextFieldAssist.PrefixText="+" Margin="0 11.25 0 0"/>
+                    <TextBox Grid.Column="1" x:Name="txtPhoneNumber" materialDesign:HintAssist.Hint="Phone Number" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="10 0 0 0"/>
+                </Grid>
+
             </StackPanel>
 
             <StackPanel Orientation="Vertical"
-                        VerticalAlignment="Center"
-                        Grid.Row="3"
-                        >
-                <TextBlock Text="Phone Number :"/>
-                <TextBox x:Name="phoneNumber"
-                         />
-            </StackPanel>
-
-            <StackPanel Orientation="Vertical"
-                        VerticalAlignment="Center"
+                        VerticalAlignment="Top"
                         Grid.Row="4"
                         >
-                <TextBlock Text="Password :"/>
-                <TextBox x:Name="password"
-                         />
+                <PasswordBox
+                    x:Name="txtPassword"
+                    materialDesign:HintAssist.Hint="Password"
+                    materialDesign:TextFieldAssist.HasClearButton="True"
+                    materialDesign:HintAssist.HelperText="At least 8 characters"
+                    Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"/>
             </StackPanel>
 
-            <CheckBox Grid.Row="5"
-                      VerticalAlignment="Center"
-                      Content="By signing in you accept our terms of use "
-                      />
+            <CheckBox Grid.Row="5" VerticalAlignment="Center">
+                <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" Text="By signing in you accept our Terms of Service"/>
+            </CheckBox>
 
-            <Button x:Name="signup"
-                    Content="Sign In"
-                    Grid.Row="6"
-                    Margin="50,0"
-                    />
-
-            <TextBlock Text="Already have an account ?"
-                       Grid.Row="7"
-                       HorizontalAlignment="Center"
-                       VerticalAlignment="Top"
-                       FontSize="15"
-                       />
-
+            <Button x:Name="signup" Content="Sign In" Grid.Row="6" HorizontalAlignment="Center" Width="{StaticResource ButtonWidth}"/>
+            <TextBlock Text="Already have an account ?" Grid.Row="7" HorizontalAlignment="Center" VerticalAlignment="Top" Style="{StaticResource MaterialDesignCaptionTextBlock}" Foreground="BlueViolet"/>
         </Grid>
     </Grid>
 </Page>
