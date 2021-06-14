@@ -11,5 +11,10 @@ namespace Library_Manager
         {
             InitializeComponent();
         }
+
+        private void exit(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
