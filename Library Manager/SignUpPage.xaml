@@ -82,8 +82,10 @@
                 <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" Text="By signing in you accept our Terms of Service"/>
             </CheckBox>
 
-            <Button x:Name="signup" Content="Sign In" Grid.Row="6" HorizontalAlignment="Center" Width="{StaticResource ButtonWidth}"/>
-            <TextBlock Text="Already have an account ?" Grid.Row="7" HorizontalAlignment="Center" VerticalAlignment="Top" Style="{StaticResource MaterialDesignCaptionTextBlock}" Foreground="BlueViolet"/>
+            <Button x:Name="signup" Content="Sign Up" Grid.Row="6" HorizontalAlignment="Center" Width="{StaticResource ButtonWidth}" Click="sigh_up_btn"/>
+            <TextBlock Grid.Row="7" HorizontalAlignment="Center" VerticalAlignment="Top" Style="{StaticResource MaterialDesignCaptionTextBlock}" Foreground="BlueViolet">
+                <Hyperlink x:Name="account" Click="account_btn">Already have an account ?</Hyperlink>
+            </TextBlock>
         </Grid>
     </Grid>
 </Page>

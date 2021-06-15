@@ -69,16 +69,17 @@
                 Style="{StaticResource MaterialDesignRaisedButton}"
                 Width="{StaticResource ButtonWidth}"
                 ToolTip="Resource name: MaterialDesignRaisedButton"
-                Click="login_Click"/>
+                Click="login_btn"/>
             </StackPanel>
 
-            <TextBlock Text="Don't have account?"
-                       Style="{StaticResource MaterialDesignCaptionTextBlock}"
+            <TextBlock x:Name="account" Style="{StaticResource MaterialDesignCaptionTextBlock}"
                        Grid.Row="7"
                        HorizontalAlignment="Center"
                        VerticalAlignment="Top"
                        Foreground="BlueViolet"
-                       />
+                       >
+                <Hyperlink Click="account_btn">Don't have account?</Hyperlink>
+            </TextBlock>
         </Grid>
     </Grid>
 </Page>
