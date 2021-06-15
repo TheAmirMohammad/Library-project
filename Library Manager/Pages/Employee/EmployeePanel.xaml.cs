@@ -10,6 +10,7 @@ namespace Library_Manager
         public EmployeePanel()
         {
             InitializeComponent();
+            employeeFrame.Content = new Pages.Universal.Home("Employee");
         }
         private void exit(object sender, RoutedEventArgs e)
         {

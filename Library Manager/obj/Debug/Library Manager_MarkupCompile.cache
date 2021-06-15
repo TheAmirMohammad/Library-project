@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\lenovo\Desktop\works\darC\AP\Library Project\Library Manager\App.xaml
-14740639099
+15-940969371
 
-24-1465327041
+25268766417
 25754295530
-LogInPage.xaml;MainWindow.xaml;Pages\Admin\adminBank.xaml;Pages\Admin\AdminPanel.xaml;Pages\Universal\books.xaml;Pages\Employee\editEmployee.xaml;Pages\Member\editMember.xaml;Pages\Employee\EmployeePanel.xaml;Pages\Universal\employees.xaml;Pages\Member\MemberPanel.xaml;Pages\Universal\members.xaml;PayPanel.xaml;SignUpPage.xaml;Pages\Employee\wallet.xaml;
+LogInPage.xaml;MainWindow.xaml;Pages\Admin\adminBank.xaml;Pages\Admin\AdminPanel.xaml;Pages\Universal\books.xaml;Pages\Employee\editEmployee.xaml;Pages\Member\editMember.xaml;Pages\Employee\EmployeePanel.xaml;Pages\Universal\employees.xaml;Pages\Member\MemberPanel.xaml;Pages\Universal\Home.xaml;Pages\Universal\members.xaml;PayPanel.xaml;SignUpPage.xaml;Pages\Employee\wallet.xaml;
 
-True
+False
 
