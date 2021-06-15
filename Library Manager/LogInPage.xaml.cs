@@ -13,7 +13,12 @@ namespace Library_Manager
             InitializeComponent();
         }
 
-        private void login_Click(object sender, RoutedEventArgs e)
+        private void account_btn(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new SignUpPage());
+        }
+
+        private void login_btn(object sender, RoutedEventArgs e)
         {
 
         }
