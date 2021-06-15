@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\lenovo\Source\Repos\sohrabi2557\Library-project\Library Manager\obj\Debug\
+C:\Users\lenovo\Desktop\works\darC\AP\Library Project\Library Manager\obj\Debug\
 Library_Manager
 none
 false
 DEBUG;TRACE
-C:\Users\lenovo\Source\Repos\sohrabi2557\Library-project\Library Manager\App.xaml
+C:\Users\lenovo\Desktop\works\darC\AP\Library Project\Library Manager\App.xaml
 14740639099
 
 24-1465327041
-251512624702
+25754295530
 LogInPage.xaml;MainWindow.xaml;Pages\Admin\adminBank.xaml;Pages\Admin\AdminPanel.xaml;Pages\Universal\books.xaml;Pages\Employee\editEmployee.xaml;Pages\Member\editMember.xaml;Pages\Employee\EmployeePanel.xaml;Pages\Universal\employees.xaml;Pages\Member\MemberPanel.xaml;Pages\Universal\members.xaml;PayPanel.xaml;SignUpPage.xaml;Pages\Employee\wallet.xaml;
 
-False
+True
 
