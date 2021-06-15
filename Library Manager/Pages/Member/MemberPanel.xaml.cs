@@ -10,6 +10,7 @@ namespace Library_Manager
         public MemberPanel()
         {
             InitializeComponent();
+            memberFrame.Content = new Pages.Universal.Home("Member");
         }
         private void exit(object sender, RoutedEventArgs e)
         {

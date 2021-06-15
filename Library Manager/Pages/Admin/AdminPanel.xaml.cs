@@ -10,6 +10,7 @@ namespace Library_Manager
         public AdminPanel()
         {
             InitializeComponent();
+            adminFrame.Content = new Pages.Universal.Home("Admin");
         }
 
         private void exit(object sender, RoutedEventArgs e)
