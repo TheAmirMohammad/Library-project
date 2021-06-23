@@ -303,3 +303,5 @@ C:\Users\lenovo\Desktop\works\darC\AP\Library Project\Library Manager\obj\Debug\
 C:\Users\lenovo\Desktop\works\darC\AP\Library Project\Library Manager\obj\Debug\MainWindow.baml
 C:\Users\lenovo\Desktop\works\darC\AP\Library Project\Library Manager\obj\Debug\Pages\Universal\Home.baml
 C:\Users\lenovo\Desktop\works\darC\AP\Library Project\Library Manager\obj\Debug\Library Manager.csproj.CopyComplete
+E:\University\Term 4\AP\Programming\Project\Library-project\Library-project\Library Manager\obj\Debug\Pages\Universal\Home.g.cs
+E:\University\Term 4\AP\Programming\Project\Library-project\Library-project\Library Manager\obj\Debug\Pages\Universal\Home.baml
