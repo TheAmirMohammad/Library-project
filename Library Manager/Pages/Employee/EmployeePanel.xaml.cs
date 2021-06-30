@@ -16,5 +16,10 @@ namespace Library_Manager
         {
             this.Close();
         }
+
+        private void Drag(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            this.DragMove();
+        }
     }
 }
