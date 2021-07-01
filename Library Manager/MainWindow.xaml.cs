@@ -19,7 +19,7 @@ namespace Library_Manager
 
         private void drag(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-
+            this.DragMove();
         }
     }
 }

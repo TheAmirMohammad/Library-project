@@ -107,9 +107,6 @@
     <Compile Include="Pages\Admin\AdminPanel.xaml.cs">
       <DependentUpon>AdminPanel.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Admin\EmployeePage.xaml.cs">
-      <DependentUpon>EmployeePage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Pages\Universal\books.xaml.cs">
       <DependentUpon>books.xaml</DependentUpon>
     </Compile>
@@ -156,10 +153,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\Admin\AdminPanel.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\Admin\EmployeePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
