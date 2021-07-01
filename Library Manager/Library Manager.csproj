@@ -104,8 +104,29 @@
     <Compile Include="Pages\Admin\adminBank.xaml.cs">
       <DependentUpon>adminBank.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Admin\AdminBooks.xaml.cs">
+      <DependentUpon>AdminBooks.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Admin\AdminPanel.xaml.cs">
       <DependentUpon>AdminPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Employee\EmployeeBooks.xaml.cs">
+      <DependentUpon>EmployeeBooks.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Member\MemberBook.xaml.cs">
+      <DependentUpon>MemberBook.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Member\MemberInfo.xaml.cs">
+      <DependentUpon>MemberInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Member\MemberMyBook.xaml.cs">
+      <DependentUpon>MemberMyBook.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Member\MemberSubscription.xaml.cs">
+      <DependentUpon>MemberSubscription.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Member\MemberWallet.xaml.cs">
+      <DependentUpon>MemberWallet.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Universal\books.xaml.cs">
       <DependentUpon>books.xaml</DependentUpon>
@@ -131,6 +152,9 @@
     <Compile Include="Pages\Universal\members.xaml.cs">
       <DependentUpon>members.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Universal\AddBookPage.xaml.cs">
+      <DependentUpon>AddBookPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PayPanel.xaml.cs">
       <DependentUpon>PayPanel.xaml</DependentUpon>
     </Compile>
@@ -152,7 +176,35 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\Admin\AdminBooks.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Admin\AdminPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Employee\EmployeeBooks.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Member\MemberBook.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Member\MemberInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Member\MemberMyBook.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Member\MemberSubscription.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Member\MemberWallet.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -189,6 +241,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\Universal\members.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Universal\AddBookPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

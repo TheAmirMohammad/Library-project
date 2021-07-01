@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\obj\Debug\
+E:\University\Term 4\AP\Programming\Project\Library-project\Library-project\Library Manager\obj\Debug\
 Library_Manager
 none
 false
 DEBUG;TRACE
-C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\App.xaml
-15-940969371
+E:\University\Term 4\AP\Programming\Project\Library-project\Library-project\Library Manager\App.xaml
+231154489566
 
-26-573592950
-25-113778576
-LogInPage.xaml;MainWindow.xaml;Pages\Admin\adminBank.xaml;Pages\Admin\AdminPanel.xaml;Pages\Universal\books.xaml;Pages\Employee\editEmployee.xaml;Pages\Member\editMember.xaml;Pages\Employee\EmployeePanel.xaml;Pages\Universal\employees.xaml;Pages\Member\MemberPanel.xaml;Pages\Universal\Home.xaml;Pages\Universal\members.xaml;PayPanel.xaml;SignUpPage.xaml;Pages\Employee\wallet.xaml;
+341249150151
+251756661660
+LogInPage.xaml;MainWindow.xaml;Pages\Admin\adminBank.xaml;Pages\Admin\AdminBooks.xaml;Pages\Admin\AdminPanel.xaml;Pages\Employee\EmployeeBooks.xaml;Pages\Member\MemberBook.xaml;Pages\Member\MemberInfo.xaml;Pages\Member\MemberMyBook.xaml;Pages\Member\MemberSubscription.xaml;Pages\Member\MemberWallet.xaml;Pages\Universal\books.xaml;Pages\Employee\editEmployee.xaml;Pages\Member\editMember.xaml;Pages\Employee\EmployeePanel.xaml;Pages\Universal\employees.xaml;Pages\Member\MemberPanel.xaml;Pages\Universal\Home.xaml;Pages\Universal\members.xaml;Pages\Universal\AddBookPage.xaml;PayPanel.xaml;SignUpPage.xaml;Pages\Employee\wallet.xaml;
 
 True
 

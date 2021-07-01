@@ -305,3 +305,19 @@ C:\Users\lenovo\Desktop\works\darC\AP\Library Project\Library Manager\obj\Debug\
 C:\Users\lenovo\Desktop\works\darC\AP\Library Project\Library Manager\obj\Debug\Library Manager.csproj.CopyComplete
 E:\University\Term 4\AP\Programming\Project\Library-project\Library-project\Library Manager\obj\Debug\Pages\Universal\Home.g.cs
 E:\University\Term 4\AP\Programming\Project\Library-project\Library-project\Library Manager\obj\Debug\Pages\Universal\Home.baml
+E:\University\Term 4\AP\Programming\Project\Library-project\Library-project\Library Manager\obj\Debug\Pages\Admin\AdminBooks.g.cs
+E:\University\Term 4\AP\Programming\Project\Library-project\Library-project\Library Manager\obj\Debug\Pages\Employee\EmployeeBooks.g.cs
+E:\University\Term 4\AP\Programming\Project\Library-project\Library-project\Library Manager\obj\Debug\Pages\Member\MemberBook.g.cs
+E:\University\Term 4\AP\Programming\Project\Library-project\Library-project\Library Manager\obj\Debug\Pages\Member\MemberMyBook.g.cs
+E:\University\Term 4\AP\Programming\Project\Library-project\Library-project\Library Manager\obj\Debug\Pages\Member\MemberSubscription.g.cs
+E:\University\Term 4\AP\Programming\Project\Library-project\Library-project\Library Manager\obj\Debug\Pages\Member\MemberWallet.g.cs
+E:\University\Term 4\AP\Programming\Project\Library-project\Library-project\Library Manager\obj\Debug\Pages\Universal\AddBookPage.g.cs
+E:\University\Term 4\AP\Programming\Project\Library-project\Library-project\Library Manager\obj\Debug\Pages\Admin\AdminBooks.baml
+E:\University\Term 4\AP\Programming\Project\Library-project\Library-project\Library Manager\obj\Debug\Pages\Employee\EmployeeBooks.baml
+E:\University\Term 4\AP\Programming\Project\Library-project\Library-project\Library Manager\obj\Debug\Pages\Member\MemberBook.baml
+E:\University\Term 4\AP\Programming\Project\Library-project\Library-project\Library Manager\obj\Debug\Pages\Member\MemberMyBook.baml
+E:\University\Term 4\AP\Programming\Project\Library-project\Library-project\Library Manager\obj\Debug\Pages\Member\MemberSubscription.baml
+E:\University\Term 4\AP\Programming\Project\Library-project\Library-project\Library Manager\obj\Debug\Pages\Member\MemberWallet.baml
+E:\University\Term 4\AP\Programming\Project\Library-project\Library-project\Library Manager\obj\Debug\Pages\Universal\AddBookPage.baml
+E:\University\Term 4\AP\Programming\Project\Library-project\Library-project\Library Manager\obj\Debug\Pages\Member\MemberInfo.g.cs
+E:\University\Term 4\AP\Programming\Project\Library-project\Library-project\Library Manager\obj\Debug\Pages\Member\MemberInfo.baml

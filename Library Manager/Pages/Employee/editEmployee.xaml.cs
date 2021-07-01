@@ -24,5 +24,10 @@ namespace Library_Manager.Pages
         {
             InitializeComponent();
         }
+
+        private void Signup_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
