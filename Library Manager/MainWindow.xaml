@@ -17,26 +17,22 @@
             </Grid.RowDefinitions>
 
             <Grid Grid.ColumnSpan="2"
-                  Margin="0,10,10,0"
-                  >
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition Width="20"/>
-                </Grid.ColumnDefinitions>
-
-                <Border x:Name="top"
-                        Grid.ColumnSpan="2" MouseLeftButtonDown="drag"
-                        />
+                        MouseLeftButtonDown="drag"
+                        Background="White"
+                        >
 
                 <Button
                     x:Name="Close_btn"
                     Click="Close_btn_Click"
-                    Grid.Column="1"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                    Margin="0 0 10 0"
                     Style="{StaticResource MaterialDesignIconButton}"
                     Height="20"
-                    Width="20"
-                    ToolTip="MaterialDesignIconButton">
+                    Width="20">
                     <materialDesign:PackIcon
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
                         Kind="Close"/>
 
                 </Button>
@@ -46,8 +42,8 @@
             <Grid Grid.Row="1">
 
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="75*"/>
-                    <ColumnDefinition Width="100*"/>
+                    <ColumnDefinition Width="343*"/>
+                    <ColumnDefinition Width="457*"/>
                 </Grid.ColumnDefinitions>
                 <materialDesign:Card
                     Background="White"
@@ -56,17 +52,17 @@
                     <Frame x:Name="mainFrame"
                        x:FieldModifier="public"
                        Grid.Column="0"
-                       Margin="5"
+                       Margin="5 0"
                        Source="/Library Manager;component/SignUpPage.xaml" 
                        NavigationUIVisibility="Hidden"
                        />
                 </materialDesign:Card>
-                <UserControl Grid.Column="1">
+                <UserControl Grid.Column="1" >
                     <svgc:SvgViewbox Source="/Assets/Login_Illustration.svg" Margin="20"/>
                 </UserControl>
 
             </Grid>
-            <StackPanel Grid.Row="0" Grid.Column="0" MouseLeftButtonDown="drag"/>
+            <StackPanel Grid.Row="0" Grid.Column="0"/>
         </Grid>
 
     </Grid>
