@@ -17,27 +17,23 @@
             </Grid.RowDefinitions>
 
             <Grid Grid.ColumnSpan="2"
-                  Margin="0,10,10,0"
+                  Background="White" MouseLeftButtonDown="drag"
                   >
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition Width="20"/>
-                </Grid.ColumnDefinitions>
-
-                <Border x:Name="top"
-                        Grid.ColumnSpan="2" MouseLeftButtonDown="drag"
-                        />
-
                 <Button
                     x:Name="Close_btn"
                     Click="Close_btn_Click"
                     Grid.Column="1"
+                    Margin="10 10 10 0"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
                     Style="{StaticResource MaterialDesignIconButton}"
                     Height="20"
-                    Width="20"
-                    ToolTip="MaterialDesignIconButton">
+                    Width="20">
                     <materialDesign:PackIcon
-                        Kind="Close"/>
+                        Kind="Close"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        />
 
                 </Button>
 
@@ -66,7 +62,6 @@
                 </UserControl>
 
             </Grid>
-            <StackPanel Grid.Row="0" Grid.Column="0"/>
         </Grid>
 
     </Grid>
