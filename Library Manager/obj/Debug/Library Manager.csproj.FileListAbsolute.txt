@@ -321,3 +321,83 @@ E:\University\Term 4\AP\Programming\Project\Library-project\Library-project\Libr
 E:\University\Term 4\AP\Programming\Project\Library-project\Library-project\Library Manager\obj\Debug\Pages\Universal\AddBookPage.baml
 E:\University\Term 4\AP\Programming\Project\Library-project\Library-project\Library Manager\obj\Debug\Pages\Member\MemberInfo.g.cs
 E:\University\Term 4\AP\Programming\Project\Library-project\Library-project\Library Manager\obj\Debug\Pages\Member\MemberInfo.baml
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\bin\Debug\Library Manager.exe.config
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\bin\Debug\Library Manager.exe
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\bin\Debug\Library Manager.pdb
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\bin\Debug\MaterialDesignColors.dll
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\bin\Debug\SharpVectors.Converters.Wpf.dll
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\bin\Debug\SharpVectors.Core.dll
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\bin\Debug\SharpVectors.Css.dll
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\bin\Debug\SharpVectors.Dom.dll
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\bin\Debug\SharpVectors.Model.dll
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\bin\Debug\SharpVectors.Rendering.Gdi.dll
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\bin\Debug\SharpVectors.Rendering.Wpf.dll
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\bin\Debug\SharpVectors.Runtime.Wpf.dll
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\bin\Debug\MaterialDesignColors.pdb
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\bin\Debug\SharpVectors.Converters.Wpf.xml
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\bin\Debug\SharpVectors.Core.xml
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\bin\Debug\SharpVectors.Css.xml
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\bin\Debug\SharpVectors.Dom.xml
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\bin\Debug\SharpVectors.Model.xml
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\bin\Debug\SharpVectors.Rendering.Gdi.xml
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\bin\Debug\SharpVectors.Rendering.Wpf.xml
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\bin\Debug\SharpVectors.Runtime.Wpf.xml
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\obj\Debug\Library Manager.csprojAssemblyReference.cache
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\obj\Debug\Pages\Member\MemberPanel.baml
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\obj\Debug\LogInPage.g.cs
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\obj\Debug\MainWindow.g.cs
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\obj\Debug\Pages\Admin\adminBank.g.cs
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\obj\Debug\Pages\Admin\AdminBooks.g.cs
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\obj\Debug\Pages\Admin\AdminPanel.g.cs
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\obj\Debug\Pages\Employee\EmployeeBooks.g.cs
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\obj\Debug\Pages\Member\MemberBook.g.cs
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\obj\Debug\Pages\Member\MemberInfo.g.cs
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\obj\Debug\Pages\Member\MemberMyBook.g.cs
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\obj\Debug\Pages\Member\MemberSubscription.g.cs
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\obj\Debug\Pages\Member\MemberWallet.g.cs
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\obj\Debug\Pages\Employee\editEmployee.g.cs
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\obj\Debug\Pages\Member\editMember.g.cs
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\obj\Debug\Pages\Employee\EmployeePanel.g.cs
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\obj\Debug\Pages\Universal\employees.g.cs
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\obj\Debug\Pages\Member\MemberPanel.g.cs
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\obj\Debug\Pages\Universal\Home.g.cs
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\obj\Debug\Pages\Universal\members.g.cs
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\obj\Debug\Pages\Universal\AddBookPage.g.cs
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\obj\Debug\PayPanel.g.cs
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\obj\Debug\SignUpPage.g.cs
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\obj\Debug\Pages\Employee\wallet.g.cs
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\obj\Debug\App.g.cs
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\obj\Debug\Library Manager_MarkupCompile.cache
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\obj\Debug\Library Manager_MarkupCompile.lref
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\obj\Debug\App.baml
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\obj\Debug\LogInPage.baml
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\obj\Debug\MainWindow.baml
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\obj\Debug\Pages\Admin\adminBank.baml
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\obj\Debug\Pages\Admin\AdminBooks.baml
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\obj\Debug\Pages\Admin\AdminPanel.baml
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\obj\Debug\Pages\Employee\EmployeeBooks.baml
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\obj\Debug\Pages\Member\MemberBook.baml
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\obj\Debug\Pages\Member\MemberInfo.baml
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\obj\Debug\Pages\Member\MemberMyBook.baml
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\obj\Debug\Pages\Member\MemberSubscription.baml
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\obj\Debug\Pages\Member\MemberWallet.baml
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\obj\Debug\Pages\Employee\editEmployee.baml
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\obj\Debug\Pages\Member\editMember.baml
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\obj\Debug\Pages\Employee\EmployeePanel.baml
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\obj\Debug\Pages\Universal\employees.baml
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\obj\Debug\Pages\Universal\Home.baml
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\obj\Debug\Pages\Universal\members.baml
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\obj\Debug\Pages\Universal\AddBookPage.baml
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\obj\Debug\PayPanel.baml
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\obj\Debug\SignUpPage.baml
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\obj\Debug\Pages\Employee\wallet.baml
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\obj\Debug\Library Manager.g.resources
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\obj\Debug\Library_Manager.Properties.Resources.resources
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\obj\Debug\Library Manager.csproj.GenerateResource.cache
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\obj\Debug\Library Manager.csproj.CoreCompileInputs.cache
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\obj\Debug\Library Manager.csproj.CopyComplete
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\obj\Debug\Library Manager.exe
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library Manager\obj\Debug\Library Manager.pdb

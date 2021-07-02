@@ -128,9 +128,6 @@
     <Compile Include="Pages\Member\MemberWallet.xaml.cs">
       <DependentUpon>MemberWallet.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Universal\books.xaml.cs">
-      <DependentUpon>books.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Pages\Employee\editEmployee.xaml.cs">
       <DependentUpon>editEmployee.xaml</DependentUpon>
     </Compile>
@@ -205,10 +202,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\Member\MemberWallet.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\Universal\books.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

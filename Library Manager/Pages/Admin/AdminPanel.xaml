@@ -70,7 +70,7 @@
                     <TextBlock Grid.Row="1" Text="Rayo Libray" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 </Grid>
                 <StackPanel Grid.Row="1" VerticalAlignment="Center" Orientation="Horizontal" >
-                    <Button Style="{StaticResource MaterialDesignFlatButton}" Padding="-10" VerticalAlignment="Center" Foreground="#1c313a" Width="150" >
+                    <Button Style="{StaticResource MaterialDesignFlatButton}" Padding="-10" VerticalAlignment="Center" Foreground="#1c313a" Width="150" Click="home_btn" >
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Width="150">
                             <materialDesign:PackIcon Kind="Home" Margin="10 0" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="#1c313a"/>
                             <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" Text="Home" VerticalAlignment="Center" HorizontalAlignment="Left"  />
@@ -78,7 +78,7 @@
                     </Button>
                 </StackPanel>
                 <StackPanel Grid.Row="2" VerticalAlignment="Center" Orientation="Horizontal">
-                    <Button Style="{StaticResource MaterialDesignFlatButton}" Padding="-10" VerticalAlignment="Center" Foreground="#1c313a" Width="150" HorizontalAlignment="Left">
+                    <Button Style="{StaticResource MaterialDesignFlatButton}" Padding="-10" VerticalAlignment="Center" Foreground="#1c313a" Width="150" HorizontalAlignment="Left" Click="emp_btn">
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Width="150">
                             <materialDesign:PackIcon Kind="User" Margin="10 0" HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="#1c313a"/>
                             <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" Text="Employees" VerticalAlignment="Center" />
@@ -86,7 +86,7 @@
                     </Button>
                 </StackPanel>
                 <StackPanel Grid.Row="3" VerticalAlignment="Center" Orientation="Horizontal">
-                    <Button Style="{StaticResource MaterialDesignFlatButton}" Padding="-10" VerticalAlignment="Center" Foreground="#1c313a" Width="150" HorizontalAlignment="Left">
+                    <Button Style="{StaticResource MaterialDesignFlatButton}" Padding="-10" VerticalAlignment="Center" Foreground="#1c313a" Width="150" HorizontalAlignment="Left" Click="books_btn">
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Width="150">
                             <materialDesign:PackIcon Kind="Book" Margin="10 0" HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="#1c313a"/>
                             <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" Text="Books" VerticalAlignment="Center" />
@@ -94,7 +94,7 @@
                     </Button>
                 </StackPanel>
                 <StackPanel Grid.Row="4" VerticalAlignment="Center" Orientation="Horizontal">
-                    <Button Style="{StaticResource MaterialDesignFlatButton}" Padding="-10" VerticalAlignment="Center" Foreground="#1c313a" Width="150" HorizontalAlignment="Left">
+                    <Button Style="{StaticResource MaterialDesignFlatButton}" Padding="-10" VerticalAlignment="Center" Foreground="#1c313a" Width="150" HorizontalAlignment="Left" Click="budget_btn">
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Width="150">
                             <materialDesign:PackIcon Kind="Money100" Margin="10 0" HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="#1c313a"/>
                             <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" Text="Budget" VerticalAlignment="Center" />

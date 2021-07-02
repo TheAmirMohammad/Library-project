@@ -22,5 +22,25 @@ namespace Library_Manager
         {
             this.DragMove();
         }
+
+        private void home_btn(object sender, RoutedEventArgs e)
+        {
+            adminFrame.Content = new Pages.Universal.Home("Admin");
+        }
+
+        private void emp_btn(object sender, RoutedEventArgs e)
+        {
+            adminFrame.Content = new Pages.Universal.employees();
+        }
+
+        private void books_btn(object sender, RoutedEventArgs e)
+        {
+            adminFrame.Content = new Pages.Admin.AdminBooks();
+        }
+
+        private void budget_btn(object sender, RoutedEventArgs e)
+        {
+            adminFrame.Content = new Pages.Admin.adminBank();
+        }
     }
 }
