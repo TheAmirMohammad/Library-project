@@ -70,7 +70,7 @@
                             <RowDefinition/>
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="1.3*"/>
+                            <ColumnDefinition Width="2.3*"/>
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
                         <StackPanel VerticalAlignment="Center">
@@ -82,7 +82,7 @@
                             <TextBox
                             VerticalAlignment="Center"
                             Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                            Width="250"
+                            Width="200"
                             Margin="0 -7 0 0"
                             materialDesign:TextFieldAssist.HasClearButton="True"
                             materialDesign:TextFieldAssist.PrefixText="$"

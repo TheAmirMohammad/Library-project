@@ -42,7 +42,7 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
-                    <ComboBox materialDesign:HintAssist.Hint="Search" materialDesign:HintAssist.HintOpacity=".26" Width="190" Margin="10" IsEditable="True">
+                    <ComboBox materialDesign:HintAssist.Hint="Search" materialDesign:HintAssist.HintOpacity=".26" Width="100" Margin="10" IsEditable="True">
                         <ComboBoxItem Content="Book 1"/>
                         <ComboBoxItem Content="Book 2"/>
                         <ComboBoxItem Content="Book 3"/>
@@ -50,7 +50,7 @@
                         <ComboBoxItem Content="Book 5"/>
                     </ComboBox>
                 </StackPanel>
-                <Button Grid.Row="1" Margin="10" Style="{StaticResource MaterialDesignRaisedButton}" Width="200" ToolTip="Resource name: MaterialDesignRaisedButton" Content="Return" />
+                <Button Grid.Row="1" Margin="10" Style="{StaticResource MaterialDesignRaisedButton}" ToolTip="Resource name: MaterialDesignRaisedButton" Content="Return" />
             </Grid>
         </materialDesign:Card>
     </Grid>

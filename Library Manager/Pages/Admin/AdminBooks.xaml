@@ -22,13 +22,13 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <StackPanel VerticalAlignment="Center">
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Style="{StaticResource MaterialDesignHeadline5TextBlock}" VerticalAlignment="Center" Margin="20 10" Text="Book"/>
+            <StackPanel>
+                <TextBlock Style="{StaticResource MaterialDesignHeadline5TextBlock}" VerticalAlignment="Center" Margin="20 10" Text="Books"/>
                 <Button
                                     Style="{StaticResource MaterialDesignIconButton}"
-                                    Height="20"
-                                    Width="60"
-                                    Margin="645 0"
+                                    Height="40"
+                                    Width="40"
+                                    Margin="2 -50 10 0"
                                     HorizontalAlignment="Right"
                                     Foreground="#834fdb"
                                     VerticalAlignment="Center">

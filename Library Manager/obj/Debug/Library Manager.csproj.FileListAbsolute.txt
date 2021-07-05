@@ -177,7 +177,6 @@ E:\University\Term 4\AP\Programming\Project\Library-project\Library-project\Libr
 E:\University\Term 4\AP\Programming\Project\Library-project\Library-project\Library Manager\obj\Debug\MainWindow.g.cs
 E:\University\Term 4\AP\Programming\Project\Library-project\Library-project\Library Manager\obj\Debug\Pages\Admin\adminBank.g.cs
 E:\University\Term 4\AP\Programming\Project\Library-project\Library-project\Library Manager\obj\Debug\Pages\Admin\AdminPanel.g.cs
-E:\University\Term 4\AP\Programming\Project\Library-project\Library-project\Library Manager\obj\Debug\Pages\Universal\books.g.cs
 E:\University\Term 4\AP\Programming\Project\Library-project\Library-project\Library Manager\obj\Debug\Pages\Employee\editEmployee.g.cs
 E:\University\Term 4\AP\Programming\Project\Library-project\Library-project\Library Manager\obj\Debug\Pages\Member\editMember.g.cs
 E:\University\Term 4\AP\Programming\Project\Library-project\Library-project\Library Manager\obj\Debug\Pages\Employee\EmployeePanel.g.cs
@@ -195,7 +194,6 @@ E:\University\Term 4\AP\Programming\Project\Library-project\Library-project\Libr
 E:\University\Term 4\AP\Programming\Project\Library-project\Library-project\Library Manager\obj\Debug\MainWindow.baml
 E:\University\Term 4\AP\Programming\Project\Library-project\Library-project\Library Manager\obj\Debug\Pages\Admin\adminBank.baml
 E:\University\Term 4\AP\Programming\Project\Library-project\Library-project\Library Manager\obj\Debug\Pages\Admin\AdminPanel.baml
-E:\University\Term 4\AP\Programming\Project\Library-project\Library-project\Library Manager\obj\Debug\Pages\Universal\books.baml
 E:\University\Term 4\AP\Programming\Project\Library-project\Library-project\Library Manager\obj\Debug\Pages\Employee\editEmployee.baml
 E:\University\Term 4\AP\Programming\Project\Library-project\Library-project\Library Manager\obj\Debug\Pages\Member\editMember.baml
 E:\University\Term 4\AP\Programming\Project\Library-project\Library-project\Library Manager\obj\Debug\Pages\Employee\EmployeePanel.baml

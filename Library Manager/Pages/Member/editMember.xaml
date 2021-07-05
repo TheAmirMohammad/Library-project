@@ -24,8 +24,8 @@
     <Grid Background="White">
         <Grid Margin="20 ,0">
             <Grid.RowDefinitions>
-                <RowDefinition Height="2*"/>
-                <RowDefinition Height="3*"/>
+                <RowDefinition Height="1.5*"/>
+                <RowDefinition Height="3.4*"/>
                 <RowDefinition/>
                 <RowDefinition/>
                 <RowDefinition/>
@@ -40,7 +40,7 @@
                        Style="{StaticResource MaterialDesignHeadline4TextBlock}"
                        />
 
-            <StackPanel Grid.Row="1" Width="200" Margin="280 5">
+            <StackPanel Grid.Row="1" Width="200" Margin="5">
                 <Grid  Background="#eceff1" Height="120">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="2*"/>

@@ -51,11 +51,11 @@
                             <TextBlock Foreground="White" Text="subscription" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource MaterialDesignHeadline4TextBlock}"/>
 
                             <StackPanel Orientation="Vertical" VerticalAlignment="Center" Grid.Row="1">
-                                <TextBlock Foreground="Teal" Text="33 Days" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource MaterialDesignHeadline4TextBlock}" FontSize="70"/>
-                                <TextBlock Foreground="LightGray" Text="Left" HorizontalAlignment="Right" VerticalAlignment="Center" Style="{StaticResource MaterialDesignHeadline4TextBlock}" FontSize="35" Margin="0 0 20 0"/>
+                                <TextBlock Foreground="Teal" Text="33 Days" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource MaterialDesignHeadline4TextBlock}" FontSize="50"/>
+                                <TextBlock Foreground="LightGray" Text="Left" HorizontalAlignment="Right" VerticalAlignment="Center" Style="{StaticResource MaterialDesignHeadline4TextBlock}" FontSize="25" Margin="0 0 50 0"/>
                             </StackPanel>
 
-                            <Button x:Name="AddBook_btn" Content="Extend" Grid.Row="5" HorizontalAlignment="Center" Width="250"/>
+                            <Button x:Name="AddBook_btn" Content="Extend" Grid.Row="5" HorizontalAlignment="Center" Width="100"/>
 
                         </Grid>
                     </Grid>

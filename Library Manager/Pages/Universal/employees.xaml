@@ -19,11 +19,11 @@
     <Grid>
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="1.2*"/>
+                <RowDefinition Height="1*"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="1.5*"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Grid Grid.ColumnSpan="2">
@@ -86,7 +86,7 @@
                         </StackPanel>
                         <materialDesign:Card Grid.Row="1" Margin="20 5" Background="#008F95" materialDesign:ShadowAssist.ShadowDepth="Depth3" BorderThickness="0">
                             <StackPanel>
-                                <Rectangle Width="200" Height="100">
+                                <Rectangle Width="300" Height="105">
                                     <Rectangle.Fill>
                                         <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
                                             <GradientStop Color="#FF0A6c" Offset="0.2" />
@@ -94,27 +94,29 @@
                                         </LinearGradientBrush>
                                     </Rectangle.Fill>
                                 </Rectangle>
-                                <StackPanel Margin="0 -100 0 0">
+                                <StackPanel Margin="0 -105 0 0" Orientation="Vertical">
                                     <TextBlock Style="{StaticResource MaterialDesignBody2TextBlock}" VerticalAlignment="Center" Margin="10 5 10 0" Text="Jahed Motlagh" Foreground="White"/>
                                     <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" VerticalAlignment="Center" Margin="10 0 10 0" Text="Melat Bank" Foreground="White"/>
-                                    <TextBlock Style="{StaticResource MaterialDesignOverlineTextBlock}" VerticalAlignment="Center" Margin="10 5 10 0" Text="6037-3374-3338-3971-1497" Foreground="White"/>
-                                    <Separator Background="White" Margin="10 5 10 0" Opacity="0.75"/>
-                                    <StackPanel Orientation="Horizontal">
-                                        <TextBlock Style="{StaticResource MaterialDesignOverlineTextBlock}" VerticalAlignment="Center" Margin="10 5 10 0" Text="1400/2/15" Foreground="White"/>
-                                        <TextBlock Style="{StaticResource MaterialDesignOverlineTextBlock}" VerticalAlignment="Center" Margin="80 5 10 0" Text="Visa Card" Foreground="White"/>
+                                    <StackPanel VerticalAlignment="Bottom">
+                                        <TextBlock Style="{StaticResource MaterialDesignOverlineTextBlock}" VerticalAlignment="Center" Margin="10 7 10 0" Text="6037-3374-3338-3971-1497" Foreground="White"/>
+                                        <Separator Background="White" Margin="10 1 10 0" Opacity="0.75"/>
+                                        <StackPanel>
+                                            <TextBlock Style="{StaticResource MaterialDesignOverlineTextBlock}" VerticalAlignment="Center" Margin="10 1 10 0" Text="1400/2/15" Foreground="White"/>
+                                            <TextBlock Style="{StaticResource MaterialDesignOverlineTextBlock}" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="80 -15 10 0" Text="Visa Card" Foreground="White"/>
+                                        </StackPanel>
                                     </StackPanel>
                                 </StackPanel>
                             </StackPanel>
                         </materialDesign:Card>
                         <materialDesign:Card Grid.Row="2" Margin="20 0 20 10">
-                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-                                <materialDesign:PackIcon Kind="CurrencyUsd" VerticalAlignment="Center" Margin="10 5 0 5" Width="30" Height="30" Foreground="#834fdb"/>
-                                <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" VerticalAlignment="Center" Margin="5 0" Text="40.000.000 T"/>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                <materialDesign:PackIcon Kind="CurrencyUsd" VerticalAlignment="Center" Margin="0 5 0 5" Width="25" Height="25" Foreground="#834fdb"/>
+                                <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" VerticalAlignment="Center" Text="40.000.000 T"/>
                                 <Button
                                     Style="{StaticResource MaterialDesignRaisedAccentButton}"
                                     Height="20"
                                     Width="60"
-                                    Margin="15 0"
+                                    Margin="5 0 0 0"
                                     ToolTip="Resource name: MaterialDesignRaisedAccentButton"
                                     VerticalContentAlignment="Bottom"
                                     Background="#834fdb"
