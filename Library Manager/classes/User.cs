@@ -7,63 +7,24 @@ namespace Library_Manager
 {
     public class User
     {
-        /// <summary>
-        /// User's First Name
-        /// </summary>
-        public string userName
+        string name;
+        string phoneNumber;
+        string email;
+        string password;
+        public string Name { get => name; set => name = value; }
+        public string PhoneNumber { get => phoneNumber; set => phoneNumber = value; }
+        public string Email { get => email; set => email = value; }
+        public string Password { get => password; set => password = value; }
+        public User()
         {
-            get => default;
-            set
-            {
-            }
-        }
 
-        /// <summary>
-        /// User's Last Name
-        /// </summary>
-        public string name
+        }
+        public User(string name, string phonenumber, string email, string password)
         {
-            get => default;
-            set
-            {
-            }
+            this.Name = name;
+            this.Email = email;
+            this.Password = password;
+            this.PhoneNumber = phonenumber;
         }
-
-        /// <summary>
-        /// User's Phone Number
-        /// </summary>
-        public string phoneNumber
-        {
-            get => default;
-            set
-            {
-            }
-        }
-
-        /// <summary>
-        /// User's Email
-        /// </summary>
-        public string email
-        {
-            get => default;
-            set
-            {
-            }
-        }
-
-        /// <summary>
-        /// User's Password
-        /// </summary>
-        public string password
-        {
-            get => default;
-            set
-            {
-            }
-        }
-    }
-
-    public class t
-    {
     }
 }

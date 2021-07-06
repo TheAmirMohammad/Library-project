@@ -16,27 +16,17 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
-            <Grid Grid.ColumnSpan="2"
-                  Background="White" MouseLeftButtonDown="drag"
-                  >
-                <Button
-                    x:Name="Close_btn"
-                    Click="Close_btn_Click"
-                    Grid.Column="1"
-                    Style="{StaticResource MaterialDesignIconButton}"
-                    Height="20"
-                    Margin="10 10 10 0"
-                    HorizontalAlignment="Right"
-                    VerticalAlignment="Center"
-                    Width="20"
-                    ToolTip="MaterialDesignIconButton">
-                    <materialDesign:PackIcon
-                        HorizontalAlignment="Center"
-                        VerticalAlignment="Center"
-                        Kind="Close"/>
-
-                </Button>
-
+            <Grid Grid.Row="0" Background="#673ab7" Grid.ColumnSpan="2" MouseLeftButtonDown="drag">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="736*"/>
+                    <ColumnDefinition Width="33*"/>
+                    <ColumnDefinition Width="33*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="2">
+                    <Button x:Name="Close_btn" Click="Close_btn_Click" Style="{StaticResource MaterialDesignIconButton}" ToolTip="MaterialDesignIconButton" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <materialDesign:PackIcon Kind="Power"/>
+                    </Button>
+                </Grid>
             </Grid>
 
             <Grid Grid.Row="1">
@@ -47,12 +37,12 @@
                 </Grid.ColumnDefinitions>
                 <materialDesign:Card
                     Background="White"
-                    Margin="20 5 0 20"  
-                    Padding="0 10 0 10">
+                    Margin="20 10 0 10"  
+                    Padding="2">
                     <Frame x:Name="mainFrame"
                        x:FieldModifier="public"
                        Grid.Column="0"
-                       Margin="5"
+                       Margin="2"
                        Source="/Library Manager;component/SignUpPage.xaml" 
                        NavigationUIVisibility="Hidden"
                        />

@@ -7,44 +7,22 @@ namespace Library_Manager
 {
     public class Member : User
     {
-        public Date signDate
+        Date signDate;
+        Date extensionDate;
+        int remainingDays;
+        List<(Book, Date)> bookList;
+        string imageFileName;
+        public Date SignDate { get => signDate; set => signDate = value; }
+        public Date ExtensionDate { get => extensionDate; set => extensionDate = value; }
+        public int RemainingDays { get => remainingDays; set => remainingDays = value; }
+        public List<(Book, Date)> BookList { get => bookList; set => bookList = value; }
+        public string ImageFileName { get => imageFileName; set => imageFileName = value; }
+        public Member(string name, string phonenumber, string email, string password, Date signdate, string imageFileName) : base(name, phonenumber, email, password)
         {
-            get => default;
-            set
-            {
-            }
-        }
-
-        public Date extensionDate
-        {
-            get => default;
-            set
-            {
-            }
-        }
-
-        public int remainingDays
-        {
-            get => default;
-            set
-            {
-            }
-        }
-
-        public List<(Book, Date)> bookList
-        {
-            get => default;
-            set
-            {
-            }
-        }
-
-        public int date
-        {
-            get => default;
-            set
-            {
-            }
+            this.SignDate = signdate;
+            this.ImageFileName = imageFileName;
+            RemainingDays = 30;
+            ExtensionDate = Date.AddDays(SignDate, RemainingDays);
         }
 
         public void borrowBook()

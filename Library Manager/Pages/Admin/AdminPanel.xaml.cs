@@ -1,6 +1,5 @@
 ﻿using System.Windows;
 using System.Data.SqlClient;
-using Library_Manager.classes;
 
 namespace Library_Manager
 {

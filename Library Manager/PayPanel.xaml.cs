@@ -20,9 +20,21 @@ namespace Library_Manager
     /// </summary>
     public partial class PayPanel : Page
     {
+        Member NewMember;
         public PayPanel()
         {
             InitializeComponent();
+        }
+
+        public PayPanel(Member MemberToAdd)
+        {
+            NewMember = MemberToAdd;
+            InitializeComponent();
+        }
+
+        private void PayButton_Click(object sender, RoutedEventArgs e)
+        {
+            DataBaseManager.AddMember(NewMember);
         }
     }
 }

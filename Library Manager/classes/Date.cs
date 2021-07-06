@@ -7,36 +7,48 @@ namespace Library_Manager
 {
     public struct Date
     {
-        public int year
+        int Year;
+        int Month;
+        int Day;
+        public Date(int year, int month, int day)
         {
-            get => default;
-            set
-            {
-            }
+            Month = month;
+            Year = year;
+            Day = day;
         }
 
-        public int month
+        public static DateTime DateToDateTime(Date DateToConvert)
         {
-            get => default;
-            set
-            {
-            }
+            return new DateTime(DateToConvert.Year, DateToConvert.Month, DateToConvert.Day);
         }
 
-        public int day
+        public static Date DateTimeToDate(DateTime DateTimeToConvert)
         {
-            get => default;
-            set
-            {
-            }
+            string sDate = DateTimeToConvert.ToString();
+            DateTime datevalue = (Convert.ToDateTime(sDate.ToString()));
+            int dy = int.Parse(datevalue.Day.ToString());
+            int mn = int.Parse(datevalue.Month.ToString());
+            int yy = int.Parse(datevalue.Year.ToString());
+            Date CurrentDate = new Date(yy, mn, dy);
+            return CurrentDate;
         }
 
-        public Member Member
+        public static Date GetCurrentDate()
         {
-            get => default;
-            set
-            {
-            }
+            string sDate = DateTime.Now.ToString();
+            DateTime datevalue = (Convert.ToDateTime(sDate.ToString()));
+            int dy = int.Parse(datevalue.Day.ToString());
+            int mn = int.Parse(datevalue.Month.ToString());
+            int yy = int.Parse(datevalue.Year.ToString());
+            Date CurrentDate = new Date(yy, mn, dy);
+            return CurrentDate;
+        }
+
+        public static Date AddDays(Date StartDate, int days)
+        {
+            DateTime StartDateTime = DateToDateTime(StartDate);
+            DateTime EndDateTime = StartDateTime.AddDays(days);
+            return DateTimeToDate(EndDateTime);
         }
     }
 }
