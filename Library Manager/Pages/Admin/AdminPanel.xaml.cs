@@ -1,4 +1,6 @@
 ﻿using System.Windows;
+using System.Data.SqlClient;
+using Library_Manager.classes;
 
 namespace Library_Manager
 {
@@ -11,6 +13,7 @@ namespace Library_Manager
         {
             InitializeComponent();
             adminFrame.Content = new Pages.Universal.Home("Admin");
+            DataBaseManager.Sample();
         }
 
         private void exit(object sender, RoutedEventArgs e)
