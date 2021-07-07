@@ -43,6 +43,7 @@
                                 <RowDefinition/>
                                 <RowDefinition/>
                                 <RowDefinition/>
+                                <RowDefinition/>
                                 <RowDefinition Height="1.5*"/>
 
                             </Grid.RowDefinitions>
@@ -62,14 +63,18 @@
                             </StackPanel>
 
                             <StackPanel VerticalAlignment="Top" Grid.Row="3">
-                                <TextBox x:Name="txtGener" materialDesign:HintAssist.Hint="Gener" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                                <TextBox x:Name="txtGener" materialDesign:HintAssist.Hint="Genre" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
                             </StackPanel>
 
                             <StackPanel Orientation="Vertical" VerticalAlignment="Top" Grid.Row="4">
                                 <TextBox x:Name="txtBookNumber" materialDesign:HintAssist.Hint="Book Number" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
                             </StackPanel>
 
-                            <Button x:Name="AddBook_btn" Content="Add" Grid.Row="5" HorizontalAlignment="Center" Width="200"/>
+                            <StackPanel Orientation="Vertical" VerticalAlignment="Top" Grid.Row="5">
+                                <TextBox x:Name="txtCount" materialDesign:HintAssist.Hint="Count" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                            </StackPanel>
+
+                            <Button x:Name="AddBook_btn" Content="Add" Grid.Row="6" HorizontalAlignment="Center" Width="200" Click="AddBookButton_Click"/>
                             
                         </Grid>
                     </Grid>

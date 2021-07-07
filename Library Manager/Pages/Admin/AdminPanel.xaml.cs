@@ -14,7 +14,14 @@ namespace Library_Manager
             adminFrame.Content = new Pages.Universal.Home("Admin");
             DataBaseManager.Sample();
         }
-
+        public void AdminPanelAddBookSetting()
+        {
+            adminFrame.Content = new Pages.Universal.AddBookPage();
+        }
+        public void AdminPanelAddEmployeeSetting()
+        {
+            adminFrame.Content = new AddEmployee();
+        }
         private void exit(object sender, RoutedEventArgs e)
         {
             this.Close();
@@ -37,7 +44,7 @@ namespace Library_Manager
 
         private void books_btn(object sender, RoutedEventArgs e)
         {
-            adminFrame.Content = new Pages.Admin.AdminBooks();
+            adminFrame.Content = new Pages.Admin.AdminBooks(this);
         }
 
         private void budget_btn(object sender, RoutedEventArgs e)

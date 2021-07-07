@@ -17,7 +17,6 @@ namespace Library_Manager
         {
             InitializeComponent();
         }
-
         private void account_btn(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new LogInPage());
@@ -125,7 +124,6 @@ namespace Library_Manager
             dlg.InitialDirectory = "c:\\";
             dlg.Filter = "Image files (*.jpg)|*.jpg|All Files (*.*)|*.*";
             dlg.RestoreDirectory = true;
-
             if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 ImageFile = dlg.FileName;

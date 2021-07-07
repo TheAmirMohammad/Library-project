@@ -7,52 +7,27 @@ namespace Library_Manager
 {
     public class Book
     {
-        public string name
+        string name;
+        string printNumber;
+        string author;
+        int count;
+        string genre;
+        public string Name { get => name; set => name = value; }
+        public string PrintNumber { get => printNumber; set => printNumber = value; }
+        public string Author { get => author; set => author = value; }
+        public int Count { get => count; set => count = value; }
+        public string Genre { get => genre; set => genre = value; }
+        public Book()
         {
-            get => default;
-            set
-            {
-            }
-        }
 
-        public int printNumber
-        {
-            get => default;
-            set
-            {
-            }
         }
-
-        public string author
+        public Book(string Name, string PrintNumber, string Author, string Gener, int Count)
         {
-            get => default;
-            set
-            {
-            }
-        }
-
-        public int count
-        {
-            get => default;
-            set
-            {
-            }
-        }
-
-        public int genre
-        {
-            get => default;
-            set
-            {
-            }
-        }
-
-        public User User
-        {
-            get => default;
-            set
-            {
-            }
+            this.Name = Name;
+            this.PrintNumber = PrintNumber;
+            this.Author = Author;
+            this.Genre = Gener;
+            this.Count = Count;
         }
     }
 }

@@ -33,13 +33,13 @@
                             <TextBlock Style="{StaticResource MaterialDesignHeadline5TextBlock}" VerticalAlignment="Center" Margin="20 10" Text="Employees"/>
                             <Button
                                     Style="{StaticResource MaterialDesignIconButton}"
-                                    Height="20"
-                                    Width="60"
-                                    Margin="545 0"
+                                    Height="30"
+                                    Width="30"
+                                    Margin="-10 0"
                                     ToolTip="Resource name: MaterialDesignRaisedAccentButton"
                                     HorizontalAlignment="Right"
                                     Foreground="#834fdb"
-                                    VerticalAlignment="Center">
+                                    VerticalAlignment="Center" Click="AddEmployeeButton_Click">
                                 <materialDesign:PackIcon
                                 Kind="PlusThick" />
                             </Button>
