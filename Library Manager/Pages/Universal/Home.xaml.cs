@@ -7,10 +7,11 @@ namespace Library_Manager.Pages.Universal
     /// </summary>
     public partial class Home : Page
     {
-        public Home(string name)
+        public Home(string type, string name = "")
         {
             InitializeComponent();
-            homeName.Text = name + " Panel";
+            homeName.Text = type + " Panel";
+            wel.Text += " " + name;
         }
     }
 }

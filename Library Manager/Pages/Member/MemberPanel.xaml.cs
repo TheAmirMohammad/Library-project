@@ -7,10 +7,13 @@ namespace Library_Manager
     /// </summary>
     public partial class MemberPanel : Window
     {
-        public MemberPanel()
+        Member member;
+
+        public MemberPanel(Member mem)
         {
             InitializeComponent();
-            memberFrame.Content = new Pages.Universal.Home("Member");
+            member = mem;
+            memberFrame.Content = new Pages.Universal.Home("Member", member.Name);
         }
         private void exit(object sender, RoutedEventArgs e)
         {
@@ -24,7 +27,7 @@ namespace Library_Manager
 
         private void home_btn(object sender, RoutedEventArgs e)
         {
-            memberFrame.Content = new Pages.Universal.Home("Member");
+            memberFrame.Content = new Pages.Universal.Home("Member", member.Name);
         }
 
         private void edit_member_btn(object sender, RoutedEventArgs e)

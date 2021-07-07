@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
-using System.Windows;
 
 namespace Library_Manager
 {
     public class DataBaseManager
     {
-        static SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=E:\University\Term 4\AP\Programming\Project\Library-project\Library-project\Library Manager\DataBase\LibraryDataBase.mdf;Integrated Security=True;Connect Timeout=30");
+        static SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\lenovo\Desktop\works\darC\AP\Project\Library-project\Library Manager\DataBase\LibraryDataBase.mdf;Integrated Security=True;Connect Timeout=30");
 
         static string command;
         static DataBaseManager()
@@ -21,12 +20,12 @@ namespace Library_Manager
             //com.BeginExecuteNonQuery();
         }
 
-        public static bool isMemberExists(Member MemberToAdd)
+        public static bool isMemberExists(string name, string email, string phoneNumber)
         {
             DataTable data = MemberList();
             for (int i = 0; i < data.Rows.Count; i++)
             {
-                if (data.Rows[i][1].ToString() == MemberToAdd.Name || data.Rows[i][2].ToString() == MemberToAdd.Email || data.Rows[i][3].ToString() == MemberToAdd.PhoneNumber)
+                if (data.Rows[i][1].ToString() == name || data.Rows[i][2].ToString() == email || data.Rows[i][3].ToString() == phoneNumber)
                 {
                     System.Windows.MessageBox.Show("Member con not be Added !\nSame info exists !!");
                     return false;
@@ -34,12 +33,12 @@ namespace Library_Manager
             }
             return true;
         }
-        public static bool isEmployeeExists(Employee EmployeeToAdd)
+        public static bool isEmployeeExists(string name, string email, string phoneNumber)
         {
             DataTable data = EmpList();
             for (int i = 0; i < data.Rows.Count; i++)
             {
-                if (data.Rows[i][1].ToString() == EmployeeToAdd.Name || data.Rows[i][2].ToString() == EmployeeToAdd.Email || data.Rows[i][3].ToString() == EmployeeToAdd.PhoneNumber)
+                if (data.Rows[i][1].ToString() == name || data.Rows[i][2].ToString() == email || data.Rows[i][3].ToString() == phoneNumber)
                 {
                     System.Windows.MessageBox.Show("Employee con not be Added !\nSame info exists !!");
                     return false;

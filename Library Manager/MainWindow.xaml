@@ -43,7 +43,7 @@
                        x:FieldModifier="public"
                        Grid.Column="0"
                        Margin="2"
-                       Source="/Library Manager;component/SignUpPage.xaml" 
+                       Source="/Library Manager;component/LogInPage.xaml" 
                        NavigationUIVisibility="Hidden"
                        />
                 </materialDesign:Card>

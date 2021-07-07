@@ -1,20 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Forms;
-using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using Library_Manager;
 
 namespace Library_Manager
 {
@@ -28,13 +17,13 @@ namespace Library_Manager
         {
             InitializeComponent();
         }
-        
+
         private void Addbutton_Click(object sender, RoutedEventArgs e)
         {
             if (ValidateFields())
             {
                 Employee NewEmployee = new Employee(txtName.Text, txtPhoneNumber.Text, txtEmail.Text, txtPassword.Password, int.Parse(txtSalary.Text), ImageFile);
-                if (DataBaseManager.isEmployeeExists(NewEmployee))
+                if (DataBaseManager.isEmployeeExists(NewEmployee.Name, NewEmployee.Email, NewEmployee.PhoneNumber))
                 {
                     DataBaseManager.AddEmployee(NewEmployee);
                 }

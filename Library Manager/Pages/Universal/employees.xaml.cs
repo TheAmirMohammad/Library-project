@@ -20,7 +20,7 @@ namespace Library_Manager.Pages.Universal
         private void AddEmployeeButton_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             AdminPanel NewAdminPanel = new AdminPanel();
-            NewAdminPanel.AdminPanelAddEmployeeSetting();
+            //NewAdminPanel.AdminPanelAddEmployeeSetting();
             NewAdminPanel.Show();
             if (WindowStart != null)
             {
