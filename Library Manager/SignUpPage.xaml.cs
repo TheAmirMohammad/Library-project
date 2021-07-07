@@ -28,8 +28,11 @@ namespace Library_Manager
             if (ValidateFields())
             {
                 Member NewMember = new Member(txtName.Text, txtPreNumber.Text + txtPhoneNumber.Text, txtEmail.Text, txtPassword.Password, Date.GetCurrentDate(), ImageFile);
-                PayPanel PayPanelWindow = new PayPanel(NewMember);
-                NavigationService.Navigate(PayPanelWindow);         
+                if (DataBaseManager.isMemberExists(NewMember))
+                {
+                    PayPanel PayPanelWindow = new PayPanel(NewMember);
+                    NavigationService.Navigate(PayPanelWindow);
+                }
             }
         }
         bool ValidateFields()
@@ -63,7 +66,7 @@ namespace Library_Manager
                     System.Windows.MessageBox.Show("E-mail must be in correct format! please provide a proper e-mail.");
                     return false;
                 }
-                
+
             }
             //Check PhoneNumber
             if (txtPhoneNumber.Text == "")

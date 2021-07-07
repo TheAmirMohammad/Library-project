@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-E:\University\Term 4\AP\Programming\Project\Library-project\Library-project\Library Manager\obj\Debug\
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library-project\Library Manager\obj\Debug\
 Library_Manager
 none
 false
 DEBUG;TRACE
-E:\University\Term 4\AP\Programming\Project\Library-project\Library-project\Library Manager\App.xaml
+C:\Users\lenovo\Desktop\works\darC\AP\Project\Library-project\Library Manager\App.xaml
 22848053099
 
 33-1567064837
-251756661660
+25-328656081
 LogInPage.xaml;MainWindow.xaml;Pages\Admin\adminBank.xaml;Pages\Admin\AdminBooks.xaml;Pages\Admin\AdminPanel.xaml;Pages\Employee\EmployeeBooks.xaml;Pages\Member\MemberBook.xaml;Pages\Member\MemberInfo.xaml;Pages\Member\MemberMyBook.xaml;Pages\Member\MemberSubscription.xaml;Pages\Member\MemberWallet.xaml;Pages\Employee\editEmployee.xaml;Pages\Member\editMember.xaml;Pages\Employee\EmployeePanel.xaml;Pages\Universal\employees.xaml;Pages\Member\MemberPanel.xaml;Pages\Universal\Home.xaml;Pages\Universal\members.xaml;Pages\Universal\AddBookPage.xaml;PayPanel.xaml;SignUpPage.xaml;Pages\Employee\wallet.xaml;
 
 False
