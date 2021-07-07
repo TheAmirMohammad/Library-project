@@ -7,10 +7,12 @@ namespace Library_Manager
     /// </summary>
     public partial class EmployeePanel : Window
     {
-        public EmployeePanel()
+        Employee employee;
+        public EmployeePanel(Employee emp)
         {
             InitializeComponent();
             employeeFrame.Content = new Pages.Universal.Home("Employee");
+            employee = emp;
         }
         private void exit(object sender, RoutedEventArgs e)
         {

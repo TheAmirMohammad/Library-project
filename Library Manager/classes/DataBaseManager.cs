@@ -21,14 +21,27 @@ namespace Library_Manager
             //com.BeginExecuteNonQuery();
         }
 
-        public static bool isMemberExists(Member MemberToAdd)
+        public static bool isMemberExists(string name, string email, string phoneNumber)
         {
             DataTable data = MemberList();
             for (int i = 0; i < data.Rows.Count; i++)
             {
-                if (data.Rows[i][1].ToString() == MemberToAdd.Name || data.Rows[i][2].ToString() == MemberToAdd.Email || data.Rows[i][3].ToString() == MemberToAdd.PhoneNumber)
+                if (data.Rows[i][1].ToString() == name || data.Rows[i][2].ToString() == email || data.Rows[i][3].ToString() == phoneNumber)
                 {
-                    System.Windows.MessageBox.Show("Member con not be Added !\nSame info exists !!");
+                    System.Windows.MessageBox.Show("Same info exists !!");
+                    return false;
+                }
+            }
+            return true;
+        }
+        public static bool isEmpExists(string name, string email, string phoneNumber)
+        {
+            DataTable data = EmpList();
+            for (int i = 0; i < data.Rows.Count; i++)
+            {
+                if (data.Rows[i][1].ToString() == name || data.Rows[i][2].ToString() == email || data.Rows[i][3].ToString() == phoneNumber)
+                {
+                    System.Windows.MessageBox.Show("Same info exists !!");
                     return false;
                 }
             }

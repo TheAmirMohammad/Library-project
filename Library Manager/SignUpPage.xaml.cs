@@ -28,7 +28,8 @@ namespace Library_Manager
             if (ValidateFields())
             {
                 Member NewMember = new Member(txtName.Text, txtPreNumber.Text + txtPhoneNumber.Text, txtEmail.Text, txtPassword.Password, Date.GetCurrentDate(), ImageFile);
-                if (DataBaseManager.isMemberExists(NewMember))
+                if (DataBaseManager.isMemberExists(NewMember.Name, NewMember.Email, NewMember.PhoneNumber)
+                    && DataBaseManager.isEmpExists(NewMember.Name, NewMember.Email, NewMember.PhoneNumber))
                 {
                     PayPanel PayPanelWindow = new PayPanel(NewMember);
                     NavigationService.Navigate(PayPanelWindow);
@@ -81,6 +82,11 @@ namespace Library_Manager
                     System.Windows.MessageBox.Show("Phone number must begin with 9! please provide a proper phone number.");
                     return false;
                 }
+                if (txtPhoneNumber.Text.Length != 10)
+                {
+                    System.Windows.MessageBox.Show("Phone number should be 10 digits! please provide a proper phone number.");
+                    return false;
+                }
             }
             //Check preNumber
             if (txtPreNumber.Text == "")
@@ -129,7 +135,7 @@ namespace Library_Manager
             if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 ImageFile = dlg.FileName;
-                System.Windows.MessageBox.Show(ImageFile);
+                //System.Windows.MessageBox.Show(ImageFile);
                 BitmapImage bitmap = new BitmapImage();
                 bitmap.BeginInit();
                 bitmap.UriSource = new Uri(ImageFile);
