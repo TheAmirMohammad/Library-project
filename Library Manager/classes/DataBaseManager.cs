@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Threading;
 
 namespace Library_Manager
 {
@@ -11,13 +12,6 @@ namespace Library_Manager
         static string command;
         static DataBaseManager()
         {
-
-        }
-        public static void Sample()
-        {
-            //command = "INSERT INTO TblTest  VALUES ('2', 'Amir');";
-            //SqlCommand com = new SqlCommand(command, con);
-            //com.BeginExecuteNonQuery();
         }
 
         public static bool isMemberExists(string name, string email, string phoneNumber)
@@ -27,7 +21,7 @@ namespace Library_Manager
             {
                 if (data.Rows[i][1].ToString() == name || data.Rows[i][2].ToString() == email || data.Rows[i][3].ToString() == phoneNumber)
                 {
-                    System.Windows.MessageBox.Show("Member con not be Added !\nSame info exists !!");
+                    System.Windows.MessageBox.Show("Same info exists !!");
                     return false;
                 }
             }
@@ -40,7 +34,7 @@ namespace Library_Manager
             {
                 if (data.Rows[i][1].ToString() == name || data.Rows[i][2].ToString() == email || data.Rows[i][3].ToString() == phoneNumber)
                 {
-                    System.Windows.MessageBox.Show("Employee con not be Added !\nSame info exists !!");
+                    System.Windows.MessageBox.Show("Same info exists !!");
                     return false;
                 }
             }
@@ -52,11 +46,11 @@ namespace Library_Manager
             command = String.Format("INSERT INTO tblMembers (Name, Email, PhoneNumber, Password, SignDate, SubscriptionDate, ImageFileName) VALUES ('{0}','{1}','{2}','{3}','{4}','{5}', '{6}');", MemberToAdd.Name, MemberToAdd.Email, MemberToAdd.PhoneNumber, MemberToAdd.Password, Date.DateToDateTime(MemberToAdd.SignDate).ToString(), Date.DateToDateTime(MemberToAdd.ExtensionDate).ToString(), MemberToAdd.ImageFileName);
             SqlCommand com = new SqlCommand(command, con);
             com.BeginExecuteNonQuery();
+            Thread.Sleep(1000);
             con.Close();
         }
         public static DataTable MemberList()
         {
-            con.Open();
             command = "SELECT * from tblMembers";
             SqlDataAdapter adapter = new SqlDataAdapter(command, con);
             DataTable table = new DataTable();
@@ -103,6 +97,7 @@ namespace Library_Manager
             command = String.Format("INSERT INTO tblBooks (Name, Author, Genre, PrintNumber, Count) VALUES ('{0}','{1}','{2}','{3}','{4}');", BookToAdd.Name, BookToAdd.Author, BookToAdd.Genre, BookToAdd.PrintNumber, BookToAdd.Count);
             SqlCommand com = new SqlCommand(command, con);
             com.BeginExecuteNonQuery();
+            Thread.Sleep(1000);
             con.Close();
         }
         public static void AddEmployee(Employee EmployeeToAdd)
@@ -111,6 +106,7 @@ namespace Library_Manager
             command = String.Format("INSERT INTO tblEmployees (Name, Email, PhoneNumber, Password, Salary, ImageFileName, Balance) VALUES ('{0}','{1}','{2}','{3}','{4}','{5}','{6}');", EmployeeToAdd.Name, EmployeeToAdd.Email, EmployeeToAdd.PhoneNumber, EmployeeToAdd.Password, EmployeeToAdd.Salary, EmployeeToAdd.ImageFileName, EmployeeToAdd.Balance);
             SqlCommand com = new SqlCommand(command, con);
             com.BeginExecuteNonQuery();
+            Thread.Sleep(1000);
             con.Close();
         }
         public static void DeleteEmployee(string Name)
@@ -119,6 +115,7 @@ namespace Library_Manager
             command = String.Format("DELETE FROM tblBooks WHERE Name='{0}'", Name);
             SqlCommand com = new SqlCommand(command, con);
             com.BeginExecuteNonQuery();
+            Thread.Sleep(1000);
             con.Close();
         }
         public static int Payment()
@@ -148,6 +145,7 @@ namespace Library_Manager
                 SqlCommand com = new SqlCommand(command, con);
                 com.BeginExecuteNonQuery();
             }
+            Thread.Sleep(1000);
             con.Close();
         }
     }

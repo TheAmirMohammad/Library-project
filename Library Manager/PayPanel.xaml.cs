@@ -16,8 +16,8 @@ namespace Library_Manager
 
         public PayPanel(Member MemberToAdd)
         {
-            NewMember = MemberToAdd;
             InitializeComponent();
+            NewMember = MemberToAdd;
         }
 
         private void PayButton_Click(object sender, RoutedEventArgs e)

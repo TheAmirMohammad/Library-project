@@ -33,6 +33,7 @@
             <TextBlock x:Name="lblWelcome"
                        Style="{StaticResource MaterialDesignHeadline4TextBlock}"
                        Text="Welcome Back"
+                       FontSize="50"
                        Grid.Row="0"
                        HorizontalAlignment="Center"
                        VerticalAlignment="Center"
@@ -41,6 +42,7 @@
             <StackPanel Orientation="Vertical" VerticalAlignment="Bottom" Grid.Row="1">
                 <TextBox x:Name="txtEmail"
                          materialDesign:HintAssist.Hint="Email"
+                         FontSize="20"
                          Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
                          />
             </StackPanel>
@@ -48,6 +50,7 @@
             <StackPanel Orientation="Vertical" VerticalAlignment="Top" Grid.Row="2">
                 <PasswordBox
                     x:Name="txtPassword"
+                    FontSize="20"
                     materialDesign:HintAssist.Hint="Password"
                     materialDesign:TextFieldAssist.HasClearButton="True"
                     materialDesign:HintAssist.HelperText="At least 8 characters"
@@ -66,9 +69,10 @@
                 <Button
                 x:Name="btnLogin"
                 Content="Log In"
+                    FontSize="20"
+                    Height="35"
                 Style="{StaticResource MaterialDesignRaisedButton}"
-                Width="{StaticResource ButtonWidth}"
-                ToolTip="Resource name: MaterialDesignRaisedButton"
+                Width="250"
                 Click="login_btn"/>
             </StackPanel>
 

@@ -26,6 +26,7 @@ namespace Library_Manager
                 if (DataBaseManager.isEmployeeExists(NewEmployee.Name, NewEmployee.Email, NewEmployee.PhoneNumber))
                 {
                     DataBaseManager.AddEmployee(NewEmployee);
+                    NavigationService.Navigate(new Pages.Universal.employees());
                 }
             }
         }

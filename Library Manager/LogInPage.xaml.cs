@@ -24,47 +24,59 @@ namespace Library_Manager
             DataTable empData = DataBaseManager.EmpList();
             DataTable memData = DataBaseManager.MemberList();
 
-            string email = txtEmail.Text;
+            string email = txtEmail.Text.ToLower();
             string pass = txtPassword.Password;
+            bool isMatch = false;
 
             if (email == "Admin" && pass == "AdminLib123")
             {
                 var admin = new AdminPanel();
                 admin.Show();
+                isMatch = true;
                 MainWindow main = Application.Current.MainWindow as MainWindow;
                 if (main != null)
                 {
                     main.Close();
                 }
             }
-
-            for (int i = 0; i < empData.Rows.Count; i++)
+            if (!isMatch)
             {
-                if (empData.Rows[i][2].ToString() == email && empData.Rows[i][4].ToString() == pass)
+                for (int i = 0; i < empData.Rows.Count; i++)
                 {
-                    var emp = new EmployeePanel(new Employee());
-                    emp.Show();
-                    MainWindow main = Application.Current.MainWindow as MainWindow;
-                    if (main != null)
+                    if (empData.Rows[i][2].ToString().ToLower() == email && empData.Rows[i][4].ToString() == pass)
                     {
-                        main.Close();
+                        var emp = new EmployeePanel(new Employee());
+                        emp.Show();
+                        isMatch = true;
+                        MainWindow main = Application.Current.MainWindow as MainWindow;
+                        if (main != null)
+                        {
+                            main.Close();
+                        }
+                    }
+                }
+                if (!isMatch)
+                {
+                    for (int i = 0; i < memData.Rows.Count; i++)
+                    {
+                        if (memData.Rows[i][2].ToString().ToLower() == email && memData.Rows[i][4].ToString() == pass)
+                        {
+                            var emp = new MemberPanel(new Member(memData.Rows[i][1].ToString(), memData.Rows[i][3].ToString()
+                                             , memData.Rows[i][2].ToString(), memData.Rows[i][4].ToString(), new Date(2000, 2, 3), memData.Rows[i][6].ToString()));
+                            emp.Show();
+                            isMatch = true;
+                            MainWindow main = Application.Current.MainWindow as MainWindow;
+                            if (main != null)
+                            {
+                                main.Close();
+                            }
+                        }
                     }
                 }
             }
-
-            for (int i = 0; i < memData.Rows.Count; i++)
+            if (!isMatch)
             {
-                if (memData.Rows[i][2].ToString() == email && memData.Rows[i][4].ToString() == pass)
-                {
-                    var emp = new MemberPanel(new Member(memData.Rows[i][1].ToString(), memData.Rows[i][3].ToString()
-                                     , memData.Rows[i][2].ToString(), memData.Rows[i][4].ToString(), new Date(2000, 2, 3), memData.Rows[i][6].ToString()));
-                    emp.Show();
-                    MainWindow main = Application.Current.MainWindow as MainWindow;
-                    if (main != null)
-                    {
-                        main.Close();
-                    }
-                }
+                MessageBox.Show("This combination of email and password does not exist !!");
             }
         }
     }

@@ -24,7 +24,7 @@
     <Grid Background="White">
         <Grid Margin="20 ,0">
             <Grid.RowDefinitions>
-                <RowDefinition Height="0.75*"/>
+                <RowDefinition Height="1*"/>
                 <RowDefinition Height="1.6*"/>
                 <RowDefinition Height="0.75*"/>
                 <RowDefinition Height="0.75*"/>
@@ -37,19 +37,20 @@
             <TextBlock Text="Hello, There !"
                        HorizontalAlignment="Center"
                        VerticalAlignment="Center"
+                       FontSize="40"
                        Style="{StaticResource MaterialDesignHeadline4TextBlock}"
                        />
 
-            <StackPanel Grid.Row="1" Width="110" Margin="5">
-                <Grid  Background="#eceff1" Height="80">
+            <StackPanel Grid.Row="1" Width="150" Margin="5"  HorizontalAlignment="Center" VerticalAlignment="Bottom">
+                <Grid  Background="#eceff1" Height="90">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="2*"/>
                         <RowDefinition Height="1*"/>
                     </Grid.RowDefinitions>
                     <materialDesign:ColorZone Mode="PrimaryLight" VerticalAlignment="Stretch">
-                        <Image x:Name="ProfileImage" Source="/Assets/Profile Default.png" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+                        <Image x:Name="ProfileImage" Width="150" Source="/Assets/Profile Default.png" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
                     </materialDesign:ColorZone>
-                    <Button Grid.Row="1" Style="{StaticResource MaterialDesignFlatButton}" ToolTip="MaterialDesignFlatButton" Content="Choose File" Height="30" Click="ChooseFileButton_Click" />
+                    <Button Grid.Row="1" Style="{StaticResource MaterialDesignFlatButton}" Content="Choose File" Width="150" Height="30" Click="ChooseFileButton_Click" />
                 </Grid>
             </StackPanel>
 
@@ -57,14 +58,17 @@
                         VerticalAlignment="Top"
                         Grid.Row="2"
                         >
-                <TextBox x:Name="txtName" materialDesign:HintAssist.Hint="Name" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                <TextBox x:Name="txtName"
+                         FontSize="18"
+                         materialDesign:HintAssist.Hint="Name"
+                         Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
             </StackPanel>
 
             <StackPanel Orientation="Vertical"
                         VerticalAlignment="Top"
                         Grid.Row="3"
                         >
-                <TextBox x:Name="txtEmail" materialDesign:HintAssist.Hint="Email" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                <TextBox x:Name="txtEmail" FontSize="18" materialDesign:HintAssist.Hint="Email" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
             </StackPanel>
 
             <StackPanel VerticalAlignment="Top" Grid.Row="4">
@@ -73,8 +77,8 @@
                         <ColumnDefinition Width="auto"/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    <TextBox Text="98" x:Name="txtPreNumber" VerticalAlignment="Center" materialDesign:TextFieldAssist.PrefixText="+" Margin="0 11.25 0 0"/>
-                    <TextBox Grid.Column="1" x:Name="txtPhoneNumber" materialDesign:HintAssist.Hint="Phone Number" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="10 0 0 0"/>
+                    <TextBox Text="98" FontSize="18" x:Name="txtPreNumber" VerticalAlignment="Center" materialDesign:TextFieldAssist.PrefixText="+" Margin="0 11.25 0 0"/>
+                    <TextBox Grid.Column="1" FontSize="18" x:Name="txtPhoneNumber" materialDesign:HintAssist.Hint="Phone Number" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="10 0 0 0"/>
                 </Grid>
 
             </StackPanel>
@@ -85,13 +89,17 @@
                         >
                 <PasswordBox
                     x:Name="txtPassword"
+                    FontSize="18"
                     materialDesign:HintAssist.Hint="Password"
                     materialDesign:TextFieldAssist.HasClearButton="True"
                     materialDesign:HintAssist.HelperText="At least 8 characters"
                     Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"/>
             </StackPanel>
 
-            <Button x:Name="signup" Content="Sign Up" Grid.Row="6" HorizontalAlignment="Center" Width="{StaticResource ButtonWidth}" Click="sigh_up_btn"/>
+            <Button x:Name="signup" Content="Sign Up" Grid.Row="6" HorizontalAlignment="Center" Width="250" Click="sigh_up_btn"
+                    FontSize="20"
+                    Height="30"
+                    />
             <TextBlock Grid.Row="8" HorizontalAlignment="Center" VerticalAlignment="Top" Style="{StaticResource MaterialDesignCaptionTextBlock}" Foreground="BlueViolet">
                 <Hyperlink x:Name="account" Click="account_btn">Already have an account ?</Hyperlink>
             </TextBlock>

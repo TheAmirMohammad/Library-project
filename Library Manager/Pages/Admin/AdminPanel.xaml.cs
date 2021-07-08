@@ -11,7 +11,6 @@ namespace Library_Manager
         {
             InitializeComponent();
             adminFrame.Content = new Pages.Universal.Home("Admin");
-            DataBaseManager.Sample();
         }
 
         private void exit(object sender, RoutedEventArgs e)

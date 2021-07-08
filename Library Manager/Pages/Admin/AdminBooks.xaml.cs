@@ -22,13 +22,7 @@ namespace Library_Manager.Pages.Admin
 
         private void AddBookButton_Click(object sender, RoutedEventArgs e)
         {
-            AdminPanel NewAdminPanel = new AdminPanel();
-            //NewAdminPanel.AdminPanelAddBookSetting();
-            NewAdminPanel.Show();
-            if (StartWindow != null)
-            {
-                StartWindow.Close();
-            }
+            NavigationService.Navigate(new Pages.Universal.AddBookPage());
         }
     }
 }

@@ -35,6 +35,16 @@
                 <ListBoxItem Content="Late Account Members" />
             </ListBox>
         </StackPanel>
-        <ListView Grid.Row="2"/>
+        <ListView x:Name="membersList" Grid.Row="2" Margin="10 0">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}"/>
+                    <GridViewColumn Header="Email" Width="200"  DisplayMemberBinding="{Binding Name}"/>
+                    <GridViewColumn Header="Phone Number" Width="160" DisplayMemberBinding="{Binding Name}"/>
+                    <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}"/>
+                    <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
 </Page>
