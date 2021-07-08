@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Threading;
@@ -7,7 +8,7 @@ namespace Library_Manager
 {
     public class DataBaseManager
     {
-        static SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\lenovo\Desktop\works\darC\AP\Project\Library-project\Library Manager\DataBase\LibraryDataBase.mdf;Integrated Security=True;Connect Timeout=30");
+        static SqlConnection con = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename=E:\University\Term 4\AP\Programming\Project\Library-project\Library-project\Library Manager\DataBase\LibraryDataBase.mdf;Integrated Security = True; Connect Timeout = 30");
 
         static string command;
         static DataBaseManager()
@@ -94,7 +95,7 @@ namespace Library_Manager
         public static void AddBook(Book BookToAdd)
         {
             con.Open();
-            command = String.Format("INSERT INTO tblBooks (Name, Author, Genre, PrintNumber, Count) VALUES ('{0}','{1}','{2}','{3}','{4}');", BookToAdd.Name, BookToAdd.Author, BookToAdd.Genre, BookToAdd.PrintNumber, BookToAdd.Count);
+            command = String.Format("INSERT INTO tblBooks (BookName, Author, Genre, PrintNumber, Count) VALUES ('{0}','{1}','{2}','{3}','{4}');", BookToAdd.Name, BookToAdd.Author, BookToAdd.Genre, BookToAdd.PrintNumber, BookToAdd.Count);
             SqlCommand com = new SqlCommand(command, con);
             com.BeginExecuteNonQuery();
             Thread.Sleep(1000);
@@ -112,7 +113,7 @@ namespace Library_Manager
         public static void DeleteEmployee(string Name)
         {
             con.Open();
-            command = String.Format("DELETE FROM tblBooks WHERE Name='{0}'", Name);
+            command = String.Format("DELETE FROM tblBooks WHERE BookName='{0}'", Name);
             SqlCommand com = new SqlCommand(command, con);
             com.BeginExecuteNonQuery();
             Thread.Sleep(1000);
@@ -147,6 +148,18 @@ namespace Library_Manager
             }
             Thread.Sleep(1000);
             con.Close();
+        }
+        public static List<Member> GetLateReturnMembers()
+        {
+            List<Member> MemberList = new List<Member>();
+            con.Open();
+            command = "SELECT * from tblLibraryManager";
+            SqlDataAdapter adapter = new SqlDataAdapter(command, con);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            /// Late Ha ro berizim to Memberlist
+            con.Close();
+            return MemberList;
         }
     }
 }
