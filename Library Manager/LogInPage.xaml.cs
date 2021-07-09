@@ -28,7 +28,7 @@ namespace Library_Manager
             string pass = txtPassword.Password;
             bool isMatch = false;
 
-            if (email == "Admin" && pass == "AdminLib123")
+            if (email == "admin" && pass == "AdminLib123")
             {
                 var admin = new AdminPanel();
                 admin.Show();

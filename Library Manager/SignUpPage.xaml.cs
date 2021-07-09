@@ -50,6 +50,7 @@ namespace Library_Manager
             {
                 if (txtName.Text.Length < 3 || txtName.Text.Length > 32)
                 {
+                    
                     System.Windows.MessageBox.Show("Name length must be from 3 to 32! please provide a proper name.");
                     return false;
                 }

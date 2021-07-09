@@ -12,11 +12,14 @@ namespace Library_Manager
         string author;
         int count;
         string genre;
+        int id;
         public string Name { get => name; set => name = value; }
         public string PrintNumber { get => printNumber; set => printNumber = value; }
         public string Author { get => author; set => author = value; }
         public int Count { get => count; set => count = value; }
         public string Genre { get => genre; set => genre = value; }
+        public int Id { get => id; set => id = value; }
+
         public Book()
         {
 

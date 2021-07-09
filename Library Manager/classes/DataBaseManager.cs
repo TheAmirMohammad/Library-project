@@ -9,7 +9,7 @@ namespace Library_Manager
     public class DataBaseManager
     {
         static SqlConnection con = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename=E:\University\Term 4\AP\Programming\Project\Library-project\Library-project\Library Manager\DataBase\LibraryDataBase.mdf;Integrated Security = True; Connect Timeout = 30");
-
+        static SqlConnection con2 = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename=E:\University\Term 4\AP\Programming\Project\Library-project\Library-project\Library Manager\DataBase\LibraryDataBase.mdf;Integrated Security = True; Connect Timeout = 30");
         static string command;
         static DataBaseManager()
         {
@@ -160,6 +160,99 @@ namespace Library_Manager
             /// Late Ha ro berizim to Memberlist
             con.Close();
             return MemberList;
+        }
+        public static int GetMemberId(string Name)
+        {
+            con.Open();
+            command = String.Format("SELECT * from tblMembers WHERE Name='{0}'",Name);
+            SqlDataAdapter adapter = new SqlDataAdapter(command, con);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            con.Close();
+            return int.Parse(table.Rows[0][0].ToString());
+        }
+        public static int GetBookId(string Name)
+        {
+            con.Open();
+            command = String.Format("SELECT * from tblBooks WHERE Name='{0}'", Name);
+            SqlDataAdapter adapter = new SqlDataAdapter(command, con);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            con.Close();
+            return int.Parse(table.Rows[0][0].ToString());
+        }
+        public static int CountBorrowedBooks(int Id)
+        {
+            command = String.Format("SELECT COUNT (Id) from tblLibraryManagment WHERE MemberID='{0}'", Id);
+            SqlDataAdapter adapter = new SqlDataAdapter(command, con);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            return int.Parse(table.Rows[0][0].ToString());
+        }
+        public static int CountBook(int Id)
+        {
+            command = String.Format("SELECT * from tblBooks WHERE Id='{0}'", Id);
+            SqlDataAdapter adapter = new SqlDataAdapter(command, con);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            return int.Parse(table.Rows[0][5].ToString());
+        }
+        public static bool IsAllowedToBorrow(int BookId, int MemberId)
+        {
+            con.Open();
+            int Count;
+            if (CountBorrowedBooks(MemberId) < 5)
+            {
+                if (CountBook(BookId) > 0)
+                {
+                    
+                    command = String.Format("SELECT COUNT (Id) from tblLibraryManagment WHERE MemberID='{0}' AND BookId='{1}'", MemberId, BookId);
+                    SqlDataAdapter adapter = new SqlDataAdapter(command, con);
+                    DataTable table = new DataTable();
+                    adapter.Fill(table);
+                    Count = int.Parse(table.Rows[0][0].ToString());
+                    if (Count != 0)
+                    {
+                        con.Close();
+                        return false;
+                    }
+                    con.Close();
+                    return true;
+                }
+                con.Close();
+                return false;
+            }
+            con.Close();
+            return false;
+        } 
+        public static void InsertToLibraryManagment(int BookId, int MemberId)
+        {
+            con.Open();
+            command = String.Format("INSERT INTO tblLibraryManagment (MemberId, BookId) VALUES ('{0}','{1}');", MemberId, BookId);
+            SqlCommand com = new SqlCommand(command, con);
+            com.BeginExecuteNonQuery();
+            con.Close();
+        }
+        public static void CountUpdate(int BookId)
+        {
+            con2.Open();
+            //int newCount = CountBook(BookId) - 1;
+            //Thread.Sleep(1000);
+            command = String.Format("UPDATE tblBooks SET Count = Count - 1 WHERE Id = '{0}'", BookId);
+            SqlCommand com = new SqlCommand(command, con2);
+            com.BeginExecuteNonQuery();
+            Thread.Sleep(1000);
+            con2.Close();
+        }
+        public static bool BorrowBook(int BookId, int MemberId)
+        {
+            if (IsAllowedToBorrow(BookId,MemberId))
+            {
+                InsertToLibraryManagment(BookId, MemberId);
+                CountUpdate(BookId);
+                return true;
+            }
+            return false;
         }
     }
 }

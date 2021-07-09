@@ -11,6 +11,7 @@ namespace Library_Manager
         {
             InitializeComponent();
             adminFrame.Content = new Pages.Universal.Home("Admin");
+            DataBaseManager.BorrowBook(1, 1);
         }
 
         private void exit(object sender, RoutedEventArgs e)
