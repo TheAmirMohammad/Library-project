@@ -8,8 +8,7 @@ namespace Library_Manager
 {
     public class DataBaseManager
     {
-        static SqlConnection con = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename=E:\University\Term 4\AP\Programming\Project\Library-project\Library-project\Library Manager\DataBase\LibraryDataBase.mdf;Integrated Security = True; Connect Timeout = 30");
-        static SqlConnection con2 = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename=E:\University\Term 4\AP\Programming\Project\Library-project\Library-project\Library Manager\DataBase\LibraryDataBase.mdf;Integrated Security = True; Connect Timeout = 30");
+        static SqlConnection con = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename=E:\University\Term 4\AP\Programming\Project\Library-project\Library-project\Library Manager\DataBase\LibraryDataBase.mdf;Integrated Security = True; Connect Timeout = 30;MultipleActiveResultSets=True");
         static string command;
         static DataBaseManager()
         {
@@ -44,7 +43,7 @@ namespace Library_Manager
         public static void AddMember(Member MemberToAdd)
         {
             con.Open();
-            command = String.Format("INSERT INTO tblMembers (Name, Email, PhoneNumber, Password, SignDate, SubscriptionDate, ImageFileName) VALUES ('{0}','{1}','{2}','{3}','{4}','{5}', '{6}');", MemberToAdd.Name, MemberToAdd.Email, MemberToAdd.PhoneNumber, MemberToAdd.Password, Date.DateToDateTime(MemberToAdd.SignDate).ToString(), Date.DateToDateTime(MemberToAdd.ExtensionDate).ToString(), MemberToAdd.ImageFileName);
+            command = String.Format("INSERT INTO tblMembers (Name, Email, PhoneNumber, Password, SignDate, SubscriptionDate, ImageFileName, Balnce) VALUES ('{0}','{1}','{2}','{3}','{4}','{5}', '{6}', '{7}');", MemberToAdd.Name, MemberToAdd.Email, MemberToAdd.PhoneNumber, MemberToAdd.Password, Date.DateToDateTime(MemberToAdd.SignDate).ToString(), Date.DateToDateTime(MemberToAdd.ExtensionDate).ToString(), MemberToAdd.ImageFileName, 0);
             SqlCommand com = new SqlCommand(command, con);
             com.BeginExecuteNonQuery();
             Thread.Sleep(1000);
@@ -149,7 +148,7 @@ namespace Library_Manager
             Thread.Sleep(1000);
             con.Close();
         }
-        public static List<Member> GetLateReturnMembers()
+        public static List<Member> GetLateSubscriptionMembers()
         {
             List<Member> MemberList = new List<Member>();
             con.Open();
@@ -157,7 +156,31 @@ namespace Library_Manager
             SqlDataAdapter adapter = new SqlDataAdapter(command, con);
             DataTable table = new DataTable();
             adapter.Fill(table);
-            /// Late Ha ro berizim to Memberlist
+            for (int i = 0; i < table.Rows.Count; i++)
+            {
+                if (isLate(DateTime.Parse(table.Rows[i][6].ToString())))
+                {
+                    MemberList.Add(new Member(table.Rows[i][1].ToString(), table.Rows[i][3].ToString(), table.Rows[i][2].ToString(), table.Rows[i][4].ToString(), Date.DateTimeToDate(DateTime.Parse(table.Rows[i][5].ToString())),table.Rows[i][7].ToString()));
+                }
+            }
+            con.Close();
+            return MemberList;
+        }
+        public static List<Member> GetLateReturnnMembers()
+        {
+            List<Member> MemberList = new List<Member>();
+            con.Open();
+            command = "SELECT tblMembers.Id, tblMembers.Name,tblMembers.Email,tblMembers.PhoneNumber, tblMembers.Password,tblMembers.SignDate, tblMembers.SubscriptionDate, tblMembers.ImageFileName ,tblMembers.Balance FROM tblLibraryManagment INNER JOIN tblBooks ON tblLibraryManagment.BookID = tblBooks.Id INNER JOIN tblMembers ON tblLibraryManagment.MemberID = tblMembers.Id;";
+            SqlDataAdapter adapter = new SqlDataAdapter(command, con);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            for (int i = 0; i < table.Rows.Count; i++)
+            {
+                if (isLate(DateTime.Parse(table.Rows[i][6].ToString())))
+                {
+                    MemberList.Add(new Member(table.Rows[i][1].ToString(), table.Rows[i][3].ToString(), table.Rows[i][2].ToString(), table.Rows[i][4].ToString(), Date.DateTimeToDate(DateTime.Parse(table.Rows[i][5].ToString())), table.Rows[i][7].ToString(), int.Parse(table.Rows[i][8].ToString())));
+                }
+            }
             con.Close();
             return MemberList;
         }
@@ -235,14 +258,12 @@ namespace Library_Manager
         }
         public static void CountUpdate(int BookId)
         {
-            con2.Open();
-            //int newCount = CountBook(BookId) - 1;
-            //Thread.Sleep(1000);
+            con.Open();
             command = String.Format("UPDATE tblBooks SET Count = Count - 1 WHERE Id = '{0}'", BookId);
-            SqlCommand com = new SqlCommand(command, con2);
+            SqlCommand com = new SqlCommand(command, con);
             com.BeginExecuteNonQuery();
             Thread.Sleep(1000);
-            con2.Close();
+            con.Close();
         }
         public static bool BorrowBook(int BookId, int MemberId)
         {
@@ -253,6 +274,56 @@ namespace Library_Manager
                 return true;
             }
             return false;
+        }
+        public static void ReturnBook(int BookId)
+        {
+            bool flag = true; 
+            con.Open();
+            command = String.Format("SELECT MemberId, EndDate FROM, tblMembers.Balance tblLibraryManagment INNER JOIN tblMembers ON tblLibraryManagment.MemberID = tblMembers.Id WHERE BookId = '{0}';", BookId);
+            SqlDataAdapter adapter = new SqlDataAdapter(command, con);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            for (int i = 0; i < table.Rows.Count; i++)
+            {
+                if (isLate(DateTime.Parse(table.Rows[i][1].ToString())))
+                {
+                    if (int.Parse(table.Rows[i][2].ToString()) < 20000)
+                    {
+                        flag = false;
+                    }
+                }
+            }
+            if (flag)
+            {
+                command = String.Format("DELETE FROM tblLibraryManagment WHERE BookId = '{0}'", BookId);
+                SqlCommand com1 = new SqlCommand(command, con);
+                com1.BeginExecuteNonQuery();
+
+                command = String.Format("UPDATE tblBooks SET Count = Count + 1 WHERE Id = '{0}'", BookId);
+                SqlCommand com2 = new SqlCommand(command, con);
+                com2.BeginExecuteNonQuery();
+            }
+            con.Close();
+        }
+        public static void AddBalanceMember(string BookName, int Amount)
+        {
+            con.Open();
+            command = String.Format("UPDATE tblBooks SET Count = Count + {0} WHERE BookName = '{1}'",Amount, BookName);
+            SqlCommand com = new SqlCommand(command, con);
+            com.BeginExecuteNonQuery();
+            Thread.Sleep(1000);
+            con.Close();
+        }
+        public static bool isLate(DateTime End)
+        {
+            if (DateTime.Compare(End,DateTime.Now) < 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
