@@ -8,7 +8,7 @@ namespace Library_Manager
 {
     public class DataBaseManager
     {
-        static SqlConnection con = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename=E:\University\Term 4\AP\Programming\Project\Library-project\Library-project\Library Manager\DataBase\LibraryDataBase.mdf;Integrated Security = True; Connect Timeout = 30;MultipleActiveResultSets=True");
+        static SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\lenovo\Desktop\works\darC\AP\Project\Library-project\Library Manager\DataBase\LibraryDataBase.mdf;Integrated Security=True;Connect Timeout=30;MultipleActiveResultSets=True");
         static string command;
         static DataBaseManager()
         {
@@ -43,7 +43,7 @@ namespace Library_Manager
         public static void AddMember(Member MemberToAdd)
         {
             con.Open();
-            command = String.Format("INSERT INTO tblMembers (Name, Email, PhoneNumber, Password, SignDate, SubscriptionDate, ImageFileName, Balnce) VALUES ('{0}','{1}','{2}','{3}','{4}','{5}', '{6}', '{7}');", MemberToAdd.Name, MemberToAdd.Email, MemberToAdd.PhoneNumber, MemberToAdd.Password, Date.DateToDateTime(MemberToAdd.SignDate).ToString(), Date.DateToDateTime(MemberToAdd.ExtensionDate).ToString(), MemberToAdd.ImageFileName, 0);
+            command = String.Format("INSERT INTO tblMembers (Name, Email, PhoneNumber, Password, SignDate, SubscriptionDate, ImageFileName, Balance) VALUES ('{0}','{1}','{2}','{3}','{4}','{5}', '{6}', '{7}');", MemberToAdd.Name, MemberToAdd.Email, MemberToAdd.PhoneNumber, MemberToAdd.Password, Date.DateToDateTime(MemberToAdd.SignDate).ToString(), Date.DateToDateTime(MemberToAdd.ExtensionDate).ToString(), MemberToAdd.ImageFileName, 0);
             SqlCommand com = new SqlCommand(command, con);
             com.BeginExecuteNonQuery();
             Thread.Sleep(1000);
@@ -112,7 +112,22 @@ namespace Library_Manager
         public static void DeleteEmployee(string Name)
         {
             con.Open();
-            command = String.Format("DELETE FROM tblBooks WHERE BookName='{0}'", Name);
+            command = String.Format("DELETE FROM tblEmployee WHERE Name='{0}'", Name);
+            SqlCommand com = new SqlCommand(command, con);
+            com.BeginExecuteNonQuery();
+            Thread.Sleep(1000);
+            con.Close();
+        }
+        public static void DeleteMember(string Name)
+        {
+            int id = GetMemberId(Name);
+            DataTable data = MyBooks(id);
+            for (int i = 0; i < data.Rows.Count; i++)
+            {
+                ReturnBook(int.Parse(data.Rows[i][1].ToString()));
+            }
+            con.Open();
+            command = String.Format("DELETE FROM tblMember WHERE Name='{0}'", Name);
             SqlCommand com = new SqlCommand(command, con);
             com.BeginExecuteNonQuery();
             Thread.Sleep(1000);
@@ -160,7 +175,7 @@ namespace Library_Manager
             {
                 if (isLate(DateTime.Parse(table.Rows[i][6].ToString())))
                 {
-                    MemberList.Add(new Member(table.Rows[i][1].ToString(), table.Rows[i][3].ToString(), table.Rows[i][2].ToString(), table.Rows[i][4].ToString(), Date.DateTimeToDate(DateTime.Parse(table.Rows[i][5].ToString())),table.Rows[i][7].ToString()));
+                    MemberList.Add(new Member(table.Rows[i][1].ToString(), table.Rows[i][3].ToString(), table.Rows[i][2].ToString(), table.Rows[i][4].ToString(), Date.DateTimeToDate(DateTime.Parse(table.Rows[i][5].ToString())), table.Rows[i][7].ToString()));
                 }
             }
             con.Close();
@@ -187,7 +202,7 @@ namespace Library_Manager
         public static int GetMemberId(string Name)
         {
             con.Open();
-            command = String.Format("SELECT * from tblMembers WHERE Name='{0}'",Name);
+            command = String.Format("SELECT * from tblMembers WHERE Name='{0}'", Name);
             SqlDataAdapter adapter = new SqlDataAdapter(command, con);
             DataTable table = new DataTable();
             adapter.Fill(table);
@@ -228,7 +243,7 @@ namespace Library_Manager
             {
                 if (CountBook(BookId) > 0)
                 {
-                    
+
                     command = String.Format("SELECT COUNT (Id) from tblLibraryManagment WHERE MemberID='{0}' AND BookId='{1}'", MemberId, BookId);
                     SqlDataAdapter adapter = new SqlDataAdapter(command, con);
                     DataTable table = new DataTable();
@@ -247,7 +262,7 @@ namespace Library_Manager
             }
             con.Close();
             return false;
-        } 
+        }
         public static void InsertToLibraryManagment(int BookId, int MemberId)
         {
             con.Open();
@@ -255,6 +270,24 @@ namespace Library_Manager
             SqlCommand com = new SqlCommand(command, con);
             com.BeginExecuteNonQuery();
             con.Close();
+        }
+        public static DataTable MyBooks(int memberId)
+        {
+            con.Open();
+            command = string.Format("SELECT * FROM tblLibraryManagment WHERE MemberID='{0}'", memberId);
+            SqlDataAdapter adapter = new SqlDataAdapter(command, con);
+            DataTable data = new DataTable();
+            adapter.Fill(data);
+            con.Close();
+            return data;
+        }
+        public static Book bookInfo(int id)
+        {
+            DataTable data = BookList();
+            for (int i = 0; i < data.Rows.Count; i++)
+                if (int.Parse(data.Rows[i][0].ToString()) == id)
+                    return new Book(data.Rows[i][1].ToString(), data.Rows[i][2].ToString(), data.Rows[i][3].ToString(), data.Rows[i][4].ToString(), int.Parse(data.Rows[i][5].ToString()));
+            return null;
         }
         public static void CountUpdate(int BookId)
         {
@@ -267,7 +300,7 @@ namespace Library_Manager
         }
         public static bool BorrowBook(int BookId, int MemberId)
         {
-            if (IsAllowedToBorrow(BookId,MemberId))
+            if (IsAllowedToBorrow(BookId, MemberId))
             {
                 InsertToLibraryManagment(BookId, MemberId);
                 CountUpdate(BookId);
@@ -277,7 +310,7 @@ namespace Library_Manager
         }
         public static void ReturnBook(int BookId)
         {
-            bool flag = true; 
+            bool flag = true;
             con.Open();
             command = String.Format("SELECT MemberId, EndDate FROM, tblMembers.Balance tblLibraryManagment INNER JOIN tblMembers ON tblLibraryManagment.MemberID = tblMembers.Id WHERE BookId = '{0}';", BookId);
             SqlDataAdapter adapter = new SqlDataAdapter(command, con);
@@ -308,7 +341,7 @@ namespace Library_Manager
         public static void AddBalanceMember(string BookName, int Amount)
         {
             con.Open();
-            command = String.Format("UPDATE tblBooks SET Count = Count + {0} WHERE BookName = '{1}'",Amount, BookName);
+            command = String.Format("UPDATE tblBooks SET Count = Count + {0} WHERE BookName = '{1}'", Amount, BookName);
             SqlCommand com = new SqlCommand(command, con);
             com.BeginExecuteNonQuery();
             Thread.Sleep(1000);
@@ -316,7 +349,7 @@ namespace Library_Manager
         }
         public static bool isLate(DateTime End)
         {
-            if (DateTime.Compare(End,DateTime.Now) < 0)
+            if (DateTime.Compare(End, DateTime.Now) < 0)
             {
                 return true;
             }

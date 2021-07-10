@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Library_Manager
+﻿namespace Library_Manager
 {
     public class User
     {
@@ -19,11 +14,17 @@ namespace Library_Manager
         {
 
         }
-        public User(string name, string phonenumber, string email, string password)
+        public User(string name, string email, string phonenumber, string password)
         {
             this.Name = name;
             this.Email = email;
             this.Password = password;
+            this.PhoneNumber = phonenumber;
+        }
+        public User(string name, string email, string phonenumber)
+        {
+            this.Name = name;
+            this.Email = email;
             this.PhoneNumber = phonenumber;
         }
     }

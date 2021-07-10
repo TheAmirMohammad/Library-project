@@ -98,6 +98,7 @@
 
             <Button x:Name="signup" Content="Sign Up" Grid.Row="6" HorizontalAlignment="Center" Width="250" Click="sigh_up_btn"
                     FontSize="20"
+                    IsDefault="True"
                     Height="30"
                     />
             <TextBlock Grid.Row="8" HorizontalAlignment="Center" VerticalAlignment="Top" Style="{StaticResource MaterialDesignCaptionTextBlock}" Foreground="BlueViolet">

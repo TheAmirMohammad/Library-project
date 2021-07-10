@@ -19,7 +19,7 @@ namespace Library_Manager
         {
 
         }
-        public Employee(string name, string phonenumber, string email, string password, int salary, string imageFileName) : base(name, phonenumber, email, password)
+        public Employee(string name, string email, string phonenumber, string password, int salary, string imageFileName) : base(name, phonenumber, email, password)
         {
             Salary = salary;
             ImageFileName = imageFileName;

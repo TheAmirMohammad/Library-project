@@ -74,7 +74,7 @@
                                 <TextBox x:Name="txtCount" materialDesign:HintAssist.Hint="Count" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
                             </StackPanel>
 
-                            <Button x:Name="AddBook_btn" Content="Add" Grid.Row="6" HorizontalAlignment="Center" Width="200" Click="AddBookButton_Click"/>
+                            <Button x:Name="AddBook_btn" Content="Add" Grid.Row="6" HorizontalAlignment="Center" Width="200" Click="AddBookButton_Click" IsDefault="True"/>
                             
                         </Grid>
                     </Grid>

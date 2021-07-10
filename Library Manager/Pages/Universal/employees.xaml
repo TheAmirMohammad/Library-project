@@ -20,7 +20,7 @@
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*"/>
-                <RowDefinition/>
+                <RowDefinition Height="0.8*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1.5*"/>
@@ -45,6 +45,34 @@
                             </Button>
                         </StackPanel>
                         <Separator Margin="20 0"/>
+                        <StackPanel Orientation="Horizontal"
+                    Margin="10 0"
+                    VerticalAlignment="Bottom"
+                    Background="#F4F4F6"
+                    Grid.Row="2">
+                            <TextBlock Text="Name" Width="200" Margin="10" FontSize="15"/>
+                            <TextBlock Text="Email" Width="200" Margin="10" FontSize="15"/>
+                            <TextBlock Text="Phone Number" Margin="10" FontSize="15"/>
+                        </StackPanel>
+                        <Separator Margin="10 0" Grid.Row="2" VerticalAlignment="Bottom"/>
+                        <ScrollViewer Grid.Row="3">
+                            <ItemsControl ItemsSource="{Binding users, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="200"/>
+                                                <ColumnDefinition Width="200"/>
+                                                <ColumnDefinition Width="200"/>
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock Grid.Column="0" Text="{Binding Name}" Margin="20 10" FontSize="12"/>
+                                            <TextBlock Grid.Column="1" Text="{Binding Email}" Margin="40 10" FontSize="12"/>
+                                            <TextBlock Grid.Column="2" Text="{Binding PhoneNumber}" Margin="60 10" FontSize="12"/>
+                                        </Grid>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </ScrollViewer>
                         <ListView/>
                     </StackPanel>
                 </materialDesign:Card>

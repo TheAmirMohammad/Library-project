@@ -42,7 +42,7 @@ namespace Library_Manager
 
         private void mybooks_btn(object sender, RoutedEventArgs e)
         {
-            memberFrame.Content = new Pages.Member.MemberMyBook();
+            memberFrame.Content = new Pages.Member.MemberMyBook(member);
         }
 
         private void subs_btn(object sender, RoutedEventArgs e)

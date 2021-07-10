@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Library_Manager
+﻿namespace Library_Manager
 {
     public class Book
     {
@@ -24,12 +19,12 @@ namespace Library_Manager
         {
 
         }
-        public Book(string Name, string PrintNumber, string Author, string Gener, int Count)
+        public Book(string Name, string Author, string Gener, string PrintNumber, int Count)
         {
             this.Name = Name;
-            this.PrintNumber = PrintNumber;
             this.Author = Author;
             this.Genre = Gener;
+            this.PrintNumber = PrintNumber;
             this.Count = Count;
         }
     }

@@ -68,7 +68,8 @@
             <StackPanel Grid.Row="4" VerticalAlignment="Center">
                 <Button
                 x:Name="btnLogin"
-                Content="Log In"
+                    IsDefault="True"
+                    Content="Log In"
                     FontSize="20"
                     Height="35"
                 Style="{StaticResource MaterialDesignRaisedButton}"

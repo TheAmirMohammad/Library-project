@@ -22,6 +22,7 @@ namespace Library_Manager
 
         private void PayButton_Click(object sender, RoutedEventArgs e)
         {
+            //if (DataBaseManager.isMemberExists(NewMember.Name, NewMember.Email, NewMember.PhoneNumber))
             DataBaseManager.AddMember(NewMember);
         }
     }

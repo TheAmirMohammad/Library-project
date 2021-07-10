@@ -27,7 +27,7 @@ namespace Library_Manager
         {
             if (ValidateFields())
             {
-                Member NewMember = new Member(txtName.Text, txtPreNumber.Text + txtPhoneNumber.Text, txtEmail.Text, txtPassword.Password, Date.GetCurrentDate(), ImageFile);
+                Member NewMember = new Member(txtName.Text, txtEmail.Text, txtPreNumber.Text + txtPhoneNumber.Text, txtPassword.Password, Date.GetCurrentDate(), ImageFile);
                 if (DataBaseManager.isMemberExists(NewMember.Name, NewMember.Email, NewMember.PhoneNumber)
                     && DataBaseManager.isEmployeeExists(NewMember.Name, NewMember.Email, NewMember.PhoneNumber))
                 {

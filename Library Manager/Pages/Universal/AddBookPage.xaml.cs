@@ -19,7 +19,7 @@ namespace Library_Manager.Pages.Universal
         {
             if (ValidateFields())
             {
-                Book NewBook = new Book(txtBookName.Text, txtBookNumber.Text, txtAuthor.Text, txtGener.Text, int.Parse(txtCount.Text));
+                Book NewBook = new Book(txtBookName.Text, txtAuthor.Text, txtGener.Text, txtBookNumber.Text, int.Parse(txtCount.Text));
                 if (DataBaseManager.isBookExists(NewBook))
                 {
                     DataBaseManager.AddBook(NewBook);

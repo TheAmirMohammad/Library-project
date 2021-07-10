@@ -19,6 +19,7 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.20*"/>
+            <RowDefinition Height="0.10*"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <StackPanel VerticalAlignment="Center">
@@ -39,5 +40,39 @@
             <Separator Margin="20 0"/>
             <ListView Grid.Row="1"/>
         </StackPanel>
+        <StackPanel Orientation="Horizontal"
+                    Margin="10 0"
+                    VerticalAlignment="Bottom"
+                    Background="#F4F4F6"
+                    Grid.Row="1">
+            <TextBlock Text="Book Name" Width="120" Margin="10" FontSize="15"/>
+            <TextBlock Text="Author" Width="120" Margin="10" FontSize="15"/>
+            <TextBlock Text="Genre" Width="120" Margin="10" FontSize="15"/>
+            <TextBlock Text="Print Number" Width="150" Margin="10" FontSize="15"/>
+            <TextBlock Text="Count" Width="120" Margin="10" FontSize="15"/>
+        </StackPanel>
+        <Separator Margin="10 0" Grid.Row="1" VerticalAlignment="Bottom"/>
+        <ScrollViewer Grid.Row="2">
+            <ItemsControl ItemsSource="{Binding books, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Margin="20 0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="140"/>
+                                <ColumnDefinition Width="140"/>
+                                <ColumnDefinition Width="140"/>
+                                <ColumnDefinition Width="170"/>
+                                <ColumnDefinition Width="120"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Text="{Binding Name}" Margin="0 10" FontSize="12"/>
+                            <TextBlock Grid.Column="1" Text="{Binding Author}" Margin="0 10" FontSize="12"/>
+                            <TextBlock Grid.Column="2" Text="{Binding Genre}" Margin="0 10" FontSize="12"/>
+                            <TextBlock Grid.Column="3" Text="{Binding PrintNumber}" Margin="0 10" FontSize="12"/>
+                            <TextBlock Grid.Column="4" Text="{Binding Count}" Margin="0 10" FontSize="12"/>
+                        </Grid>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
     </Grid>
 </Page>
