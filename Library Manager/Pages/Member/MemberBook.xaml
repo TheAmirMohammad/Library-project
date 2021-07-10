@@ -19,8 +19,8 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.20*"/>
+            <RowDefinition Height="0.2*"/>
             <RowDefinition Height="1*"/>
-            <RowDefinition Height="0.4*"/>
         </Grid.RowDefinitions>
         <StackPanel VerticalAlignment="Center" Grid.ColumnSpan="2">
             <StackPanel Orientation="Horizontal">
@@ -28,7 +28,7 @@
             </StackPanel>
             <Separator Margin="20 0"/>
         </StackPanel>
-        <materialDesign:Card Grid.Row="1" Margin="10">
+        <materialDesign:Card Grid.Row="2" Margin="10">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="0.15*"/>
@@ -56,13 +56,17 @@
                                         <ColumnDefinition Width="140"/>
                                         <ColumnDefinition Width="140"/>
                                         <ColumnDefinition Width="170"/>
-                                        <ColumnDefinition Width="120"/>
+                                        <ColumnDefinition Width="60"/>
+                                        <ColumnDefinition/>
                                     </Grid.ColumnDefinitions>
                                     <TextBlock Grid.Column="0" Text="{Binding Name}" Margin="0 10" FontSize="12"/>
                                     <TextBlock Grid.Column="1" Text="{Binding Author}" Margin="0 10" FontSize="12"/>
                                     <TextBlock Grid.Column="2" Text="{Binding Genre}" Margin="0 10" FontSize="12"/>
                                     <TextBlock Grid.Column="3" Text="{Binding PrintNumber}" Margin="0 10" FontSize="12"/>
                                     <TextBlock Grid.Column="4" Text="{Binding Count}" Margin="0 10" FontSize="12"/>
+                                    <Button Grid.Column="5" Content="Borrow" Click="borrow_btn"
+                                            Width="150" HorizontalAlignment="Right"
+                                            />
                                 </Grid>
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
@@ -70,27 +74,27 @@
                 </ScrollViewer>
             </Grid>
         </materialDesign:Card>
-        <materialDesign:Card Grid.Row="3" Margin="10 0" VerticalAlignment="Center">
+        <materialDesign:Card Grid.Row="1" Margin="10 0" VerticalAlignment="Center">
             <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
-                    <TextBox materialDesign:HintAssist.Hint="Search" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Center" Margin="10 5 0 0" Width="200"/>
-                    <Button Style="{StaticResource MaterialDesignIconButton}" ToolTip="MaterialDesignIconButton" Margin="0 10 0 0" Padding="0" Width="30" Height="30">
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                    <TextBox x:Name="txtSearch" materialDesign:HintAssist.Hint="Search" Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                             VerticalAlignment="Center" Margin="10" Width="300"/>
+                    <Button Style="{StaticResource MaterialDesignIconButton}"
+                            Margin="5 10 10 10" Padding="0" Width="30"
+                            Height="30" Click="search_btn"
+                            IsDefault="True"
+                            >
                         <materialDesign:PackIcon Kind="Search" Margin="0"/>
                     </Button>
                 </StackPanel>
-                <StackPanel Orientation="Horizontal" Grid.Row="1" VerticalAlignment="Center" Margin="10">
-                    <CheckBox IsChecked="True" Content="Book Name" Margin="0 0 30 0"/>
-                    <CheckBox IsChecked="False" Content="Author Name"/>
+                <StackPanel Orientation="Horizontal" Grid.Column="1" VerticalAlignment="Center" Margin="10">
+                    <RadioButton x:Name="searchByName" IsChecked="True" Content="Book Name" Margin="0 0 30 0"/>
+                    <RadioButton x:Name="searchByAuthor" IsChecked="False" Content="Author Name"/>
                 </StackPanel>
-                <Button Grid.RowSpan="2" Grid.Column="1" Margin="10" Style="{StaticResource MaterialDesignRaisedButton}" ToolTip="Resource name: MaterialDesignRaisedButton" Content="Borrow" />
             </Grid>
         </materialDesign:Card>
     </Grid>

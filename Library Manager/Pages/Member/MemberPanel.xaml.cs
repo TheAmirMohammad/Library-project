@@ -32,12 +32,12 @@ namespace Library_Manager
 
         private void edit_member_btn(object sender, RoutedEventArgs e)
         {
-            memberFrame.Content = new Pages.Member.editMember();
+            memberFrame.Content = new Pages.Member.editMember(member);
         }
 
         private void books_btn(object sender, RoutedEventArgs e)
         {
-            memberFrame.Content = new Pages.Member.MemberBook();
+            memberFrame.Content = new Pages.Member.MemberBook(member);
         }
 
         private void mybooks_btn(object sender, RoutedEventArgs e)

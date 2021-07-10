@@ -14,6 +14,8 @@ namespace Library_Manager
         string imageFileName;
         int id;
         int balance;
+        private string imageFile;
+
         public Date SignDate { get => signDate; set => signDate = value; }
         public Date ExtensionDate { get => extensionDate; set => extensionDate = value; }
         public int RemainingDays { get => remainingDays; set => remainingDays = value; }
@@ -29,6 +31,11 @@ namespace Library_Manager
             RemainingDays = 30;
             ExtensionDate = Date.AddDays(SignDate, RemainingDays);
             this.Balance = Balance;
+        }
+
+        public Member(string name, string email, string phonenumber, string password, string imageFile) : base(name, email, phonenumber, password)
+        {
+            this.imageFile = imageFile;
         }
 
         public void borrowBook()

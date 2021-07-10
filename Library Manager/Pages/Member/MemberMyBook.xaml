@@ -63,7 +63,9 @@
                                     <TextBlock Grid.Column="2" Text="{Binding Genre}" Margin="0 10" FontSize="12"/>
                                     <TextBlock Grid.Column="3" Text="{Binding PrintNumber}" Margin="0 10" FontSize="12"/>
                                     <TextBlock Grid.Column="4" Text="{Binding Count}" Margin="0 10" FontSize="12"/>
-                                    <Button Style="{StaticResource MaterialDesignRaisedButton}" Content="Return"/>
+                                    <Button Grid.Column="5" Content="Return"
+                                            Width="150" HorizontalAlignment="Right" Click="return_btn"
+                                            />
                                 </Grid>
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>

@@ -1,5 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 using System.Data;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace Library_Manager.Pages.Member
@@ -10,12 +11,16 @@ namespace Library_Manager.Pages.Member
     public partial class MemberBook : Page
     {
         public ObservableCollection<Book> books { get; set; }
+        public DataTable data;
 
-        public MemberBook()
+        Library_Manager.Member member;
+
+        public MemberBook(Library_Manager.Member mem)
         {
             InitializeComponent();
+            member = mem;
             books = new ObservableCollection<Book>();
-            DataTable data = DataBaseManager.BookList();
+            data = DataBaseManager.BookList();
             for (int i = 0; i < data.Rows.Count; i++)
                 books.Add(new Book()
                 {
@@ -27,6 +32,37 @@ namespace Library_Manager.Pages.Member
                 });
 
             DataContext = this;
+        }
+
+        private void borrow_btn(object sender, System.Windows.RoutedEventArgs e)
+        {
+            Button btn = sender as Button;
+            var obj = btn.DataContext as Book;
+            int bookId = DataBaseManager.GetBookId(obj.Name);
+            int memberId = DataBaseManager.GetMemberId(member.Name);
+            DataBaseManager.BorrowBook(bookId, memberId);
+        }
+
+        private void search_btn(object sender, RoutedEventArgs e)
+        {
+            string search = txtSearch.Text;
+            if (!string.IsNullOrEmpty(search))
+            {
+                if (searchByName.IsChecked == true)
+                {
+                    books.Clear();
+                    for (int i = 0; i < data.Rows.Count; i++)
+                        if (data.Rows[i][0].ToString().Contains(search))
+                            books.Add(new Book()
+                            {
+                                Name = data.Rows[i][1].ToString(),
+                                Author = data.Rows[i][2].ToString(),
+                                Genre = data.Rows[i][3].ToString(),
+                                PrintNumber = data.Rows[i][4].ToString(),
+                                Count = (int)data.Rows[i][5]
+                            });
+                }
+            }
         }
     }
 }
