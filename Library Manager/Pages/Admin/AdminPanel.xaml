@@ -40,12 +40,7 @@
                 </Grid>
                 <materialDesign:PopupBox Grid.Column="1" Foreground="White" PlacementMode="BottomAndAlignRightEdges">
                     <StackPanel Width="200">
-                        <Button Style="{StaticResource MaterialDesignFlatButton}" ToolTip="MaterialDesignFlatButton" Content="Item1"/>
-                        <Button Style="{StaticResource MaterialDesignFlatButton}" ToolTip="MaterialDesignFlatButton" Content="Item2"/>
-                        <Button Style="{StaticResource MaterialDesignFlatButton}" ToolTip="MaterialDesignFlatButton" Content="Item3"/>
-                        <Separator/>
-                        <Button Style="{StaticResource MaterialDesignFlatButton}" ToolTip="MaterialDesignFlatButton" Content="Item4"/>
-                        <Button Style="{StaticResource MaterialDesignFlatButton}" ToolTip="MaterialDesignFlatButton" Content="Item5"/>
+                        <Button Style="{StaticResource MaterialDesignFlatButton}" x:Name="logout" Click="log_out_btn" Content="Log Out"/>
                     </StackPanel>
                 </materialDesign:PopupBox>
             </Grid>

@@ -44,6 +44,7 @@
                     <TextBlock Text="Print Number" Width="150" Margin="10" FontSize="15"/>
                     <TextBlock Text="Count" Width="60" Margin="10" FontSize="15"/>
                 </StackPanel>
+                
                 <Separator Margin="10 0" Grid.Row="1" VerticalAlignment="Bottom"/>
                 <ScrollViewer Grid.Row="1">
                     <ItemsControl ItemsSource="{Binding books, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">

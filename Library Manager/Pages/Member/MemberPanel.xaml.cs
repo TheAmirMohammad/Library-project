@@ -19,7 +19,12 @@ namespace Library_Manager
         {
             this.Close();
         }
-
+        private void log_out_btn(object sender, RoutedEventArgs e)
+        {
+            MainWindow main = new MainWindow();
+            main.Show();
+            this.Close();
+        }
         private void drag(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             this.DragMove();
