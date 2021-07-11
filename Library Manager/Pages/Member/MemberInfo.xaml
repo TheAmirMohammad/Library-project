@@ -31,6 +31,7 @@
                 <ColumnDefinition Width="2*"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
+            
             <Grid Grid.ColumnSpan="2">
                 <materialDesign:Card Margin="20 10">
                     <StackPanel>
@@ -72,7 +73,7 @@
                         Grid.Column="1"
                                             Margin="5"
                         >
-                                    <TextBox x:Name="txtName" materialDesign:HintAssist.Hint="Name" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                                    <TextBox x:Name="txtName" IsEnabled="False" materialDesign:HintAssist.Hint="Name" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
                                 </StackPanel>
 
                                 <StackPanel Orientation="Vertical"
@@ -81,7 +82,7 @@
                         Grid.Column="1" 
                                             Margin="5"
                         >
-                                    <TextBox x:Name="txtEmail" materialDesign:HintAssist.Hint="Email" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                                    <TextBox x:Name="txtEmail" IsEnabled="False" materialDesign:HintAssist.Hint="Email" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
                                 </StackPanel>
 
                                 <StackPanel VerticalAlignment="Top" Grid.Row="3"
@@ -92,8 +93,8 @@
                                             <ColumnDefinition Width="auto"/>
                                             <ColumnDefinition/>
                                         </Grid.ColumnDefinitions>
-                                        <TextBox Text="98" VerticalAlignment="Center" materialDesign:TextFieldAssist.PrefixText="+" Margin="0 11.25 0 0"/>
-                                        <TextBox Grid.Column="1" x:Name="txtPhoneNumber" materialDesign:HintAssist.Hint="Phone Number" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="10 0 0 0"/>
+                                        <TextBox x:Name="txtPreNumber" Text="98" IsEnabled="False" VerticalAlignment="Center" materialDesign:TextFieldAssist.PrefixText="+" Margin="0 11.25 0 0"/>
+                                        <TextBox Grid.Column="1" IsEnabled="False" x:Name="txtPhoneNumber" materialDesign:HintAssist.Hint="Phone Number" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="10 0 0 0"/>
                                     </Grid>
 
                                 </StackPanel>
@@ -104,7 +105,7 @@
                         Grid.Column="2" 
                                             Margin="5"
                         >
-                                    <TextBox x:Name="txtStartDate" materialDesign:HintAssist.Hint="Start Day" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                                    <TextBox x:Name="txtStartDate" IsEnabled="False" materialDesign:HintAssist.Hint="Start Day" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
                                 </StackPanel>
 
                                 <StackPanel Orientation="Vertical"
@@ -113,10 +114,10 @@
                         Grid.Column="2"    
                                             Margin="5"
                         >
-                                    <TextBox x:Name="txtEndDate" materialDesign:HintAssist.Hint="End Day" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                                    <TextBox x:Name="txtEndDate" IsEnabled="False" materialDesign:HintAssist.Hint="End Day" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
                                 </StackPanel>
 
-                                <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource MaterialDesignHeadline5TextBlock}" VerticalAlignment="Center" Margin="5" Text="33 Days"/>
+                                <TextBlock x:Name="remainingDates" Grid.Row="3" Grid.Column="2" Style="{StaticResource MaterialDesignHeadline5TextBlock}" VerticalAlignment="Center" Margin="5" Text="33 Days"/>
 
                             </Grid>
                         </Grid>
@@ -131,7 +132,46 @@
                             <TextBlock Style="{StaticResource MaterialDesignHeadline5TextBlock}" VerticalAlignment="Center" Margin="20 10" Text="Borrowed Books"/>
                         </StackPanel>
                         <Separator Margin="20 0"/>
-                        <ListView/>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="0.15*"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <StackPanel Orientation="Horizontal"
+                    Margin="10 0"
+                    VerticalAlignment="Bottom"
+                    Background="#F4F4F6"
+                    Grid.Row="0">
+                                <TextBlock Text="Book Name" Width="80" Margin="10" FontSize="10"/>
+                                <TextBlock Text="Author" Width="60" Margin="10" FontSize="10"/>
+                                <TextBlock Text="Genre" Width="60" Margin="10" FontSize="10"/>
+                                <TextBlock Text="Print Number" Width="90" Margin="10" FontSize="10"/>
+                                <TextBlock Text="Count" Width="60" Margin="10" FontSize="10"/>
+                            </StackPanel>
+                            <Separator Margin="10 0" Grid.Row="1" VerticalAlignment="Bottom"/>
+                            <ScrollViewer Grid.Row="1" Height="103">
+                                <ItemsControl ItemsSource="{Binding books, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" >
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <Grid Margin="20 0">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="100"/>
+                                                    <ColumnDefinition Width="80"/>
+                                                    <ColumnDefinition Width="80"/>
+                                                    <ColumnDefinition Width="100"/>
+                                                    <ColumnDefinition/>
+                                                </Grid.ColumnDefinitions>
+                                                <TextBlock Grid.Column="0" Text="{Binding Name}" Margin="0 10" FontSize="10"/>
+                                                <TextBlock Grid.Column="1" Text="{Binding Author}" Margin="0 10" FontSize="10"/>
+                                                <TextBlock Grid.Column="2" Text="{Binding Genre}" Margin="0 10" FontSize="10"/>
+                                                <TextBlock Grid.Column="3" Text="{Binding PrintNumber}" Margin="0 10" FontSize="10"/>
+                                                <TextBlock Grid.Column="4" Text="{Binding Count}" Margin="0 10" FontSize="10"/>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                            </ScrollViewer>
+                        </Grid>
                     </StackPanel>
                 </materialDesign:Card>
             </Grid>
@@ -171,7 +211,7 @@
                                     VerticalAlignment="Center"
                                     FontSize="9"
                                     BorderThickness="0"
-                                    Content="Delete">
+                                    Content="Delete" Click="delete_btn">
                                 </Button>
                             </StackPanel>
                         </materialDesign:Card>

@@ -23,7 +23,8 @@ namespace Library_Manager
             if (ValidateFields())
             {
                 Employee NewEmployee = new Employee(txtName.Text, txtPhoneNumber.Text, txtEmail.Text, txtPassword.Password, int.Parse(txtSalary.Text), ImageFile);
-                if (DataBaseManager.isEmployeeExists(NewEmployee.Name, NewEmployee.Email, NewEmployee.PhoneNumber))
+                if (DataBaseManager.isEmployeeExists(NewEmployee.Name, NewEmployee.Email, NewEmployee.PhoneNumber)
+                    && DataBaseManager.isMemberExists(NewEmployee.Name, NewEmployee.Email, NewEmployee.PhoneNumber))
                 {
                     DataBaseManager.AddEmployee(NewEmployee);
                     NavigationService.Navigate(new Pages.Universal.employees());

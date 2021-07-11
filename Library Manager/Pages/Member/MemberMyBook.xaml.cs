@@ -31,6 +31,8 @@ namespace Library_Manager.Pages.Member
             int bookId = DataBaseManager.GetBookId(obj.Name);
             int memberId = DataBaseManager.GetMemberId(member.Name);
             DataBaseManager.ReturnBook(bookId, memberId);
+
+            this.NavigationService.Navigate(new Pages.Member.MemberMyBook(member));
         }
     }
 }

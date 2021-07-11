@@ -7,6 +7,8 @@ namespace Library_Manager
         int salary;
         int balance;
         string imageFileName;
+        private string imageFile;
+
         public int Salary { get => salary; set => salary = value; }
         public int Balance { get => balance; set => balance = value; }
         public string ImageFileName { get => imageFileName; set => imageFileName = value; }
@@ -25,6 +27,12 @@ namespace Library_Manager
             ImageFileName = imageFileName;
             Balance = 0;
         }
+
+        public Employee(string name, string email, string phonenumber, string password, string imageFile) : base(name, email, phonenumber, password)
+        {
+            this.imageFile = imageFile;
+        }
+
         public List<Book> showAllBooks()
         {
             throw new System.NotImplementedException();

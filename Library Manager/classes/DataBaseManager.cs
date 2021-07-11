@@ -8,12 +8,21 @@ namespace Library_Manager
 {
     public class DataBaseManager
     {
-        static SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=E:\University\Term 4\AP\Programming\Project\Library-project\Library-project\Library Manager\DataBase\LibraryDataBase.mdf;Integrated Security=True;Connect Timeout=30;MultipleActiveResultSets=True");
+        static SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\lenovo\Desktop\works\darC\AP\Project\Library-project\Library Manager\DataBase\LibraryDataBase.mdf;Integrated Security=True;Connect Timeout=30;MultipleActiveResultSets=True");
         static string command;
         static DataBaseManager()
         {
         }
 
+        public static void addMemberBalance(string Name, int amount)
+        {
+            con.Open();
+            command = String.Format("UPDATE tblMembers SET Balance = Balance + '{0}' WHERE Name = '{1}'", amount, Name);
+            SqlCommand com = new SqlCommand(command, con);
+            com.BeginExecuteNonQuery();
+            Thread.Sleep(2000);
+            con.Close();
+        }
         public static bool isMemberExists(string name, string email, string phoneNumber)
         {
             DataTable data = MemberList();
@@ -128,7 +137,7 @@ namespace Library_Manager
                 ReturnBook(bookId, MemberId);
             }
             con.Open();
-            command = String.Format("DELETE FROM tblMember WHERE Name='{0}'", Name);
+            command = String.Format("DELETE FROM tblMembers WHERE Name='{0}'", Name);
             SqlCommand com = new SqlCommand(command, con);
             com.BeginExecuteNonQuery();
             Thread.Sleep(2000);
@@ -276,7 +285,7 @@ namespace Library_Manager
         public static void InsertToLibraryManagment(int BookId, int MemberId)
         {
             con.Open();
-            command = String.Format("INSERT INTO tblLibraryManagment (MemberId, BookId) VALUES ('{0}','{1}');", MemberId, BookId);
+            command = String.Format("INSERT INTO tblLibraryManagment (MemberId, BookId, StartDate, EndDate) VALUES ('{0}','{1}','{2}','{3}');", MemberId, BookId, DateTime.Now.ToString(), DateTime.Now.AddDays(7).ToString());
             SqlCommand com = new SqlCommand(command, con);
             com.BeginExecuteNonQuery();
             Thread.Sleep(2000);
@@ -351,7 +360,17 @@ namespace Library_Manager
             Thread.Sleep(2000);
             con.Close();
         }
-        public static void AddBalanceMember(string BookName, int Amount)
+        public static DataTable memberInfo(string Name)
+        {
+            con.Open();
+            command = String.Format("SELECT * FROM tblMembers WHERE Name = '{0}'", Name);
+            SqlDataAdapter adapter = new SqlDataAdapter(command, con);
+            DataTable data = new DataTable();
+            adapter.Fill(data);
+            con.Close();
+            return data;
+        }
+        public static void AddBookCount(string BookName, int Amount)
         {
             con.Open();
             command = String.Format("UPDATE tblBooks SET Count = Count + '{0}' WHERE BookName = '{1}'", Amount, BookName);
@@ -369,6 +388,15 @@ namespace Library_Manager
             Thread.Sleep(2000);
             con.Close();
         }
+        public static void updateEmployee(Employee emp)
+        {
+            con.Open();
+            command = String.Format("UPDATE tblEmployees SET Email='{0}', PhoneNumber='{1}', Password='{2}',ImageFileName='{3}' WHERE Name = '{4}'", emp.Email, emp.PhoneNumber, emp.Password, emp.ImageFileName, emp.Name);
+            SqlCommand com = new SqlCommand(command, con);
+            com.BeginExecuteNonQuery();
+            Thread.Sleep(2000);
+            con.Close();
+        }
         public static int LibraryBudget()
         {
             command = String.Format("SELECT * from tblAdmin");
@@ -379,7 +407,7 @@ namespace Library_Manager
         }
         public static int MemberBalance(string name)
         {
-            command = String.Format("SELECT * from tblMembers WHERE Name='{0}'",name);
+            command = String.Format("SELECT * from tblMembers WHERE Name='{0}'", name);
             SqlDataAdapter adapter = new SqlDataAdapter(command, con);
             DataTable table = new DataTable();
             adapter.Fill(table);

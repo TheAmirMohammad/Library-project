@@ -31,7 +31,7 @@ namespace Library_Manager
 
         private void edit_emp_btn(object sender, RoutedEventArgs e)
         {
-            employeeFrame.Content = new Pages.Employee.editEmployee();
+            employeeFrame.Content = new Pages.Employee.editEmployee(employee);
         }
 
         private void books_btn(object sender, RoutedEventArgs e)
@@ -41,7 +41,7 @@ namespace Library_Manager
 
         private void members_btn(object sender, RoutedEventArgs e)
         {
-            employeeFrame.Content = new Pages.Universal.members();
+            employeeFrame.Content = new Pages.Universal.members(employee);
         }
 
         private void budget_btn(object sender, RoutedEventArgs e)

@@ -31,7 +31,7 @@ namespace Library_Manager
                 if (DataBaseManager.isMemberExists(NewMember.Name, NewMember.Email, NewMember.PhoneNumber)
                     && DataBaseManager.isEmployeeExists(NewMember.Name, NewMember.Email, NewMember.PhoneNumber))
                 {
-                    PayPanel PayPanelWindow = new PayPanel(NewMember);
+                    PayPanel PayPanelWindow = new PayPanel(20000, NewMember);
                     NavigationService.Navigate(PayPanelWindow);
                 }
             }
@@ -50,7 +50,7 @@ namespace Library_Manager
             {
                 if (txtName.Text.Length < 3 || txtName.Text.Length > 32)
                 {
-                    
+
                     System.Windows.MessageBox.Show("Name length must be from 3 to 32! please provide a proper name.");
                     return false;
                 }

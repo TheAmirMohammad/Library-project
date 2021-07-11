@@ -21,17 +21,42 @@ namespace Library_Manager.Pages.Admin
             txtBudget.Text = String.Format("{0:n0}", Budget);
         }
 
-        private void btn_add_Click(object sender, System.Windows.RoutedEventArgs e)
+        private void btn_add_Click(object sender, RoutedEventArgs e)
         {
-            if (txtAmount.Text != "")
+            if (isAmountValid())
             {
-                DataBaseManager.AddBudget(int.Parse(txtAmount.Text));
-                UpdatePrice();
+                MainWindow main = new MainWindow();
+                main.mainFrame.Content = new PayPanel(int.Parse(txtAmount.Text));
+                main.Show();
+
+            }
+        }
+        bool isAmountValid()
+        {
+            if (string.IsNullOrEmpty(txtAmount.Text))
+            {
+                MessageBox.Show("Enter Amount !");
+                return false;
             }
             else
             {
-                MessageBox.Show("Put amount of Money!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                if (!IsDigitsOnly(txtAmount.Text))
+                {
+                    MessageBox.Show("year should be all digits !");
+                    return false;
+                }
             }
+            return true;
+        }
+        bool IsDigitsOnly(string str)
+        {
+            foreach (char c in str)
+            {
+                if (c < '0' || c > '9')
+                    return false;
+            }
+
+            return true;
         }
     }
 }

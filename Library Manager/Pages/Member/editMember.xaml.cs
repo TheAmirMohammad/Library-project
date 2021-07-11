@@ -18,6 +18,19 @@ namespace Library_Manager.Pages.Member
         {
             InitializeComponent();
             txtName.Text = member.Name;
+            txtEmail.Text = member.Email;
+            txtPassword.Password = member.Password;
+            txtPreNumber.Text = member.PhoneNumber.Substring(0, 2);
+            txtPhoneNumber.Text = member.PhoneNumber.Substring(2);
+            try
+            {
+                BitmapImage bitmap = new BitmapImage();
+                bitmap.BeginInit();
+                bitmap.UriSource = new Uri(member.ImageFileName);
+                bitmap.EndInit();
+                ProfileImage.Source = bitmap;
+            }
+            catch { }
         }
 
         private void set_btn(object sender, System.Windows.RoutedEventArgs e)

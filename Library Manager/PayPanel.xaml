@@ -20,6 +20,7 @@
                 <RowDefinition/>
                 <RowDefinition/>
                 <RowDefinition/>
+                <RowDefinition/>
             </Grid.RowDefinitions>
 
             <TextBlock Text="Card Info !"
@@ -27,10 +28,16 @@
                        VerticalAlignment="Center"
                        FontSize="50"
                        />
-
+            <TextBlock x:Name="Payment_Amount"
+                       Text="PayMent Amount : "
+                       Grid.Row="1"
+                       VerticalAlignment="Center"
+                       FontSize="20"
+                       FontWeight="Bold"
+                />
             <StackPanel Orientation="Vertical"
                         VerticalAlignment="Center"
-                        Grid.Row="1"
+                        Grid.Row="2"
                         >
                 <TextBlock Text="Card Number :"/>
                 <StackPanel Orientation="Horizontal"
@@ -49,7 +56,7 @@
 
             <StackPanel Orientation="Vertical"
                         VerticalAlignment="Center"
-                        Grid.Row="2"
+                        Grid.Row="3"
                         >
                 <TextBlock Text="Password :"/>
                 <TextBox x:Name="password" MaxLength="12" Width="200" HorizontalAlignment="Left"/>
@@ -57,7 +64,7 @@
 
             <StackPanel Orientation="Vertical"
                         VerticalAlignment="Center"
-                        Grid.Row="3"
+                        Grid.Row="4"
                         >
                 <TextBlock Text="CVV2 :"/>
                 <TextBox x:Name="cvv2" MaxLength="12" Width="200" HorizontalAlignment="Left"/>
@@ -65,7 +72,7 @@
 
             <StackPanel Orientation="Vertical"
                         VerticalAlignment="Center"
-                        Grid.Row="4"
+                        Grid.Row="5"
                         >
                 <TextBlock Text="Expire Date :"/>
                 <StackPanel Orientation="Horizontal">

@@ -61,8 +61,8 @@ namespace Library_Manager
                     {
                         if (memData.Rows[i][2].ToString().ToLower() == email && memData.Rows[i][4].ToString() == pass)
                         {
-                            var emp = new MemberPanel(new Member(memData.Rows[i][1].ToString(), memData.Rows[i][3].ToString()
-                                             , memData.Rows[i][2].ToString(), memData.Rows[i][4].ToString(), new Date(2000, 2, 3), memData.Rows[i][6].ToString()));
+                            var emp = new MemberPanel(new Member(memData.Rows[i][1].ToString(), memData.Rows[i][2].ToString()
+                                             , memData.Rows[i][3].ToString(), memData.Rows[i][4].ToString(), memData.Rows[i][6].ToString()));
                             emp.Show();
                             isMatch = true;
                             MainWindow main = Application.Current.MainWindow as MainWindow;

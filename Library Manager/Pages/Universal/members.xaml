@@ -26,6 +26,7 @@
             <RowDefinition Height="0.2*"/>
             <RowDefinition Height="0.9*"/>
         </Grid.RowDefinitions>
+        
         <StackPanel VerticalAlignment="Center" Grid.ColumnSpan="2" Margin="0,5">
             <StackPanel Orientation="Horizontal">
                 <TextBlock Style="{StaticResource MaterialDesignHeadline5TextBlock}" VerticalAlignment="Center" Margin="20 10" Text="Members"/>
@@ -34,9 +35,9 @@
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="1" VerticalAlignment="Center" Margin="20,10" Grid.ColumnSpan="2">
             <ListBox Style="{StaticResource MaterialDesignChoiceChipPrimaryListBox}" x:Name="RadioButtonGroupChoiceChipPrimary">
-                <ListBoxItem Content="All Members" />
-                <ListBoxItem IsSelected="True" Content="Late Return Members" />
-                <ListBoxItem Content="Late Account Members" />
+                <ListBoxItem IsSelected="True" x:Name="allMembers" Content="All Members" />
+                <ListBoxItem Content="Late Return Members" x:Name="lateReturn" />
+                <ListBoxItem Content="Late Account Members" Name="lateAccount" />
             </ListBox>
         </StackPanel>
         <StackPanel Orientation="Horizontal"
@@ -46,22 +47,24 @@
                     Grid.Row="2">
             <TextBlock Text="Name" Width="200" Margin="10" FontSize="15"/>
             <TextBlock Text="Email" Width="200" Margin="10" FontSize="15"/>
-            <TextBlock Text="Phone Number" Margin="10" FontSize="15"/>
+            <TextBlock Text="Phone Number" Width="120" Margin="10" FontSize="15"/>
         </StackPanel>
         <Separator Margin="10 0" Grid.Row="2" VerticalAlignment="Bottom"/>
-        <ScrollViewer Grid.Row="3">
+        <ScrollViewer Grid.Row="3" Margin="0 0 10 0">
             <ItemsControl ItemsSource="{Binding users, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
                         <Grid>
                             <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="220"/>
+                                <ColumnDefinition Width="220"/>
                                 <ColumnDefinition Width="200"/>
-                                <ColumnDefinition Width="200"/>
-                                <ColumnDefinition Width="200"/>
+                                <ColumnDefinition />
                             </Grid.ColumnDefinitions>
                             <TextBlock Grid.Column="0" Text="{Binding Name}" Margin="20 10" FontSize="12"/>
-                            <TextBlock Grid.Column="1" Text="{Binding Email}" Margin="40 10" FontSize="12"/>
-                            <TextBlock Grid.Column="2" Text="{Binding PhoneNumber}" Margin="60 10" FontSize="12"/>
+                            <TextBlock Grid.Column="1" Text="{Binding Email}" Margin="20 10" FontSize="12"/>
+                            <TextBlock Grid.Column="2" Text="{Binding PhoneNumber}" Margin="20 10" FontSize="12"/>
+                            <Button Width="100" Margin="0 0 10 0" HorizontalAlignment="Right" Grid.Column="3" Content="Info" Click="Show_info_btn"/>
                         </Grid>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
