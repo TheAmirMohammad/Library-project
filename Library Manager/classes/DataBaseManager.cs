@@ -377,6 +377,22 @@ namespace Library_Manager
             adapter.Fill(table);
             return int.Parse(table.Rows[0][1].ToString());
         }
+        public static int MemberBalance(string name)
+        {
+            command = String.Format("SELECT * from tblMembers WHERE Name='{0}'",name);
+            SqlDataAdapter adapter = new SqlDataAdapter(command, con);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            return int.Parse(table.Rows[0][8].ToString());
+        }
+        public static int BalanceEmployee(string name)
+        {
+            command = String.Format("SELECT * from tblEmployees WHERE Name='{0}'", name);
+            SqlDataAdapter adapter = new SqlDataAdapter(command, con);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            return int.Parse(table.Rows[0][7].ToString());
+        }
         public static bool isLate(DateTime End)
         {
             if (DateTime.Compare(End, DateTime.Now) < 0)
@@ -387,6 +403,54 @@ namespace Library_Manager
             {
                 return false;
             }
+        }
+        public static int CountRemainingDays(string name)
+        {
+            command = String.Format("SELECT * from tblMembers WHERE Name = '{0}'", name);
+            SqlDataAdapter adapter = new SqlDataAdapter(command, con);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            DateTime subscriptiondate = DateTime.Parse(table.Rows[0][6].ToString());
+            int numberofDays = (subscriptiondate - DateTime.Now).Days;
+            con.Close();
+            return numberofDays;
+        }
+        public static DateTime GetSubscriptionDate(string name)
+        {
+            command = String.Format("SELECT * from tblMembers WHERE Name = '{0}'", name);
+            SqlDataAdapter adapter = new SqlDataAdapter(command, con);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            DateTime subscriptiondate = DateTime.Parse(table.Rows[0][6].ToString());
+            return subscriptiondate;
+        }
+        public static void UpdateSubscriptionWithDays(string name, int days)
+        {
+            DateTime Subscriptiondate = GetSubscriptionDate(name);
+            con.Open();
+            command = String.Format("UPDATE tblMembers SET SubscriptionDate = '{0}' WHERE Name = '{1}'", Subscriptiondate.AddDays(days).ToString(), name);
+            SqlCommand com = new SqlCommand(command, con);
+            com.BeginExecuteNonQuery();
+            Thread.Sleep(2000);
+            con.Close();
+        }
+        public static void UpdateMemberBalance(string name, int RemoveAmount)
+        {
+            con.Open();
+            command = String.Format("UPDATE tblMembers SET Balance = Balance - {0} WHERE Name = '{1}'", RemoveAmount, name);
+            SqlCommand com = new SqlCommand(command, con);
+            com.BeginExecuteNonQuery();
+            Thread.Sleep(2000);
+            con.Close();
+        }
+        public static void AddMemberBalance(string name, int RemoveAmount)
+        {
+            con.Open();
+            command = String.Format("UPDATE tblMembers SET Balance = Balance + {0} WHERE Name = '{1}'", RemoveAmount, name);
+            SqlCommand com = new SqlCommand(command, con);
+            com.BeginExecuteNonQuery();
+            Thread.Sleep(2000);
+            con.Close();
         }
     }
 }

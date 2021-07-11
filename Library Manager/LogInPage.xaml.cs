@@ -45,7 +45,7 @@ namespace Library_Manager
                 {
                     if (empData.Rows[i][2].ToString().ToLower() == email && empData.Rows[i][4].ToString() == pass)
                     {
-                        var emp = new EmployeePanel(new Employee());
+                        var emp = new EmployeePanel(new Employee(empData.Rows[i][1].ToString(), empData.Rows[i][2].ToString(), empData.Rows[i][3].ToString(), empData.Rows[i][4].ToString(), int.Parse(empData.Rows[i][5].ToString()), empData.Rows[i][6].ToString()));
                         emp.Show();
                         isMatch = true;
                         MainWindow main = Application.Current.MainWindow as MainWindow;

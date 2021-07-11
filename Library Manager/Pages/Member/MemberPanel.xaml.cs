@@ -47,12 +47,12 @@ namespace Library_Manager
 
         private void subs_btn(object sender, RoutedEventArgs e)
         {
-            memberFrame.Content = new Pages.Member.MemberSubscription();
+            memberFrame.Content = new Pages.Member.MemberSubscription(member);
         }
 
         private void bud_btn(object sender, RoutedEventArgs e)
         {
-            memberFrame.Content = new Pages.Member.MemberWallet();
+            memberFrame.Content = new Pages.Member.MemberWallet(member);
         }
     }
 }

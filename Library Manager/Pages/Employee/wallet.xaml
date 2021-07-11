@@ -28,7 +28,7 @@
             </StackPanel>
             <materialDesign:Card Grid.Row="1" Margin="40 22 40 30" Background="#008F95" materialDesign:ShadowAssist.ShadowDepth="Depth3" BorderThickness="0">
                 <StackPanel>
-                    <Rectangle Width="900" Height="330">
+                    <Rectangle Width="900" Height="400">
                         <Rectangle.Fill>
                             <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
                                 <GradientStop Color="#FF0A6c" Offset="0.2" />
@@ -36,7 +36,7 @@
                             </LinearGradientBrush>
                         </Rectangle.Fill>
                     </Rectangle>
-                    <StackPanel Margin="0 -320 0 0">
+                    <StackPanel Margin="0 -390 0 0">
                         <TextBlock Style="{StaticResource MaterialDesignBody2TextBlock}" VerticalAlignment="Center" Margin="10 5 10 0" Text="Jahed Motlagh" Foreground="White"/>
                         <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" VerticalAlignment="Center" Margin="10 0 10 0" Text="Melat Bank" Foreground="White"/>
                         <TextBlock Style="{StaticResource MaterialDesignOverlineTextBlock}" VerticalAlignment="Center" Margin="10 5 10 0" Text="6037-3374-3338-3971-1497" Foreground="White"/>
@@ -49,7 +49,7 @@
                         <materialDesign:Card HorizontalAlignment="Center" Padding="10 0" Margin="33" Opacity="1">
                             <StackPanel Orientation="Horizontal" Width="400" Height="150">
                                 <materialDesign:PackIcon Kind="CurrencyUsd" VerticalAlignment="Center" Margin="5 5 0 5" Width="80" Height="80" Foreground="#834fdb"/>
-                                <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" FontSize="40" VerticalAlignment="Center" Margin="5 0" Text="40.000.000 T" Foreground="Teal"/>
+                                <TextBlock x:Name="txtBudget" Style="{StaticResource MaterialDesignCaptionTextBlock}" FontSize="40" VerticalAlignment="Center" Margin="5 0" Text="40.000.000 T" Foreground="Teal"/>
                             </StackPanel>
                         </materialDesign:Card>
                         <Separator Background="White" Margin="10 10 10 0" Opacity="0.75"/>

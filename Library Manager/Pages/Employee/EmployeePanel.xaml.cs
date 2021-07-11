@@ -11,7 +11,7 @@ namespace Library_Manager
         public EmployeePanel(Employee emp)
         {
             InitializeComponent();
-            employeeFrame.Content = new Pages.Universal.Home("Employee");
+            employeeFrame.Content = new Pages.Universal.Home("Employee", emp.Name);
             employee = emp;
         }
         private void exit(object sender, RoutedEventArgs e)
@@ -46,7 +46,7 @@ namespace Library_Manager
 
         private void budget_btn(object sender, RoutedEventArgs e)
         {
-            employeeFrame.Content = new Pages.Employee.wallet();
+            employeeFrame.Content = new Pages.Employee.wallet(employee);
         }
     }
 }
