@@ -8,7 +8,7 @@ namespace Library_Manager
 {
     public class DataBaseManager
     {
-        static SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=E:\University\Term 4\AP\Programming\Project\Library-project\Library-project\Library Manager\DataBase\LibraryDataBase.mdf;Integrated Security=True;Connect Timeout=30;MultipleActiveResultSets=True");
+        static SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\lenovo\Desktop\works\darC\AP\Project\Library-project\Library Manager\DataBase\LibraryDataBase.mdf;Integrated Security=True;Connect Timeout=30;MultipleActiveResultSets=True");
         static string command;
         static DataBaseManager()
         {
@@ -52,10 +52,13 @@ namespace Library_Manager
         public static void AddMember(Member MemberToAdd)
         {
             con.Open();
+            Library_Manager.Pages.Universal.Loading loading = new Pages.Universal.Loading();
+            loading.Show();
             command = String.Format("INSERT INTO tblMembers (Name, Email, PhoneNumber, Password, SignDate, SubscriptionDate, ImageFileName, Balance) VALUES ('{0}','{1}','{2}','{3}','{4}','{5}', '{6}', '{7}');", MemberToAdd.Name, MemberToAdd.Email, MemberToAdd.PhoneNumber, MemberToAdd.Password, Date.DateToDateTime(MemberToAdd.SignDate).ToString(), Date.DateToDateTime(MemberToAdd.ExtensionDate).ToString(), MemberToAdd.ImageFileName, 0);
             SqlCommand com = new SqlCommand(command, con);
             com.BeginExecuteNonQuery();
             Thread.Sleep(2000);
+            loading.Close();
             con.Close();
         }
         public static DataTable MemberList()
