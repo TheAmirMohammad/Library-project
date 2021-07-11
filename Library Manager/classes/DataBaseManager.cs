@@ -8,7 +8,7 @@ namespace Library_Manager
 {
     public class DataBaseManager
     {
-        static SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\lenovo\Desktop\works\darC\AP\Project\Library-project\Library Manager\DataBase\LibraryDataBase.mdf;Integrated Security=True;Connect Timeout=30;MultipleActiveResultSets=True");
+        static SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=E:\University\Term 4\AP\Programming\Project\Library-project\Library-project\Library Manager\DataBase\LibraryDataBase.mdf;Integrated Security=True;Connect Timeout=30;MultipleActiveResultSets=True");
         static string command;
         static DataBaseManager()
         {
@@ -112,7 +112,7 @@ namespace Library_Manager
         public static void DeleteEmployee(string Name)
         {
             con.Open();
-            command = String.Format("DELETE FROM tblEmployee WHERE Name='{0}'", Name);
+            command = String.Format("DELETE FROM tblEmployees WHERE Name='{0}'", Name);
             SqlCommand com = new SqlCommand(command, con);
             com.BeginExecuteNonQuery();
             Thread.Sleep(2000);
@@ -137,7 +137,7 @@ namespace Library_Manager
         public static int Payment()
         {
             con.Open();
-            command = "SELECT SUM(Salary) FROM tblEmployees;";
+            command = "SELECT SUM(Salary) AS Total FROM tblEmployees;";
             SqlDataAdapter adapter = new SqlDataAdapter(command, con);
             DataTable table = new DataTable();
             adapter.Fill(table);
@@ -146,21 +146,30 @@ namespace Library_Manager
         }
         public static void PayAllSalaries()
         {
-            int Salary;
-            int Balance;
             int Id;
+            int Pay = Payment();
             DataTable data = EmpList();
             con.Open();
             for (int i = 0; i < data.Rows.Count; i++)
             {
-                Salary = int.Parse(data.Rows[i][5].ToString());
-                Balance = int.Parse(data.Rows[i][7].ToString());
                 Id = int.Parse(data.Rows[i][0].ToString());
-                Balance += Salary;
-                command = String.Format("UPDATE tblEmployees SET Balance = '{0}' WHERE Id = '{1}'", Balance, Id);
+                command = String.Format("UPDATE tblEmployees SET Balance = Balance + Salary WHERE Id = '{0}'", Id);
                 SqlCommand com = new SqlCommand(command, con);
                 com.BeginExecuteNonQuery();
             }
+            Thread.Sleep(2000);
+            command = String.Format("UPDATE tblAdmin SET Budget = Budget - {0} WHERE Id = '1'", Pay);
+            SqlCommand com1 = new SqlCommand(command, con);
+            com1.BeginExecuteNonQuery();
+            Thread.Sleep(2000);
+            con.Close();
+        }
+        public static void AddBudget(int amount)
+        {
+            con.Open();
+            command = String.Format("UPDATE tblAdmin SET Budget = Budget + {0} WHERE Id = '1'", amount);
+            SqlCommand com1 = new SqlCommand(command, con);
+            com1.BeginExecuteNonQuery();
             Thread.Sleep(2000);
             con.Close();
         }
@@ -315,7 +324,7 @@ namespace Library_Manager
         {
             bool flag = true;
             con.Open();
-            command = String.Format("SELECT MemberId, EndDate, tblMembers.Balance, FROM tblLibraryManagment INNER JOIN tblMembers ON tblLibraryManagment.MemberID = tblMembers.Id WHERE BookId = '{0}' AND MemberId='{1}';", BookId, MemberId);
+            command = String.Format("SELECT MemberId, EndDate, tblMembers.Balance FROM tblLibraryManagment INNER JOIN tblMembers ON tblLibraryManagment.MemberID = tblMembers.Id WHERE BookID = '{0}' AND MemberID='{1}';", BookId, MemberId);
             SqlDataAdapter adapter = new SqlDataAdapter(command, con);
             DataTable table = new DataTable();
             adapter.Fill(table);
@@ -359,6 +368,14 @@ namespace Library_Manager
             com.BeginExecuteNonQuery();
             Thread.Sleep(2000);
             con.Close();
+        }
+        public static int LibraryBudget()
+        {
+            command = String.Format("SELECT * from tblAdmin");
+            SqlDataAdapter adapter = new SqlDataAdapter(command, con);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            return int.Parse(table.Rows[0][1].ToString());
         }
         public static bool isLate(DateTime End)
         {

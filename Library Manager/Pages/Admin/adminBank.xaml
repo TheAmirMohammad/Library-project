@@ -30,7 +30,7 @@
             </StackPanel>
             <materialDesign:Card Grid.Row="1" Margin="40 22 40 30" Background="#008F95" materialDesign:ShadowAssist.ShadowDepth="Depth3" BorderThickness="0">
                 <StackPanel>
-                    <Rectangle Width="auto" Height="250">
+                    <Rectangle Width="auto" Height="270">
                         <Rectangle.Fill>
                             <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
                                 <GradientStop Color="#FF0A6c" Offset="0.2" />
@@ -51,7 +51,7 @@
                         <materialDesign:Card HorizontalAlignment="Center" Padding="10 0" Margin="18" Opacity="1">
                             <StackPanel Orientation="Horizontal" Width="400">
                                 <materialDesign:PackIcon Kind="CurrencyUsd" VerticalAlignment="Center" Margin="5 5 0 5" Width="60" Height="60" Foreground="#834fdb"/>
-                                <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" FontSize="30" VerticalAlignment="Center" Margin="5 0" Text="40.000.000 T" Foreground="Teal"/>
+                                <TextBlock x:Name="txtBudget" Style="{StaticResource MaterialDesignCaptionTextBlock}" FontSize="30" VerticalAlignment="Center" Margin="5 0" Text="40.000.000 T" Foreground="Teal"/>
                             </StackPanel>
                         </materialDesign:Card>
                         <Separator Background="White" Margin="10 10 10 0" Opacity="0.75"/>
@@ -79,6 +79,7 @@
                     <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="16 -15 5 0">
                         <materialDesign:PackIcon Kind="CurrencyUsd" VerticalAlignment="Center" Margin="0 5 0 5" Width="30" Height="30" Foreground="#834fdb"/>
                         <TextBox
+                            x:Name="txtAmount"
                             VerticalAlignment="Center"
                             Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                             Width="200"
@@ -109,7 +110,7 @@
                                     VerticalAlignment="Center"
                                     FontSize="9"
                                     BorderThickness="0"
-                                    Content="ADD">
+                                    Content="ADD" Click="btn_add_Click">
                         </Button>
                     </StackPanel>
                     <UserControl Grid.Column="1" Grid.RowSpan="2">
