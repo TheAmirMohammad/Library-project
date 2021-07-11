@@ -34,10 +34,10 @@
             <Separator Margin="20 0"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="1" VerticalAlignment="Center" Margin="20,10" Grid.ColumnSpan="2">
-            <ListBox Style="{StaticResource MaterialDesignChoiceChipPrimaryListBox}" x:Name="RadioButtonGroupChoiceChipPrimary">
+            <ListBox x:Name="FilterChips" Style="{StaticResource MaterialDesignChoiceChipPrimaryListBox}" MouseDoubleClick="Filter_Change">
                 <ListBoxItem IsSelected="True" x:Name="allMembers" Content="All Members" />
                 <ListBoxItem Content="Late Return Members" x:Name="lateReturn" />
-                <ListBoxItem Content="Late Account Members" Name="lateAccount" />
+                <ListBoxItem Content="Late Account Members" x:Name="lateAccount" />
             </ListBox>
         </StackPanel>
         <StackPanel Orientation="Horizontal"

@@ -42,8 +42,7 @@ namespace Library_Manager.Pages.Member
             int memberId = DataBaseManager.GetMemberId(member.Name);
             DataBaseManager.BorrowBook(bookId, memberId);
         }
-
-        private void search_btn(object sender, RoutedEventArgs e)
+        public void Search()
         {
             string search = txtSearch.Text;
             if (!string.IsNullOrEmpty(search))
@@ -52,7 +51,21 @@ namespace Library_Manager.Pages.Member
                 {
                     books.Clear();
                     for (int i = 0; i < data.Rows.Count; i++)
-                        if (data.Rows[i][0].ToString().Contains(search))
+                        if (data.Rows[i][1].ToString().ToLower().Contains(search.ToLower()))
+                            books.Add(new Book()
+                            {
+                                Name = data.Rows[i][1].ToString(),
+                                Author = data.Rows[i][2].ToString(),
+                                Genre = data.Rows[i][3].ToString(),
+                                PrintNumber = data.Rows[i][4].ToString(),
+                                Count = (int)data.Rows[i][5]
+                            });
+                }
+                if (searchByAuthor.IsChecked == true)
+                {
+                    books.Clear();
+                    for (int i = 0; i < data.Rows.Count; i++)
+                        if (data.Rows[i][2].ToString().ToLower().Contains(search.ToLower()))
                             books.Add(new Book()
                             {
                                 Name = data.Rows[i][1].ToString(),
@@ -63,6 +76,29 @@ namespace Library_Manager.Pages.Member
                             });
                 }
             }
+            else
+            {
+                books.Clear();
+                for (int i = 0; i < data.Rows.Count; i++)
+                    books.Add(new Book()
+                    {
+                        Name = data.Rows[i][1].ToString(),
+                        Author = data.Rows[i][2].ToString(),
+                        Genre = data.Rows[i][3].ToString(),
+                        PrintNumber = data.Rows[i][4].ToString(),
+                        Count = (int)data.Rows[i][5]
+                    });
+            }
+        }
+
+        private void search_btn(object sender, RoutedEventArgs e)
+        {
+            Search();
+        }
+
+        private void Search_Change(object sender, TextChangedEventArgs e)
+        {
+            Search();
         }
     }
 }

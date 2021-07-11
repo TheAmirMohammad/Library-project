@@ -8,7 +8,7 @@ namespace Library_Manager
 {
     public class DataBaseManager
     {
-        static SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\lenovo\Desktop\works\darC\AP\Project\Library-project\Library Manager\DataBase\LibraryDataBase.mdf;Integrated Security=True;Connect Timeout=30;MultipleActiveResultSets=True");
+        static SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=E:\University\Term 4\AP\Programming\Project\Library-project\Library-project\Library Manager\DataBase\LibraryDataBase.mdf;Integrated Security=True;Connect Timeout=30;MultipleActiveResultSets=True");
         static string command;
         static DataBaseManager()
         {
@@ -182,37 +182,37 @@ namespace Library_Manager
             Thread.Sleep(2000);
             con.Close();
         }
-        public static List<Member> GetLateSubscriptionMembers()
+        public static List<User> GetLateSubscriptionMembers()
         {
-            List<Member> MemberList = new List<Member>();
+            List<User> MemberList = new List<User>();
             con.Open();
-            command = "SELECT * from tblLibraryManager";
+            command = "SELECT DISTINCT tblMembers.Name,tblMembers.Email,tblMembers.PhoneNumber, tblMembers.SubscriptionDate FROM tblMembers";
             SqlDataAdapter adapter = new SqlDataAdapter(command, con);
             DataTable table = new DataTable();
             adapter.Fill(table);
             for (int i = 0; i < table.Rows.Count; i++)
             {
-                if (isLate(DateTime.Parse(table.Rows[i][6].ToString())))
+                if (isLate(DateTime.Parse(table.Rows[i][3].ToString())))
                 {
-                    MemberList.Add(new Member(table.Rows[i][1].ToString(), table.Rows[i][3].ToString(), table.Rows[i][2].ToString(), table.Rows[i][4].ToString(), Date.DateTimeToDate(DateTime.Parse(table.Rows[i][5].ToString())), table.Rows[i][7].ToString()));
+                    MemberList.Add(new User(table.Rows[i][0].ToString(), table.Rows[i][1].ToString(), table.Rows[i][2].ToString()));
                 }
             }
             con.Close();
             return MemberList;
         }
-        public static List<Member> GetLateReturnnMembers()
+        public static List<User> GetLateReturnMembers()
         {
-            List<Member> MemberList = new List<Member>();
+            List<User> MemberList = new List<User>();
             con.Open();
-            command = "SELECT tblMembers.Id, tblMembers.Name,tblMembers.Email,tblMembers.PhoneNumber, tblMembers.Password,tblMembers.SignDate, tblMembers.SubscriptionDate, tblMembers.ImageFileName ,tblMembers.Balance FROM tblLibraryManagment INNER JOIN tblBooks ON tblLibraryManagment.BookID = tblBooks.Id INNER JOIN tblMembers ON tblLibraryManagment.MemberID = tblMembers.Id;";
+            command = "SELECT DISTINCT tblMembers.Name,tblMembers.Email,tblMembers.PhoneNumber, tblLibraryManagment.EndDate FROM tblLibraryManagment INNER JOIN tblBooks ON tblLibraryManagment.BookID = tblBooks.Id INNER JOIN tblMembers ON tblLibraryManagment.MemberID = tblMembers.Id;";
             SqlDataAdapter adapter = new SqlDataAdapter(command, con);
             DataTable table = new DataTable();
             adapter.Fill(table);
             for (int i = 0; i < table.Rows.Count; i++)
             {
-                if (isLate(DateTime.Parse(table.Rows[i][6].ToString())))
+                if (isLate(DateTime.Parse(table.Rows[i][3].ToString())))
                 {
-                    MemberList.Add(new Member(table.Rows[i][1].ToString(), table.Rows[i][3].ToString(), table.Rows[i][2].ToString(), table.Rows[i][4].ToString(), Date.DateTimeToDate(DateTime.Parse(table.Rows[i][5].ToString())), table.Rows[i][7].ToString(), int.Parse(table.Rows[i][8].ToString())));
+                    MemberList.Add(new User(table.Rows[i][0].ToString(), table.Rows[i][1].ToString(), table.Rows[i][2].ToString()));
                 }
             }
             con.Close();
@@ -479,6 +479,26 @@ namespace Library_Manager
             com.BeginExecuteNonQuery();
             Thread.Sleep(2000);
             con.Close();
+        }
+        public static DataTable GetBorrowedBooks()
+        {
+            con.Open();
+            command = String.Format("SELECT DISTINCT tblBooks.BookName,tblBooks.Author,tblBooks.Genre, tblBooks.PrintNumber, tblBooks.Count FROM tblLibraryManagment INNER JOIN tblBooks ON tblLibraryManagment.BookID = tblBooks.Id");
+            SqlDataAdapter adapter = new SqlDataAdapter(command, con);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            con.Close();
+            return table;
+        }
+        public static DataTable GetAvailableBooks()
+        {
+            con.Open();
+            command = String.Format("SELECT DISTINCT tblBooks.BookName,tblBooks.Author,tblBooks.Genre, tblBooks.PrintNumber, tblBooks.Count FROM tblBooks WHERE Count != '0'");
+            SqlDataAdapter adapter = new SqlDataAdapter(command, con);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            con.Close();
+            return table;
         }
     }
 }

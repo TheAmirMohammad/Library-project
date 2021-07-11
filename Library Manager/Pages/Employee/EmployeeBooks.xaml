@@ -30,10 +30,10 @@
             <Separator Margin="20 0"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="1" VerticalAlignment="Center" Margin="20 0">
-            <ListBox Style="{StaticResource MaterialDesignChoiceChipPrimaryListBox}" x:Name="RadioButtonGroupChoiceChipPrimary">
-                <ListBoxItem IsSelected="True" Content="All Books" />
-                <ListBoxItem Content="Borrowed Books" />
-                <ListBoxItem Content="Available Books" />
+            <ListBox Style="{StaticResource MaterialDesignChoiceChipPrimaryListBox}" x:Name="FilterChips" MouseDoubleClick="Filter_Change">
+                <ListBoxItem x:Name="AllBooks" IsSelected="True" Content="All Books" />
+                <ListBoxItem x:Name="BorrowedBooks" Content="Borrowed Books" />
+                <ListBoxItem x:Name="AvailableBooks" Content="Available Books" />
             </ListBox>
         </StackPanel>
         <StackPanel Orientation="Horizontal"
