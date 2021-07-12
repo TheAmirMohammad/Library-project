@@ -41,7 +41,7 @@ namespace Library_Manager.Pages.Universal
             }
             if (txtGener.Text == "")
             {
-                System.Windows.MessageBox.Show("Gener Can NOT be null!");
+                System.Windows.MessageBox.Show("Genre Can NOT be null!");
                 return false;
             }
             if (txtBookNumber.Text == "")

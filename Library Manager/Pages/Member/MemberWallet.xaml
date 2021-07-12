@@ -104,7 +104,7 @@
                                     Height="20"
                                     Width="60"
                                     Margin="15 0 0 0"
-                                    ToolTip="Resource name: MaterialDesignRaisedAccentButton"
+                                    IsDefault="True"  
                                     VerticalContentAlignment="Bottom"
                                     Background="#834fdb"
                                     Foreground="White"

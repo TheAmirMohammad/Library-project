@@ -33,6 +33,9 @@ namespace Library_Manager
 
         private void PayButton_Click(object sender, RoutedEventArgs e)
         {
+            var load = new Pages.Universal.Loading();
+            load.Activate();
+            load.Show();
             if (isForAddMember)
             {
                 if (DataBaseManager.isMemberExists(NewMember.Name, NewMember.Email, NewMember.PhoneNumber))
@@ -40,6 +43,7 @@ namespace Library_Manager
                     {
                         DataBaseManager.AddMember(NewMember);
                         DataBaseManager.AddBudget(amount);
+
                         MemberPanel member = new MemberPanel(NewMember);
                         member.Show();
 
@@ -53,18 +57,27 @@ namespace Library_Manager
             else
             {
                 if (isForMember)
+                {
                     DataBaseManager.addMemberBalance(member.Name, amount);
+                    MessageBox.Show("Done !");
+                    MainWindow main = Application.Current.MainWindow as MainWindow;
+                    if (main != null)
+                    {
+                        main.Close();
+                    }
+                }
                 else
                 {
                     DataBaseManager.AddBudget(amount);
-                }
-                MessageBox.Show("Done !");
-                MainWindow main = Application.Current.MainWindow as MainWindow;
-                if (main != null)
-                {
-                    main.Close();
+                    MessageBox.Show("Done !");
+                    MainWindow main = Application.Current.MainWindow as MainWindow;
+                    if (main != null)
+                    {
+                        main.Close();
+                    }
                 }
             }
+            load.Close();
         }
 
         private bool isCardValid()

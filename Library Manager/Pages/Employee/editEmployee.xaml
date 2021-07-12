@@ -90,7 +90,7 @@
                     Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"/>
             </StackPanel>
 
-            <Button x:Name="set" Content="Set" Grid.Row="6" HorizontalAlignment="Center" Click="Addbutton_Click" Width="{StaticResource ButtonWidth}"/>
+            <Button x:Name="set" IsDefault="True" Content="Set" Grid.Row="6" HorizontalAlignment="Center" Click="Addbutton_Click" Width="{StaticResource ButtonWidth}"/>
         </Grid>
     </Grid>
 </Page>

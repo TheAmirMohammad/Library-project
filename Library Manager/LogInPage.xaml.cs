@@ -21,6 +21,10 @@ namespace Library_Manager
 
         private void login_btn(object sender, RoutedEventArgs e)
         {
+            var load = new Pages.Universal.Loading();
+            load.Activate();
+            load.Show();
+
             DataTable empData = DataBaseManager.EmpList();
             DataTable memData = DataBaseManager.MemberList();
 
@@ -78,6 +82,7 @@ namespace Library_Manager
             {
                 MessageBox.Show("This combination of email and password does not exist !!");
             }
+            load.Close();
         }
     }
 }

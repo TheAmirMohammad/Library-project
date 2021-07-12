@@ -29,7 +29,7 @@
             <Grid Grid.ColumnSpan="2">
                 <materialDesign:Card Margin="20 10">
                     <StackPanel>
-                        <StackPanel Orientation="Horizontal" Width="760">
+                        <StackPanel Orientation="Horizontal" Width="auto">
                             <TextBlock Style="{StaticResource MaterialDesignHeadline5TextBlock}" VerticalAlignment="Center" Margin="20 10" Text="Employees"/>
                             <Button
                                     Style="{StaticResource MaterialDesignIconButton}"

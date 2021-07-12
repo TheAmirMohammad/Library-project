@@ -1,17 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Library_Manager.Pages.Member
 {
@@ -21,7 +10,7 @@ namespace Library_Manager.Pages.Member
     public partial class MemberWallet : Page
     {
         int Budget;
-        Library_Manager.Member CurrentMember;
+        Library_Manager.Member member;
         public MemberWallet()
         {
             InitializeComponent();
@@ -29,26 +18,50 @@ namespace Library_Manager.Pages.Member
         public MemberWallet(Library_Manager.Member member)
         {
             InitializeComponent();
-            CurrentMember = member;
+            this.member = member;
             UpdatePrice();
         }
         public void UpdatePrice()
         {
-            Budget = DataBaseManager.MemberBalance(CurrentMember.Name);
+            Budget = DataBaseManager.MemberBalance(member.Name);
             txtBudget.Text = String.Format("{0:n0}", Budget);
         }
 
         private void btn_add_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-            if (txtAmount.Text != "")
+            if (isAmountValid())
             {
-                DataBaseManager.AddMemberBalance(CurrentMember.Name ,int.Parse(txtAmount.Text));
-                UpdatePrice();
+                MainWindow main = new MainWindow();
+                main.mainFrame.Content = new PayPanel(int.Parse(txtAmount.Text), true, member);
+                main.Show();
+            }
+        }
+        bool isAmountValid()
+        {
+            if (string.IsNullOrEmpty(txtAmount.Text))
+            {
+                MessageBox.Show("Enter Amount !");
+                return false;
             }
             else
             {
-                MessageBox.Show("Put amount of Money!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                if (!IsDigitsOnly(txtAmount.Text))
+                {
+                    MessageBox.Show("year should be all digits !");
+                    return false;
+                }
             }
+            return true;
+        }
+        bool IsDigitsOnly(string str)
+        {
+            foreach (char c in str)
+            {
+                if (c < '0' || c > '9')
+                    return false;
+            }
+
+            return true;
         }
     }
 }

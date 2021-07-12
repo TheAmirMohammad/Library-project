@@ -22,7 +22,7 @@ namespace Library_Manager
         {
             if (ValidateFields())
             {
-                Employee NewEmployee = new Employee(txtName.Text, txtPhoneNumber.Text, txtEmail.Text, txtPassword.Password, int.Parse(txtSalary.Text), ImageFile);
+                Employee NewEmployee = new Employee(txtName.Text, txtPreNumber.Text + txtPhoneNumber.Text, txtEmail.Text, txtPassword.Password, int.Parse(txtSalary.Text), ImageFile);
                 if (DataBaseManager.isEmployeeExists(NewEmployee.Name, NewEmployee.Email, NewEmployee.PhoneNumber)
                     && DataBaseManager.isMemberExists(NewEmployee.Name, NewEmployee.Email, NewEmployee.PhoneNumber))
                 {
@@ -75,6 +75,11 @@ namespace Library_Manager
                 if (txtPhoneNumber.Text[0] != '9')
                 {
                     System.Windows.MessageBox.Show("Phone number must begin with 9! please provide a proper phone number.");
+                    return false;
+                }
+                if (txtPhoneNumber.Text.Length != 10)
+                {
+                    System.Windows.MessageBox.Show("Phone number should be exactly 10 digits! please provide a proper phone number.");
                     return false;
                 }
             }

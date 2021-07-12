@@ -90,7 +90,7 @@
                     Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"/>
             </StackPanel>
 
-            <Button x:Name="signup" Content="Set" Grid.Row="6" HorizontalAlignment="Center" Width="{StaticResource ButtonWidth}" Click="set_btn"/>
+            <Button x:Name="signup" IsDefault="True" Content="Set" Grid.Row="6" HorizontalAlignment="Center" Width="{StaticResource ButtonWidth}" Click="set_btn"/>
         </Grid>
     </Grid>
 </Page>
